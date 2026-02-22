@@ -235,7 +235,7 @@ if (!container || container.dataset.mapReady === "true") {
       loadSvgIcon(name);
     });
 
-    map.on("load", () => {
+    const prepareIcons = () => {
       addTransparentIcon(" ");
       let iconNames = iconList;
       if (typeof iconNames === "string") {
@@ -248,43 +248,63 @@ if (!container || container.dataset.mapReady === "true") {
       if (!Array.isArray(iconNames)) {
         iconNames = Object.values(iconNames || {});
       }
-      const loadIcons = iconNames.map((name) => loadSvgIcon(String(name).trim()));
+      return iconNames.map((name) => loadSvgIcon(String(name).trim()));
+    };
 
-      map.addSource("openaip-data", {
-        type: "vector",
-        tiles: [tileUrl],
-        attribution:
-          '<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> | ' +
-          '<a href="https://www.openaip.net/" target="_blank" rel="noopener">OpenAIP</a> | ' +
-          "Luftrauminformationen ohne Gewähr"
-      });
-      map.addSource("point-features", {
-        type: "geojson",
-        data: {type: "FeatureCollection", features: []}
-      });
-      map.addSource("polygon-features", {
-        type: "geojson",
-        data: {type: "FeatureCollection", features: []}
-      });
-      map.addSource("adhoc-polygon-features", {
-        type: "geojson",
-        data: {type: "FeatureCollection", features: []}
-      });
-
-      const openAipLayers = config.openAipLayers || [];
-
-      Promise.all(loadIcons).then(() => {
-        const fontFallback = ["Open Sans Regular", "Arial Unicode MS Regular"];
-        openAipLayers.forEach((layer) => {
-          if (layer.id && map.getLayer(layer.id)) return;
-          if (layer.layout && layer.layout["text-font"]) {
-            layer.layout["text-font"] = fontFallback;
-          }
-          map.addLayer(layer);
+    const ensureSources = () => {
+      if (!map.getSource("openaip-data")) {
+        map.addSource("openaip-data", {
+          type: "vector",
+          tiles: [tileUrl],
+          attribution:
+            '<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> | ' +
+            '<a href="https://www.openaip.net/" target="_blank" rel="noopener">OpenAIP</a> | ' +
+            "Luftrauminformationen ohne Gewähr"
         });
+      }
+      if (!map.getSource("point-features")) {
+        map.addSource("point-features", {
+          type: "geojson",
+          data: {type: "FeatureCollection", features: []}
+        });
+      }
+      if (!map.getSource("polygon-features")) {
+        map.addSource("polygon-features", {
+          type: "geojson",
+          data: {type: "FeatureCollection", features: []}
+        });
+      }
+      if (!map.getSource("adhoc-polygon-features")) {
+        map.addSource("adhoc-polygon-features", {
+          type: "geojson",
+          data: {type: "FeatureCollection", features: []}
+        });
+      }
+    };
 
-        new maplibregl.Marker({color: "#1d6ee8"}).setLngLat([lon, lat]).addTo(map);
+    const ensureLayers = () => {
+      const openAipLayers = config.openAipLayers || [];
+      const fontFallback = ["Open Sans Regular", "Arial Unicode MS Regular"];
+      openAipLayers.forEach((layer) => {
+        if (layer.id && map.getLayer(layer.id)) return;
+        if (layer.layout && layer.layout["text-font"]) {
+          layer.layout["text-font"] = fontFallback;
+        }
+        map.addLayer(layer);
       });
+    };
+
+    const ensureOverlay = () => {
+      ensureSources();
+      const loadIcons = prepareIcons();
+      Promise.all(loadIcons).then(() => {
+        ensureLayers();
+      });
+    };
+
+    map.once("styledata", () => {
+      ensureOverlay();
+      new maplibregl.Marker({color: "#1d6ee8"}).setLngLat([lon, lat]).addTo(map);
     });
   };
 
