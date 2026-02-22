@@ -17,7 +17,7 @@
 <div class="map-widget" id="{{ $id }}" data-map-ready="false"></div>
 <script src="https://unpkg.com/maplibre-gl@5.17.0/dist/maplibre-gl.js"></script>
 <script>
-  (() => {
+  (async () => {
     const container = document.getElementById("{{ $id }}");
     if (!container || container.dataset.mapReady === "true") return;
     container.dataset.mapReady = "true";
@@ -28,10 +28,42 @@
       : [0, 0];
 
     const styleUrl = "{{ $lightStyle }}";
+    let mapStyle = styleUrl;
+    if (styleUrl.includes("styles.trailsta.sh/openmaptiles-osm.json")) {
+      const localStyleUrl = new URL(
+        `/tiles/style/${styleUrl.split("/").pop()}`,
+        window.location.origin
+      ).toString();
+      try {
+        const res = await fetch(localStyleUrl);
+        if (res.ok) {
+          const styleJson = await res.json();
+          if (styleJson && typeof styleJson === "object") {
+            if (typeof styleJson.sprite === "string" && styleJson.sprite.startsWith("/")) {
+              styleJson.sprite = `${window.location.origin}${styleJson.sprite}`;
+            }
+            if (typeof styleJson.glyphs === "string" && styleJson.glyphs.startsWith("/")) {
+              styleJson.glyphs = `${window.location.origin}${styleJson.glyphs}`;
+            }
+            if (styleJson.sources && typeof styleJson.sources === "object") {
+              Object.values(styleJson.sources).forEach((source) => {
+                if (!source || typeof source !== "object") return;
+                if (typeof source.url === "string" && source.url.startsWith("/")) {
+                  source.url = `${window.location.origin}${source.url}`;
+                }
+              });
+            }
+          }
+          mapStyle = styleJson;
+        }
+      } catch (e) {
+        // keep remote style fallback
+      }
+    }
 
     const map = new maplibregl.Map({
       container: "{{ $id }}",
-      style: styleUrl,
+      style: mapStyle,
       center: initialCenter,
       zoom: {{ $zoom }},
       attributionControl: true

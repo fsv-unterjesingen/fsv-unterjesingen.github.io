@@ -1,0 +1,37 @@
+name: Update tile cache
+
+on:
+  schedule:
+    - cron: "0 3 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Update tile cache
+        run: python3 scripts/update-tile-cache.py
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Update tile cache"
+          title: "Update tile cache"
+          body: "Automated monthly refresh of cached map tiles and style assets."
+          branch: "automation/update-tile-cache"
+          delete-branch: true
+          reviewers: rnwst
+          add-paths: |
+            static/tiles
+            scripts/update-tile-cache.py

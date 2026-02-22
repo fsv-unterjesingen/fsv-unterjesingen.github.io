@@ -23,18 +23,134 @@
 <div class="map-widget" id="{{ $id }}" data-map-ready="false"></div>
 <script src="https://unpkg.com/maplibre-gl@5.17.0/dist/maplibre-gl.js"></script>
 <script>
-  (() => {
+  (async () => {
     const container = document.getElementById("{{ $id }}");
     if (!container || container.dataset.mapReady === "true") return;
     container.dataset.mapReady = "true";
 
+    const remoteStyleUrl = "https://styles.trailsta.sh/openmaptiles-osm.json";
+    const localStyleUrl = new URL(
+      `/tiles/style/${remoteStyleUrl.split("/").pop()}`,
+      window.location.origin
+    ).toString();
+    let mapStyle = remoteStyleUrl;
+    try {
+      const res = await fetch(localStyleUrl);
+      if (res.ok) {
+        const styleJson = await res.json();
+        if (styleJson && typeof styleJson === "object") {
+          if (typeof styleJson.sprite === "string" && styleJson.sprite.startsWith("/")) {
+            styleJson.sprite = `${window.location.origin}${styleJson.sprite}`;
+          }
+          if (typeof styleJson.glyphs === "string" && styleJson.glyphs.startsWith("/")) {
+            styleJson.glyphs = `${window.location.origin}${styleJson.glyphs}`;
+          }
+          if (styleJson.sources && typeof styleJson.sources === "object") {
+            Object.values(styleJson.sources).forEach((source) => {
+              if (!source || typeof source !== "object") return;
+              if (typeof source.url === "string" && source.url.startsWith("/")) {
+                source.url = `${window.location.origin}${source.url}`;
+              }
+            });
+          }
+        }
+        mapStyle = styleJson;
+      }
+    } catch (e) {
+      // keep remote style fallback
+    }
+
+    const localBounds = {
+      west: 8.2,
+      south: 48.0,
+      east: 9.7,
+      north: 49.0
+    };
+    const tileWithinBounds = (z, x, y) => {
+      const n = Math.pow(2, z);
+      const lon1 = (x / n) * 360 - 180;
+      const lon2 = ((x + 1) / n) * 360 - 180;
+      const lat1 = (Math.atan(Math.sinh(Math.PI * (1 - (2 * y) / n))) * 180) / Math.PI;
+      const lat2 = (Math.atan(Math.sinh(Math.PI * (1 - (2 * (y + 1)) / n))) * 180) / Math.PI;
+      const tile = {
+        west: lon1,
+        east: lon2,
+        south: Math.min(lat1, lat2),
+        north: Math.max(lat1, lat2)
+      };
+      return (
+        tile.west < localBounds.east &&
+        tile.east > localBounds.west &&
+        tile.south < localBounds.north &&
+        tile.north > localBounds.south
+      );
+    };
+    const parseTileCoords = (url) => {
+      const match = url.match(/\/(\d+)\/(\d+)\/(\d+)\.pbf/);
+      if (!match) return null;
+      return {
+        z: Number.parseInt(match[1], 10),
+        x: Number.parseInt(match[2], 10),
+        y: Number.parseInt(match[3], 10)
+      };
+    };
+
+    try {
+      const res = await fetch(new URL("/tiles/index.json", window.location.origin));
+      if (res.ok) {
+        const data = await res.json();
+        if (Array.isArray(data.openfreemap)) {
+          window.__openfreemapCachedTiles = new Set(data.openfreemap);
+        }
+        if (Array.isArray(data.openaip)) {
+          window.__openaipCachedTiles = new Set(data.openaip);
+        }
+      }
+    } catch (e) {
+      // ignore cache manifest failures
+    }
+
     const map = new maplibregl.Map({
       container: "{{ $id }}",
       // OpenMapTiles OSM style via TrailStash (no API key required).
-      style: "https://styles.trailsta.sh/openmaptiles-osm.json",
+      style: mapStyle,
       center: [{{$lon}}, {{$lat}}],
   zoom: {{$zoom}},
-  attributionControl: false
+  attributionControl: false,
+  transformRequest: (url, resourceType) => {
+    if (resourceType !== "Tile") return {url};
+    if (!url || !url.includes(".pbf")) return {url};
+    let parsed;
+    try {
+      parsed = parseTileCoords(url);
+    } catch (e) {
+      return {url};
+    }
+    if (!parsed) return {url};
+    if (!tileWithinBounds(parsed.z, parsed.x, parsed.y)) return {url};
+
+    const tileKey = `${parsed.z}/${parsed.x}/${parsed.y}`;
+    if (url.includes("openaip.net")) {
+      if (!window.__openaipCachedTiles || !window.__openaipCachedTiles.has(tileKey)) {
+        return {url};
+      }
+      return {
+        url: new URL(
+          `/tiles/openaip/${parsed.z}/${parsed.x}/${parsed.y}.pbf`,
+          window.location.origin
+        ).toString()
+      };
+    }
+    if (window.__openfreemapCachedTiles && window.__openfreemapCachedTiles.has(tileKey)) {
+      return {
+        url: new URL(
+          `/tiles/openfreemap/${parsed.z}/${parsed.x}/${parsed.y}.pbf`,
+          window.location.origin
+        ).toString()
+      };
+    }
+    return {url};
+  }
   });
 
   map.addControl(new maplibregl.NavigationControl({showCompass: false}), "top-right");
