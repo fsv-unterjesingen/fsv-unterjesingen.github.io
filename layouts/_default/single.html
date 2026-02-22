@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ $hero := partial "funcs/hero-image.html" . }}
-<section class="page-hero{{ if $hero.url }} has-hero-image{{ end }}"{{ with $hero.url }} style="background-image: {{ $hero.overlay }}, url('{{ . | safeURL }}');"{{ end }}>
+<section class="page-hero{{ if $hero.url }} has-hero-image{{ end }}"{{ with $hero.url }} style="background-image: {{ $hero.overlay }}, url('{{ $hero.fallback | safeURL }}');{{ if $hero.imageSetWebkit }} background-image: {{ $hero.overlay }}, {{ $hero.imageSetWebkit | safeCSS }};{{ end }}{{ if $hero.imageSet }} background-image: {{ $hero.overlay }}, {{ $hero.imageSet | safeCSS }};{{ end }}"{{ end }}>
   <div class="container">
     <h1>{{ .Title }}</h1>
     {{ with .Params.lead }}<p class="page-lead">{{ . }}</p>{{ end }}

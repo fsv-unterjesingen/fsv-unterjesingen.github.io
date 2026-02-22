@@ -1,6 +1,9 @@
 {{- $heroParam := .Params.hero_image -}}
 {{- $heroUrl := "" -}}
 {{- $heroBrightness := 0.8 -}}
+{{- $heroSet := "" -}}
+{{- $heroSetWebkit := "" -}}
+{{- $heroFallback := "" -}}
 {{- if $heroParam -}}
   {{- if reflect.IsMap $heroParam -}}
     {{- $heroUrl = $heroParam.url | default "" -}}
@@ -13,12 +16,42 @@
   {{- $isAbsolute := or (strings.HasPrefix $heroUrl "/") (strings.HasPrefix $heroUrl "http") -}}
   {{- if not $isAbsolute -}}
     {{- with .Resources.GetMatch $heroUrl -}}
-      {{- $heroUrl = .RelPermalink -}}
+      {{- if eq .ResourceType "image" -}}
+        {{- $img800 := .Resize "800x webp q78" -}}
+        {{- $img1200 := .Resize "1200x webp q78" -}}
+        {{- $img1600 := .Resize "1600x webp q78" -}}
+        {{- $heroFallback = $img1200.RelPermalink -}}
+        {{- $heroSet = printf "image-set(url('%s') type('image/webp') 1x, url('%s') type('image/webp') 2x, url('%s') type('image/webp') 3x)" $img800.RelPermalink $img1200.RelPermalink $img1600.RelPermalink -}}
+        {{- $heroSetWebkit = printf "-webkit-image-set(url('%s') 1x, url('%s') 2x, url('%s') 3x)" $img800.RelPermalink $img1200.RelPermalink $img1600.RelPermalink -}}
+        {{- $heroUrl = $heroFallback -}}
+      {{- else -}}
+        {{- $heroUrl = .RelPermalink -}}
+      {{- end -}}
     {{- else -}}
-      {{- $heroUrl = (path.Join .RelPermalink $heroUrl) | relURL -}}
+      {{- $assetPath := strings.TrimPrefix "/" $heroUrl -}}
+      {{- with resources.Get $assetPath -}}
+        {{- if eq .ResourceType "image" -}}
+          {{- $img800 := .Resize "800x webp q78" -}}
+          {{- $img1200 := .Resize "1200x webp q78" -}}
+          {{- $img1600 := .Resize "1600x webp q78" -}}
+          {{- $heroFallback = $img1200.RelPermalink -}}
+          {{- $heroSet = printf "image-set(url('%s') type('image/webp') 1x, url('%s') type('image/webp') 2x, url('%s') type('image/webp') 3x)" $img800.RelPermalink $img1200.RelPermalink $img1600.RelPermalink -}}
+          {{- $heroSetWebkit = printf "-webkit-image-set(url('%s') 1x, url('%s') 2x, url('%s') 3x)" $img800.RelPermalink $img1200.RelPermalink $img1600.RelPermalink -}}
+          {{- $heroUrl = $heroFallback -}}
+        {{- else -}}
+          {{- $heroUrl = .RelPermalink -}}
+        {{- end -}}
+      {{- else -}}
+        {{- $heroUrl = (path.Join .RelPermalink $heroUrl) | relURL -}}
+      {{- end -}}
     {{- end -}}
+  {{- else -}}
+    {{- $heroUrl = $heroUrl -}}
+  {{- end -}}
+  {{- if not $heroFallback -}}
+    {{- $heroFallback = $heroUrl -}}
   {{- end -}}
 {{- end -}}
 {{- $heroOverlayAlpha := sub 1 $heroBrightness -}}
 {{- $heroOverlay := printf "linear-gradient(rgba(0,0,0,%.2f), rgba(0,0,0,%.2f))" $heroOverlayAlpha $heroOverlayAlpha | safeCSS -}}
-{{- return (dict "url" $heroUrl "overlay" $heroOverlay) -}}
+{{- return (dict "url" $heroUrl "overlay" $heroOverlay "imageSet" $heroSet "imageSetWebkit" $heroSetWebkit "fallback" $heroFallback) -}}

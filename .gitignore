@@ -3,3 +3,4 @@ public
 node_modules
 artifacts
 package-lock.json
+resources/_gen/images

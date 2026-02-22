@@ -3,7 +3,25 @@
 <section class="hero">
   <div class="hero-slides">
     {{ range $index, $slide := $home.hero.slides }}
+      {{- $imagePath := strings.TrimPrefix "/" $slide.image -}}
+      {{- $imageSet := "" -}}
+      {{- $imageSetWebkit := "" -}}
+      {{- $fallback := $slide.image -}}
+      {{- with resources.Get $imagePath -}}
+        {{- if eq .ResourceType "image" -}}
+          {{- $img800 := .Resize "800x webp q78" -}}
+          {{- $img1200 := .Resize "1200x webp q78" -}}
+          {{- $img1600 := .Resize "1600x webp q78" -}}
+          {{- $fallback = $img1200.RelPermalink -}}
+          {{- $imageSet = printf "image-set(url('%s') type('image/webp') 1x, url('%s') type('image/webp') 2x, url('%s') type('image/webp') 3x)" $img800.RelPermalink $img1200.RelPermalink $img1600.RelPermalink -}}
+          {{- $imageSetWebkit = printf "-webkit-image-set(url('%s') 1x, url('%s') 2x, url('%s') 3x)" $img800.RelPermalink $img1200.RelPermalink $img1600.RelPermalink -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if $imageSet -}}
+    <div class="hero-slide" style="background-image: url('{{ $fallback | safeURL }}');{{ if $imageSetWebkit }} background-image: {{ $imageSetWebkit | safeCSS }};{{ end }} background-image: {{ $imageSet | safeCSS }};" aria-hidden="true"></div>
+      {{- else -}}
     <div class="hero-slide" style="background-image: url('{{ $slide.image }}')" aria-hidden="true"></div>
+      {{- end -}}
     {{ end }}
   </div>
   <div class="container hero-content">
