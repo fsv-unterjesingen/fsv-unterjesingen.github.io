@@ -10,3 +10,7 @@ Streckenflug ist die Königsdisziplin im Segelflug. Wir planen gemeinsam, analys
 - Theorie zu Wetter und Luftraum
 - Praxisbriefings vor dem Start
 - Nachbesprechung und Auswertung der Flüge
+
+# Unsere Flüge
+
+{{< weglide >}}

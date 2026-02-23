@@ -1,0 +1,8 @@
+{{- $club := .club | default "1531" -}}
+{{- $bgcolor := .bgcolor | default "eeeeee" -}}
+{{- $width := .width | default "980px" -}}
+{{- $height := .height | default "1300px" -}}
+{{- $src := printf "https://www.weglide.org/embedded/club/%s?bgcolor=%s" $club $bgcolor -}}
+<div class="weglide">
+  <iframe loading="lazy" src="{{ $src }}" width="{{ $width }}" height="{{ $height }}" frameborder="0"></iframe>
+</div>

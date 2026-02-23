@@ -474,7 +474,6 @@ body:has(.site-header.is-scrolled) {
 }
 
 .weglide {
-  padding: 80px 0;
   background: var(--white);
 }
 
