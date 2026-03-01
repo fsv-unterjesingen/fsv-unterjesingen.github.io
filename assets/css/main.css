@@ -16,7 +16,7 @@
 }
 
 body {
-  --header-height: 72px;
+  --header-height: 82px;
   margin: 0;
   font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
   color: var(--ink);
@@ -96,13 +96,16 @@ header a,
   display: flex;
   align-items: center;
   gap: 12px;
-  width: 235px;
 }
 
 .brand-lockup img {
   height: 100%;
   min-height: 0;
   width: auto;
+}
+
+.brand-lockup>.brand-text {
+  width: 160px;
 }
 
 .brand-title {
