@@ -827,7 +827,9 @@ body:has(.site-header.is-scrolled) {
     top: var(--header-height);
     transition: top var(--transition-period) ease;
     right: 0;
-    width: min(200px, 90vw);
+    width: 250px;
+    max-height: calc(97vh - var(--header-height));
+    overflow-y: auto;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
@@ -835,7 +837,6 @@ body:has(.site-header.is-scrolled) {
     backdrop-filter: var(--header-backdrop-filter);
     border-radius: 0 0 14px 14px;
     box-shadow: var(--shadow);
-    overflow-y: auto;
     z-index: 20;
   }
 
@@ -849,7 +850,7 @@ body:has(.site-header.is-scrolled) {
   }
 
   body.nav-open .main-nav ul {
-    display: flex;
+    display: block;
   }
 
   .main-nav {
@@ -874,7 +875,7 @@ body:has(.site-header.is-scrolled) {
 
   .main-nav>ul>li>a {
     width: 100%;
-    padding: 10px 16px;
+    padding: 18px 16px 16px;
     justify-content: space-between;
     display: flex;
     align-items: center;
@@ -908,7 +909,7 @@ body:has(.site-header.is-scrolled) {
 
   .main-nav .sub-menu a {
     background: transparent;
-    padding: 8px 16px 8px 28px;
+    padding: 17px 12px 13px 32px;
     line-height: 1.2;
   }
 }
