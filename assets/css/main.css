@@ -308,10 +308,15 @@ body:has(.site-header.is-scrolled) {
 .hero-slide {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
   opacity: 0;
   animation: slideShow 24s infinite;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .hero-slide:nth-child(1) {
@@ -571,12 +576,39 @@ body:has(.site-header.is-scrolled) {
   margin-top: calc(-1 * var(--header-height));
   padding: calc(min(150px, 13vh) + 72px) 0 30px;
   background-color: #365a9d45;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .page-hero.has-hero-image {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  color: #fff;
+}
+
+.page-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.page-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.page-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.page-hero.has-hero-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--page-hero-overlay, linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)));
 }
 
 .page-hero h1 {
@@ -588,6 +620,12 @@ body:has(.site-header.is-scrolled) {
 
 .page-hero.has-hero-image h1 {
   color: white;
+  text-shadow:
+    0.1em 0.1em 0.3em black;
+}
+
+.page-hero.has-hero-image .page-lead {
+  color: rgba(255, 255, 255, 0.92);
   text-shadow:
     0.1em 0.1em 0.3em black;
 }

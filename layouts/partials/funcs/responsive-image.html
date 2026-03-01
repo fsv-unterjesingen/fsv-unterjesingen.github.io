@@ -1,0 +1,82 @@
+{{- $page := .page -}}
+{{- $imageURL := .url | default "" -}}
+{{- $sizes := .sizes | default "100vw" -}}
+{{- $widths := .widths | default (slice 640 960 1200 1600 1920 2560 3200 3840) -}}
+{{- $fallbackWidth := .fallbackWidth | default 1600 -}}
+{{- $quality := .quality | default 78 -}}
+
+{{- $resolvedURL := $imageURL -}}
+{{- $fallback := "" -}}
+{{- $srcset := "" -}}
+{{- $resource := "" -}}
+{{- $isRemote := or (strings.HasPrefix $imageURL "http://") (strings.HasPrefix $imageURL "https://") -}}
+
+{{- if and (not $isRemote) $imageURL -}}
+  {{- if and $page (not (strings.HasPrefix $imageURL "/")) -}}
+    {{- with $page.Resources.GetMatch $imageURL -}}
+      {{- $resource = . -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- if not $resource -}}
+    {{- with resources.Get (strings.TrimPrefix "/" $imageURL) -}}
+      {{- $resource = . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- with $resource -}}
+  {{- if eq .ResourceType "image" -}}
+    {{- $resourceImage := . -}}
+    {{- $maxWidth := .Width -}}
+    {{- $entries := slice -}}
+    {{- $largestGenerated := 0 -}}
+
+    {{- range $w := $widths -}}
+      {{- if le $w $maxWidth -}}
+        {{- $img := $resourceImage.Resize (printf "%dx webp q%d" $w $quality) -}}
+        {{- $entries = $entries | append (printf "%s %dw" $img.RelPermalink $img.Width) -}}
+        {{- if gt $img.Width $largestGenerated -}}
+          {{- $largestGenerated = $img.Width -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- if lt $largestGenerated $maxWidth -}}
+      {{- $imgFull := .Resize (printf "%dx webp q%d" $maxWidth $quality) -}}
+      {{- $entries = $entries | append (printf "%s %dw" $imgFull.RelPermalink $imgFull.Width) -}}
+    {{- end -}}
+
+    {{- $actualFallbackWidth := $fallbackWidth -}}
+    {{- if lt $maxWidth $actualFallbackWidth -}}
+      {{- $actualFallbackWidth = $maxWidth -}}
+    {{- end -}}
+    {{- $fallbackImg := .Resize (printf "%dx webp q%d" $actualFallbackWidth $quality) -}}
+    {{- $fallback = $fallbackImg.RelPermalink -}}
+
+    {{- if eq (len $entries) 0 -}}
+      {{- $entries = $entries | append (printf "%s %dw" $fallbackImg.RelPermalink $fallbackImg.Width) -}}
+    {{- end -}}
+
+    {{- $srcset = delimit $entries ", " -}}
+    {{- $resolvedURL = $fallback -}}
+  {{- else -}}
+    {{- $resolvedURL = .RelPermalink -}}
+  {{- end -}}
+{{- else -}}
+  {{- if and (not $isRemote) $imageURL -}}
+    {{- if strings.HasPrefix $imageURL "/" -}}
+      {{- $resolvedURL = $imageURL | relURL -}}
+    {{- else if $page -}}
+      {{- $resolvedURL = (path.Join $page.RelPermalink $imageURL) | relURL -}}
+    {{- else -}}
+      {{- $resolvedURL = $imageURL | relURL -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if not $fallback -}}
+  {{- $fallback = $resolvedURL -}}
+{{- end -}}
+
+{{- return (dict "url" $resolvedURL "fallback" $fallback "srcset" $srcset "sizes" $sizes) -}}
