@@ -18,6 +18,9 @@ Im [Goldenen Propeller](https://www.restaurant-goldener-propeller.de/) wird für
 
 Wir freuen uns auf deinen Besuch! **Bitte achte auf anfliegende Flugzeuge!**
 
+
+# Flugplatzinfo
+
 ICAO-Flugplatzcode
 : EDSP
 
@@ -45,3 +48,15 @@ Länge / Belag
     {"lat":48.55115,"lon":8.94581,"title":"Segelflugstart Nord"}
   ]`
 >}}
+
+
+# Webcam
+
+## Aktuelles Bild
+
+![Flugplatz Poltringen Webcam](https://www.fsv-herrenberg.de/externals/webcam/getImage.php)
+
+
+## Archiv
+
+<iframe src="https://content.bergfex.at/webcam/5720/" style="width:100%; height: 650px; border-width: 0px;" title="Webcam Archiv"></iframe>
