@@ -59,4 +59,4 @@ Länge / Belag
 
 ## Archiv
 
-<iframe src="https://content.bergfex.at/webcam/5720/" style="width:100%; height: 650px; border-width: 0px;" title="Webcam Archiv"></iframe>
+<iframe src="https://content.bergfex.at/webcam/5720/" style="width:100%; height: 433px; border-width: 0px;" title="Webcam Archiv"></iframe>
