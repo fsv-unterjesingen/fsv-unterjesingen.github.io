@@ -4,7 +4,7 @@ aliases:
   - /startseite/fliegen-lernen-2/wie-werde-ich-pilot
 ---
 
-## Ausbildung
+# Ausbildung
 
 <div class="image-grid">
   <img src="/images/fliegen-lernen/IMG_1618-1030x687.jpg" alt="ASK 21" />
@@ -17,7 +17,7 @@ aliases:
 
 Der FSV Unterjesingen ist ein zertifizierter Segelflug-Ausbildungsbetrieb und bietet dank ehrenamtlich engagierter, hervorragend ausgebildeter Fluglehrer eine kostengünstige Ausbildung auf höchstem Niveau. Der Schulungsbetrieb ist wetterabhängig und findet saisonal von Mitte März bis Mitte Oktober statt, überwiegend an Wochenenden sowie in Schulungslagern.
 
-### Allgemeine Infos
+## Allgemeine Infos
 
 {{< youtube D3-s7hWb6rA >}}
 
@@ -26,13 +26,13 @@ Der FSV Unterjesingen ist ein zertifizierter Segelflug-Ausbildungsbetrieb und bi
 - Mindestalter für Ausbildungsbeginn: **14 Jahre** (mit Sondergenehmigung auch vorher, nach oben lediglich begrenzt durch die Flugtauglichkeit)
 - Mindestalter für Scheinerhalt: **16 Jahre**
 
-### Kosten
+## Kosten
 
 Für nur 300 € (Schüler und Studenten bis 25) bzw. 400€ kann man beim FSV Unterjesingen eine Segelflugausbildung bis zum 1. Alleinflug machen. Danach fliegt man zu den regulären Preisen, wobei es auch hier Vergünstigungen für Schüler und Studenten gibt.
 
 Gerne beantworten wir dir deine Fragen hierzu persönlich. Schicke uns einfach eine [Nachricht](https://www.fsv-unterjesingen.de/startseite/kontakt/) und wir melden uns bei dir.
 
-### Ausbildung
+## Ausbildung
 
 Am Anfang der Ausbildung steht die Eingewöhnung an das Fliegen, das für viele ein komplett neues, aufregendes und begeisterndes Gefühl sein wird.
 
@@ -50,7 +50,7 @@ Wenn du das alles geschafft hast nach 2-3 Jahren kommt die praktische Prüfung: 
 **Grundausbildung:** praktische und theoretische Ausbildung im Segelflug, Windenbetrieb und F-Schlepp
 **Angebote:** wöchentliche Schulung, THURM-Lager/Theorieschulung, Fluglager
 
-### Theorie
+## Theorie
 
 Ohne Grundwissen geht nichts.
 Deshalb ist es notwendig, dass du eine theoretische Prüfung ablegst.
@@ -69,11 +69,11 @@ Die folgen 9 Fächer werden dabei unterrichtet:
 - Allgemeine Luftfahrzeugkunde
 - Navigation
 
-### Scheinerhalt
+## Scheinerhalt
 
 Hast du genügend Erfahrung gesammelt und die Theorieprüfung und das Funksprechzeugnis bestanden, kannst du die praktische Prüfung im Segelflug ablegen. Danach ist deine Grundausbildung abgeschlossen und du hast einen Segelflugschein.
 
-### Streckenflugausbildung
+## Streckenflugausbildung
 
 Auch nach dem Scheinerhalt unterstützt der FSV Unterjesingen dich bei deiner fliegerischen Entwicklung.
 
