@@ -462,9 +462,10 @@ body:has(.site-header.is-scrolled) {
   align-items: center;
 }
 
-.about h2 {
+h2 {
   font-family: "Fraunces", "Times New Roman", serif;
   font-size: 2rem;
+  margin: 1.6em 0 0.7em;
 }
 
 .about-badge {
@@ -655,7 +656,7 @@ body:has(.site-header.is-scrolled) {
 }
 
 .content dl {
-  margin: 50px 0;
+  margin: 30px 0;
   display: grid;
   grid-template-columns: max-content 1fr;
   column-gap: 50px;

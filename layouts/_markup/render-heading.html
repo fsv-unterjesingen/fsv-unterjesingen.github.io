@@ -1,0 +1,7 @@
+{{ $level := add .Level 1 }}
+{{ if gt $level 6 }}{{ $level = 6 }}{{ end }}
+<h{{ $level }} id="{{ .Anchor }}"
+  {{- range $k, $v := .Attributes -}}
+    {{ printf " %s=%q" $k $v | safeHTMLAttr }}
+  {{- end -}}
+>{{ .Text | safeHTML }}</h{{ $level }}>
