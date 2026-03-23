@@ -477,7 +477,8 @@ h2 {
   width: min(260px, 70%);
 }
 
-.news {
+section.news,
+section.weglide {
   padding: 80px 0;
   background: var(--white);
 }
