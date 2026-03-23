@@ -1,6 +1,7 @@
 baseURL = 'https://www.fsv-unterjesingen.de/'
 languageCode = 'de-de'
 title = 'FSV Unterjesingen'
+timeout = '180s'
 
 [params]
 clubName = 'Flugsportverein Unterjesingen e.V.'
