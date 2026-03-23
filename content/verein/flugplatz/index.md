@@ -54,7 +54,7 @@ Länge / Belag
 
 ## Aktuelles Bild
 
-![Flugplatz Poltringen Webcam](https://www.fsv-herrenberg.de/externals/webcam/getImage.php)
+<img alt="Flugplatz Poltringen Webcam" src="https://www.fsv-herrenberg.de/externals/webcam/getImage.php" style="border-radius: 0">
 
 
 ## Archiv

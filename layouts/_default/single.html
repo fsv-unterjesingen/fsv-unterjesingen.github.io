@@ -16,6 +16,12 @@
   {{ end }}
   <div class="container">
     <h1>{{ .Title }}</h1>
+    {{ if or .Params.date .Params.author }}
+    <p class="page-meta">
+      {{ with .Params.date }}<span>{{ $.Date.Format "02.01.2006" }}</span>{{ end }}
+      {{ with .Params.author }}<span>Von {{ . }}</span>{{ end }}
+    </p>
+    {{ end }}
     {{ with .Params.lead }}<p class="page-lead">{{ . }}</p>{{ end }}
   </div>
 </section>

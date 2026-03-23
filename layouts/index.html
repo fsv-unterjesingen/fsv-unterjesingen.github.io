@@ -40,17 +40,18 @@
   <div class="container">
     <div class="section-title">
       <h2>Aktuelles</h2>
-      <p>Neuigkeiten aus dem Verein und vom Flugplatz. TBD</p>
+      <p>Neuigkeiten aus dem Verein und vom Flugplatz.</p>
     </div>
-    <div class="news-list">
-      {{ range $home.news }}
-      <article class="news-item">
-        <div class="news-date">{{ .date }}</div>
-        <h3>{{ .title }}</h3>
-        <p>{{ .text }}</p>
-      </article>
+    {{ with .Site.GetPage "/blog" }}
+    <div class="blog-list blog-list-preview">
+      {{ range first 3 (.RegularPages.ByDate.Reverse) }}
+      {{ partial "blog-card.html" . }}
       {{ end }}
     </div>
+    <p class="section-more">
+      <a href="{{ .RelPermalink }}">Alle Artikel</a>
+    </p>
+    {{ end }}
   </div>
 </section>
 

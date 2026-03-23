@@ -1,0 +1,29 @@
+{{- $page := . -}}
+{{- $summary := $page.Params.description | default ($page.Plain | plainify | truncate 220) -}}
+<article class="blog-list-item" lang="de">
+  <a class="blog-list-card" href="{{ $page.RelPermalink }}">
+  {{ with $page.Resources.ByType "image" }}
+  {{ with index . 0 }}
+  {{ $thumb := .Fill "720x540 Center q78 webp" }}
+  <div class="blog-list-media" aria-hidden="true">
+    <img
+      src="{{ $thumb.RelPermalink }}"
+      width="{{ $thumb.Width }}"
+      height="{{ $thumb.Height }}"
+      alt=""
+      loading="lazy"
+      decoding="async"
+    >
+  </div>
+  {{ end }}
+  {{ end }}
+  <div class="blog-list-body">
+    <p class="blog-list-meta">
+      <span>{{ $page.Date.Format "02.01.2006" }}</span>
+      {{ with $page.Params.author }}<span class="blog-list-author">{{ . }}</span>{{ end }}
+    </p>
+    <h2>{{ $page.Title }}</h2>
+    <p>{{ $summary }}</p>
+  </div>
+  </a>
+</article>

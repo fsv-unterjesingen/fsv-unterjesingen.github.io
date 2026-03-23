@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="page-hero">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    <p class="page-lead">{{ .Params.Subtitle }}</p>
+  </div>
+</section>
+<section class="page-body blog-archive">
+  <div class="container">
+    {{ with .Content }}
+    <div class="content blog-archive-intro">
+      {{ . }}
+    </div>
+    {{ end }}
+
+    <div class="blog-list">
+      {{ range .RegularPages.ByDate.Reverse }}
+      {{ partial "blog-card.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
