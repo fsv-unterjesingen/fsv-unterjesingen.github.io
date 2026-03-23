@@ -43,6 +43,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
+      - name: Restore Hugo generated resources
+        uses: actions/cache@v4
+        with:
+          path: resources/_gen
+          key: ${{ runner.os }}-hugo-gen-${{ env.HUGO_VERSION }}-${{ hashFiles('hugo.toml', 'assets/**', 'content/**', 'layouts/**', 'archetypes/**', 'data/**') }}
+          restore-keys: |
+            ${{ runner.os }}-hugo-gen-${{ env.HUGO_VERSION }}-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
