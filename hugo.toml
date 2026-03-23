@@ -88,6 +88,7 @@ openaipApiKey = 'bf2df3ae9c5c969fe269d1418df194f2'
     pageRef = '/blog'
     weight = 5
   [[menu.main]]
-    name = 'Bilder'
+    name = 'Bilderarchiv'
     pageRef = '/bilder'
-    weight = 6
+    parent = 'verein'
+    weight = 7
