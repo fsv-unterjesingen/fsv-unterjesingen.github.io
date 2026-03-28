@@ -9,7 +9,7 @@ aliases:
 - /2023/09/04/mein-erster-alleinflug-im-thurm-lager-ein-bericht-von-joel/
 ---
 
-*Unser Flugschüler Joel Domke beschreibt seinen ersten Alleinflug:  *
+{{< figure caption="Joel Domke nach seinem ersten Alleinflug." src="image-01.jpg" />}}
 
 Nach einem langsamen Start in meine Segelflugausbildung im Jahr 2022 habe ich dieses Jahr richtig losgelegt und konnte bis zum THURM-Lager viele Starts und Flugstunden sammeln. Als sich herausstellte, dass ich demnächst meinen ersten Alleinflug absolvieren könnte, war ich doch etwas überrascht und musste noch spontan mein Medical machen. Nachdem das erledigt war, stand eigentlich schon fest, dass es demnächst so weit sein würde.
 
@@ -24,5 +24,3 @@ Es ist ein kühler Tag und es gibt keine Thermik, der Windenstart gibt mir aber 
 Nachdem mir mein Fluglehrer über das Funkgerät sagt, dass ich meine Bremsklappen noch ganz ausfahren soll, setzte ich auf dem Boden auf, roll aus und komm neben der Landebahn zum Stehen. Ich bleibe noch ein bisschen im Flieger sitzen und realisiere erstmal, dass ich gerade alleine geflogen bin. Als ich aussteige, bekomme ich, wie nach dem ersten Alleinflug üblich, einen Blumenstrauß mit Brennnesseln überreicht.
 
 Als Nächstes steht nun im Winter der Theorieteil an, und nächstes Jahr mache ich mich an die Umschulung zur ASK-23, dem einsitzigen Schulungsflugzeug des Vereins.
-
-![](image-01.jpg)
