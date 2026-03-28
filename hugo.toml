@@ -67,7 +67,7 @@ openaipApiKey = 'bf2df3ae9c5c969fe269d1418df194f2'
     weight = 3
   [[menu.main]]
     name = 'Vereinsheim Unterjesingen'
-    pageRef = '/verein/vereinsheim-unterjesingen'
+    pageRef = '/verein/vereinsheim'
     parent = 'verein'
     weight = 4
   [[menu.main]]
