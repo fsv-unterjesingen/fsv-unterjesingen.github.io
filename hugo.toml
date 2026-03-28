@@ -71,19 +71,14 @@ openaipApiKey = 'bf2df3ae9c5c969fe269d1418df194f2'
     parent = 'verein'
     weight = 4
   [[menu.main]]
-    name = 'Webcam'
-    pageRef = '/verein/webcam'
-    parent = 'verein'
-    weight = 5
-  [[menu.main]]
     name = 'Chronik'
     pageRef = '/verein/chronik'
     parent = 'verein'
-    weight = 6
+    weight = 5
   [[menu.main]]
     name = 'Kontakt'
     pageRef = '/kontakt'
-    weight = 7
+    weight = 6
   [[menu.main]]
     name = 'Blog'
     pageRef = '/blog'
