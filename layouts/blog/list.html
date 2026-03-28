@@ -13,7 +13,7 @@
     </div>
     {{ end }}
 
-    <div class="blog-list">
+    <div class="card-grid">
       {{ range .RegularPages.ByDate.Reverse }}
       {{ partial "blog-card.html" . }}
       {{ end }}

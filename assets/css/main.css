@@ -1,12 +1,11 @@
 :root {
   --green: rgb(45, 143, 65);
-  --green-dark: #1e4f2a;
-  --blue: #0e5d78;
   --blue-dark: #083444;
   --sand: #f4efe7;
-  --gold: #f3a428;
-  --white: #ffffff;
+  --white: white;
+  --black: black;
   --ink: #182226;
+  --card-bg: white;
   --muted: #6c7b80;
   --shadow: 0 18px 40px rgba(8, 24, 28, 0.18);
 }
@@ -520,27 +519,27 @@ section.weglide {
   margin-bottom: 28px;
 }
 
-.blog-list {
+.card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
 }
 
-.blog-list-preview {
+.card-grid-preview {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.blog-list-item {
+.card-item {
   display: flex;
   flex-direction: column;
-  background: var(--white);
+  background: var(--card-bg);
   border: 1px solid rgba(24, 34, 38, 0.08);
   border-radius: 22px;
   overflow: hidden;
   box-shadow: var(--shadow);
 }
 
-.blog-list-card {
+.card-link {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
@@ -548,62 +547,63 @@ section.weglide {
   text-decoration: none;
 }
 
-.blog-list-media {
+.card-media {
   display: block;
   background: rgba(14, 93, 120, 0.08);
   aspect-ratio: 4 / 3;
   overflow: hidden;
 }
 
-.blog-list-media img {
+.card-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.28s ease;
+  border-radius: 0 !important;
 }
 
-.blog-list-body {
-  padding: 22px 22px 24px;
+.card-body {
+  padding: 0 22px;
+  color: var(--black);
 }
 
-.blog-list-body h2,
-.blog-list-body p {
+.card-body h2,
+.card-body p {
   hyphens: auto;
 }
 
-.blog-list-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 0 0 10px;
+.card-meta {
+  margin: 10px 0;
   color: var(--muted);
   font-size: 0.86rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.blog-list-meta span+span::before,
+.card-meta span+span::before,
 .page-meta span+span::before {
   content: "•";
-  margin-right: 8px;
+  margin: 0 6px;
 }
 
-.blog-list-author {
+.card-author {
   font-weight: 700;
 }
 
-.blog-list-body h2 {
+.card-body h2 {
   font-size: 1.45rem;
   margin: 0 0 10px;
 }
 
-.blog-list-card:hover .blog-list-body h2,
-.blog-list-card:focus-visible .blog-list-body h2 {
+.card-link:hover .card-body h2,
+.card-link:focus-visible .card-body h2 {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
-.blog-list-body p:last-child {
-  margin-bottom: 0;
+.card-link:hover .card-media img,
+.card-link:focus-visible .card-media img {
+  transform: scale(1.04);
 }
 
 .section-more {
@@ -626,9 +626,8 @@ section.weglide {
 
 @media (prefers-color-scheme: dark) {
 
-  .blog-list-item,
+  .card-item,
   .section-more a {
-    background: #333;
     box-shadow: none;
   }
 }
@@ -788,8 +787,12 @@ section.weglide {
 
 .content {
   max-width: 760px;
-  font-size: 1.05rem;
+  font-size: 1.05em;
   line-height: 1.7;
+}
+
+.content-wide {
+  max-width: 1160px;
 }
 
 .content img {
@@ -839,6 +842,222 @@ section.weglide {
 .content figcaption:empty,
 .content .content-figure figcaption:empty {
   display: none;
+}
+
+.aircraft-fleet {
+  display: grid;
+  gap: 28px;
+}
+
+.aircraft-card-trigger {
+  appearance: none;
+  border: none;
+  width: 100%;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.aircraft-card-trigger:focus-visible {
+  outline: 3px solid rgba(14, 93, 120, 0.28);
+  outline-offset: -3px;
+}
+
+.aircraft-fleet div.card-body {
+  padding: 0;
+  text-align: center;
+
+  h2 {
+    margin-top: -0.2em;
+  }
+}
+
+.fleet-modal {
+  --fleet-modal-max-height: 93vh;
+  --fleet-modal-max-width: calc(100vw - 25px);
+  --fleet-modal-max-media-height: 60vh;
+  --fleet-modal-media-aspect-ratio: 3 / 2;
+  --fleet-modal-width: min(calc(var(--fleet-modal-media-aspect-ratio) * var(--fleet-modal-max-media-height)), var(--fleet-modal-max-width));
+  color: var(--ink);
+  width: var(--fleet-modal-width);
+  max-height: var(--fleet-modal-max-height);
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+.fleet-modal::backdrop {
+  backdrop-filter: blur(2px) brightness(0.5);
+  animation: fleet-backdrop-in 0.18s ease-out;
+}
+
+.fleet-modal-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.fleet-modal[open] .fleet-modal-card {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.fleet-modal-media {
+  --button-distance-from-edge: 18px;
+  position: relative;
+  height: calc(var(--fleet-modal-width) / (var(--fleet-modal-media-aspect-ratio)));
+  aspect-ratio: var(--fleet-modal-media-aspect-ratio);
+  overflow: hidden;
+}
+
+.fleet-gallery-track {
+  position: relative;
+  height: 100%;
+}
+
+.fleet-gallery-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.015);
+  transition: opacity 0.18s ease-out, transform 0.18s ease-out;
+}
+
+.fleet-gallery-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.fleet-gallery-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+button.fleet-modal-close,
+.fleet-gallery-nav {
+  appearance: none;
+  border: none;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+button.fleet-modal-close {
+  /* 'close' button must sit above 'next' button! */
+  margin: var(--button-distance-from-edge);
+  z-index: 3;
+}
+
+.fleet-gallery-nav {
+  padding: var(--button-distance-from-edge);
+  bottom: 0;
+  width: 25%;
+}
+
+.fleet-gallery-nav-prev {
+  left: 0;
+  justify-content: flex-start;
+}
+
+button.fleet-modal-close,
+.fleet-gallery-nav-next {
+  right: 0;
+  justify-content: flex-end;
+}
+
+button.fleet-modal-close,
+.fleet-gallery-nav span,
+.fleet-gallery-status {
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(8, 24, 28, 0.4);
+  font-size: 1.6rem;
+  line-height: 1;
+  /* To ensure 'x' and '</>' are centered vertically. */
+  padding-bottom: 3px;
+}
+
+button.fleet-modal-close,
+.fleet-gallery-nav span {
+  width: 35px;
+  aspect-ratio: 1;
+  transition: background 0.18s ease-out, transform 0.18s ease-out;
+}
+
+button.fleet-modal-close:hover,
+button.fleet-modal-close:focus-visible,
+.fleet-gallery-nav:hover span,
+.fleet-gallery-nav:focus-visible span {
+  background: rgba(8, 24, 28, 0.8);
+  transform: scale(1.3);
+}
+
+.fleet-gallery-status {
+  position: absolute;
+  right: var(--button-distance-from-edge);
+  bottom: 0;
+  height: 25px;
+  width: 35px;
+  /* Status should be below 'next' button. */
+  z-index: 1;
+  padding: 0;
+  border-radius: 15px;
+  font-size: 0.84rem;
+}
+
+.fleet-modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  max-height: calc(var(--fleet-modal-max-height) - calc(var(--fleet-modal-width) / (var(--fleet-modal-media-aspect-ratio))));
+  overflow: scroll;
+  display: grid;
+  gap: 18px;
+  align-content: start;
+  padding: 24px 24px 22px;
+}
+
+.fleet-modal-body.content {
+  max-width: none;
+}
+
+.fleet-modal-close:focus-visible {
+  outline: 3px solid rgba(14, 93, 120, 0.28);
+  outline-offset: 2px;
+}
+
+.fleet-modal-header {
+  display: grid;
+  gap: 8px;
+  text-align: center;
+}
+
+.fleet-modal-meta {
+  margin: 0;
+}
+
+.fleet-modal-title {
+  margin: 0;
+  font-family: "Fraunces", "Times New Roman", serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  line-height: 1.05;
+}
+
+.fleet-modal-body dl.fleet-specs {
+  margin: auto;
 }
 
 h3 {
@@ -960,7 +1179,6 @@ h2+h3 {
   min-height: 420px;
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: var(--shadow);
   margin: 18px 0 26px;
   --map-filter: saturate(1.22) contrast(1.1) sepia(0.14);
 }
@@ -972,8 +1190,10 @@ h2+h3 {
 @media (prefers-color-scheme: dark) {
   :root {
     --sand: #0c1517;
-    --white: #0f1d22;
+    --white: #000;
+    --black: #fff;
     --ink: #e6f0f2;
+    --card-bg: #444;
     --muted: #9bb0b7;
     --shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
   }
@@ -1157,7 +1377,7 @@ h2+h3 {
 }
 
 @media (max-width: 700px) {
-  .blog-list-preview {
+  .card-grid-preview {
     grid-template-columns: 1fr;
   }
 

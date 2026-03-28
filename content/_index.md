@@ -4,7 +4,7 @@ title: "Start"
 
 Herzlich Willkommen auf der Website des Flugsportverein Unterjesingen e.V., der Verein für Segelfliegen, Motorsegler und Motorflug zwischen Tübingen, Herrenberg, Rottenburg im Raum Stuttgart.
 
-Wir sind ein engagierter Verein und bieten unseren Mitgliedern einen **hervorragenden Flugzeugpark mit niedrigen Fluggebühren**, eine qualifizierte Aus- und Weiterbildung, viel Spaß am Fliegen und ein interessantes Vereinsleben.
+Wir sind ein engagierter Verein und bieten unseren Mitgliedern einen [**hervorragenden Flugzeugpark mit niedrigen Fluggebühren**](/verein/flugzeugpark), eine qualifizierte Aus- und Weiterbildung, viel Spaß am Fliegen und ein interessantes Vereinsleben.
 
 Durch tolle Angebote und Förderungen, bleibt das Fliegen auch für Jugendliche erschwinglich. Im Verein sind Angehörige aller Alters- und Berufsgruppen vertreten. Der Flugsportverein Unterjesingen e.V. ist gegenüber allen Interessenten offen, die Mitglied werden oder eine Flugausbildung beginnen wollen. Für nur 300€ wirst Du mit unserer Ausbildungspauschale zum Segelflugpilot*in!
 

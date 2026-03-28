@@ -43,7 +43,7 @@
       <p>Neuigkeiten aus dem Verein und vom Flugplatz.</p>
     </div>
     {{ with .Site.GetPage "/blog" }}
-    <div class="blog-list blog-list-preview">
+    <div class="card-grid card-grid-preview">
       {{ range first 3 (.RegularPages.ByDate.Reverse) }}
       {{ partial "blog-card.html" . }}
       {{ end }}

@@ -1,0 +1,203 @@
+{{- $aircraft := .Page.Params.aircraft | default slice -}}
+<div class="aircraft-fleet" data-aircraft-fleet>
+  <div class="card-grid">
+    {{- range $item := $aircraft -}}
+      {{- $modalID := printf "fleet-modal-%s" ($item.slug | anchorize) -}}
+      {{- $galleryImages := $item.images | default (slice $item.image) -}}
+      {{- $cardImageURL := $item.image | default (index $galleryImages 0) -}}
+      {{- $cardDerivedURL := replaceRE "(?i)\\.(jpe?g|png|webp)$" "-card.jpg" $cardImageURL -}}
+      {{- $cardImage := or ($.Page.Resources.GetMatch $cardDerivedURL) ($.Page.Resources.GetMatch $cardImageURL) -}}
+      <article class="card-item" lang="de">
+        <button class="card-link aircraft-card-trigger" type="button" data-fleet-open="{{ $modalID }}">
+          <div class="card-media" aria-hidden="true">
+            <img
+              src="{{ if $cardImage }}{{ $cardImage.RelPermalink }}{{ else }}{{ $cardDerivedURL | safeURL }}{{ end }}"
+              {{ with $cardImage }}width="{{ .Width }}" height="{{ .Height }}"{{ end }}
+              alt="{{ $item.name }}"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <div class="card-body">
+            <p class="card-meta">
+              <span>{{ $item.category }}</span><span>{{ $item.seats }}&ndash;sitzig</span>
+            </p>
+            <h2>{{ $item.name }}</h2>
+          </div>
+        </button>
+      </article>
+    {{- end -}}
+  </div>
+
+  {{- range $item := $aircraft -}}
+    {{- $modalID := printf "fleet-modal-%s" ($item.slug | anchorize) -}}
+    {{- $galleryImages := $item.images | default (slice $item.image) -}}
+    <dialog class="fleet-modal" id="{{ $modalID }}">
+      <div class="fleet-modal-card">
+        <div class="fleet-modal-media{{ if gt (len $galleryImages) 1 }} has-gallery{{ end }}">
+          <button class="fleet-modal-close" type="button" data-fleet-close aria-label="Fenster schließen">×</button>
+          {{- if gt (len $galleryImages) 1 -}}
+            <button class="fleet-gallery-nav fleet-gallery-nav-prev" type="button" data-fleet-step="-1" aria-label="Vorheriges Bild">
+              <span aria-hidden="true">‹</span>
+            </button>
+            <button class="fleet-gallery-nav fleet-gallery-nav-next" type="button" data-fleet-step="1" aria-label="Nächstes Bild">
+              <span aria-hidden="true">›</span>
+            </button>
+          {{- end -}}
+          <div class="fleet-gallery-track">
+            {{- range $index, $imageURL := $galleryImages -}}
+              {{- $modalDerivedURL := replaceRE "(?i)\\.(jpe?g|png|webp)$" "-modal.jpg" $imageURL -}}
+              {{- $modalImage := or ($.Page.Resources.GetMatch $modalDerivedURL) ($.Page.Resources.GetMatch $imageURL) -}}
+              <div class="fleet-gallery-slide{{ if eq $index 0 }} is-active{{ end }}" data-fleet-slide aria-hidden="{{ if eq $index 0 }}false{{ else }}true{{ end }}">
+                <img
+                  src="{{ if $modalImage }}{{ $modalImage.RelPermalink }}{{ else }}{{ $modalDerivedURL | safeURL }}{{ end }}"
+                  {{ with $modalImage }}width="{{ .Width }}" height="{{ .Height }}"{{ end }}
+                  alt="{{ if eq (len $galleryImages) 1 }}{{ $item.name }}{{ else }}{{ printf "%s – Bild %d" $item.name (add $index 1) }}{{ end }}"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+            {{- end -}}
+          </div>
+          {{- if gt (len $galleryImages) 1 -}}
+            <p class="fleet-gallery-status" aria-live="polite">
+              <span data-fleet-index>1</span><span aria-hidden="true"> / </span><span>{{ len $galleryImages }}</span>
+            </p>
+          {{- end -}}
+        </div>
+        <div class="fleet-modal-body content">
+          <div class="fleet-modal-header">
+            <p class="card-meta fleet-modal-meta">{{ $item.category }}</p>
+            <h2 class="fleet-modal-title">{{ $item.name }}</h2>
+          </div>
+          <dl class="fleet-specs">
+            <dt>Sitze</dt>
+            <dd>{{ $item.seats }}</dd>
+            {{- with $item.engine_power }}
+              <dt>Motorleistung</dt>
+              <dd>{{ . }}</dd>
+            {{- end }}
+            {{- with $item.range }}
+              <dt>Reichweite</dt>
+              <dd>{{ . }}</dd>
+            {{- end }}
+            {{- with $item.glide_ratio }}
+              <dt>Gleitzahl</dt>
+              <dd>{{ . }}</dd>
+            {{- end }}
+            {{- with $item.application }}
+              <dt>Einsatzbereich</dt>
+              <dd>{{ . }}</dd>
+            {{- end }}
+          </dl>
+        </div>
+      </div>
+    </dialog>
+  {{- end -}}
+</div>
+<script>
+(() => {
+  const root = document.currentScript?.previousElementSibling;
+  if (!root) return;
+
+  const openerForDialog = new WeakMap();
+  const galleryForDialog = new WeakMap();
+  const dialogs = root.querySelectorAll('.fleet-modal');
+
+  const setGalleryIndex = (dialog, nextIndex) => {
+    const gallery = galleryForDialog.get(dialog);
+    if (!gallery) return;
+
+    const { slides, counter } = gallery;
+    const total = slides.length;
+    const normalizedIndex = ((nextIndex % total) + total) % total;
+    gallery.index = normalizedIndex;
+
+    slides.forEach((slide, slideIndex) => {
+      const isActive = slideIndex === normalizedIndex;
+      slide.classList.toggle('is-active', isActive);
+      slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+    });
+
+    if (counter) {
+      counter.textContent = String(normalizedIndex + 1);
+    }
+  };
+
+  const stepGallery = (dialog, delta) => {
+    const gallery = galleryForDialog.get(dialog);
+    if (!gallery) return;
+    setGalleryIndex(dialog, gallery.index + delta);
+  };
+
+  root.querySelectorAll('[data-fleet-open]').forEach((trigger) => {
+    const dialog = root.querySelector(`#${trigger.dataset.fleetOpen}`);
+    if (!dialog) return;
+
+    trigger.addEventListener('click', () => {
+      openerForDialog.set(dialog, trigger);
+      setGalleryIndex(dialog, 0);
+      if (typeof dialog.showModal === 'function') {
+        dialog.showModal();
+      } else {
+        dialog.setAttribute('open', 'open');
+      }
+    });
+  });
+
+  dialogs.forEach((dialog) => {
+    const slides = Array.from(dialog.querySelectorAll('[data-fleet-slide]'));
+    if (slides.length > 1) {
+      galleryForDialog.set(dialog, {
+        slides,
+        counter: dialog.querySelector('[data-fleet-index]'),
+        index: 0,
+      });
+
+      dialog.querySelectorAll('[data-fleet-step]').forEach((button) => {
+        button.addEventListener('click', (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          stepGallery(dialog, Number(button.dataset.fleetStep || 0));
+        });
+      });
+    }
+
+    dialog.querySelectorAll('[data-fleet-close]').forEach((closeButton) => {
+      closeButton.addEventListener('click', () => dialog.close());
+    });
+
+    dialog.addEventListener('click', (event) => {
+      const card = dialog.querySelector('.fleet-modal-card');
+      if (!card) return;
+      const rect = card.getBoundingClientRect();
+      const clickedInside =
+        event.clientX >= rect.left &&
+        event.clientX <= rect.right &&
+        event.clientY >= rect.top &&
+        event.clientY <= rect.bottom;
+
+      if (!clickedInside) {
+        dialog.close();
+      }
+    });
+
+    dialog.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        stepGallery(dialog, -1);
+      }
+
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        stepGallery(dialog, 1);
+      }
+    });
+
+    dialog.addEventListener('close', () => {
+      setGalleryIndex(dialog, 0);
+      openerForDialog.get(dialog)?.focus();
+    });
+  });
+})();
+</script>
