@@ -1387,6 +1387,7 @@ h2+h3 {
     --white: #000;
     --black: #fff;
     --ink: #e6f0f2;
+    --green: rgb(70, 206, 98);
     --card-bg: #444;
     --muted: #9bb0b7;
     --shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
