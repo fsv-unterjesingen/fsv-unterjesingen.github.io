@@ -1,0 +1,206 @@
+{{- $timeline := dict "eras" (slice) -}}
+{{- with .Page.Resources.GetMatch "timeline.yaml" -}}
+  {{- $timeline = . | transform.Unmarshal -}}
+{{- end -}}
+{{- $eras := index $timeline "eras" | default (slice) -}}
+
+{{- if gt (len $eras) 0 -}}
+  <nav class="subnav chronik-subnav" aria-label="Jahrzehnte">
+    {{- range $eraIndex, $era := $eras -}}
+      {{- $years := index $era "years" | default (slice) -}}
+      {{- $visibleYears := $years -}}
+      {{- if eq $eraIndex 0 -}}
+        {{- $visibleYears = where $years "year" "ge" 1950 -}}
+      {{- end -}}
+      {{- $label := "" -}}
+      {{- if gt (len $visibleYears) 0 -}}
+        {{- $startYear := index (index $visibleYears 0) "year" -}}
+        {{- $label = printf "%ver" $startYear -}}
+      {{- end -}}
+      <a href="#{{ $label }}">{{ $label }}</a>
+    {{- end -}}
+  </nav>
+
+  <div class="chronik-timeline" lang="de">
+    {{- range $eraIndex, $era := $eras -}}
+      {{- $title := index $era "title" -}}
+      {{- $intro := index $era "intro" | default (slice) -}}
+      {{- $years := index $era "years" | default (slice) -}}
+      {{- $visibleYears := $years -}}
+      {{- $preludeYears := slice -}}
+      {{- $images := index $era "images" | default (slice) -}}
+      {{- if eq $eraIndex 0 -}}
+        {{- $preludeYears = where $years "year" "lt" 1950 -}}
+        {{- $visibleYears = where $years "year" "ge" 1950 -}}
+      {{- end -}}
+      {{- if gt (len $preludeYears) 0 -}}
+        <section class="chronik-era chronik-era-prelude">
+          <div class="chronik-era-track">
+            {{- range $entry := $preludeYears -}}
+              {{- $year := index $entry "year" -}}
+              {{- $entries := index $entry "entries" | default (slice) -}}
+              <article class="chronik-node chronik-node-year">
+                <div class="card-item chronik-card chronik-year-card">
+                  <div class="chronik-year-label">
+                    <p class="chronik-year">{{ $year }}</p>
+                  </div>
+                  <ul class="chronik-event-list">
+                    {{- range $item := $entries -}}
+                      <li>{{ $item }}</li>
+                    {{- end -}}
+                  </ul>
+                </div>
+              </article>
+            {{- end -}}
+          </div>
+        </section>
+      {{- end -}}
+      {{- $label := "" -}}
+      {{- if gt (len $visibleYears) 0 -}}
+        {{- $startYear := index (index $visibleYears 0) "year" -}}
+        {{- $label = printf "%ver" $startYear -}}
+      {{- end -}}
+
+      <section class="chronik-era" id="{{ $label }}">
+        <div class="chronik-era-stamp">
+          <h2>{{ $label }}</h2>
+        </div>
+
+        <div class="chronik-era-track">
+          {{- if gt (len $intro) 0 -}}
+            <article class="chronik-node chronik-node-intro">
+              <div class="card-item chronik-card chronik-intro-card">
+                <p class="card-meta">Einordnung</p>
+                <div class="chronik-copy">
+                  {{- range $paragraph := $intro -}}
+                    <p>{{ $paragraph }}</p>
+                  {{- end -}}
+                </div>
+              </div>
+            </article>
+          {{- end -}}
+
+          {{- if gt (len $images) 0 -}}
+            <article class="chronik-node chronik-node-gallery">
+              <div class="card-item chronik-card chronik-gallery-card">
+                <div class="chronik-gallery-header">
+                  <p class="card-meta">Archivfotos</p>
+                  <h3>{{ $title }}</h3>
+                </div>
+                <div class="chronik-gallery-grid{{ if eq (len $images) 1 }} is-single-image{{ end }}">
+                  {{- range $image := $images -}}
+                    {{- $file := index $image "file" -}}
+                    {{- $resource := $.Page.Resources.GetMatch $file -}}
+                    {{- $imageVariant := partial "funcs/responsive-image.html" (dict "page" $.Page "url" $file "fallbackWidth" 960 "sizes" "(max-width: 700px) 100vw, (max-width: 1160px) calc(100vw - 150px), 520px") -}}
+                    {{- $caption := index $image "title" -}}
+                    {{- $alt := $caption | default (printf "Archivfoto aus den %s" $title) -}}
+                    <figure class="chronik-photo-tile">
+                      <a class="chronik-photo-link" href="{{ with $resource }}{{ .RelPermalink }}{{ else }}{{ $imageVariant.fallback | safeURL }}{{ end }}">
+                        <img
+                          src="{{ $imageVariant.fallback | safeURL }}"
+                          {{ with $imageVariant.srcset }}srcset="{{ . }}"{{ end }}
+                          sizes="{{ $imageVariant.sizes }}"
+                          {{ with $resource }}width="{{ .Width }}" height="{{ .Height }}"{{ end }}
+                          alt="{{ $alt }}"
+                          loading="lazy"
+                          decoding="async"
+                        >
+                      </a>
+                      {{- with $caption -}}
+                        <figcaption>{{ . }}</figcaption>
+                      {{- end -}}
+                    </figure>
+                  {{- end -}}
+                </div>
+              </div>
+            </article>
+          {{- end -}}
+
+          {{- range $entry := $visibleYears -}}
+            {{- $year := index $entry "year" -}}
+            {{- $entries := index $entry "entries" | default (slice) -}}
+            <article class="chronik-node chronik-node-year">
+              <div class="card-item chronik-card chronik-year-card">
+                <div class="chronik-year-label">
+                  <p class="chronik-year">{{ $year }}</p>
+                </div>
+                <ul class="chronik-event-list">
+                  {{- range $item := $entries -}}
+                    <li>{{ $item }}</li>
+                  {{- end -}}
+                </ul>
+              </div>
+            </article>
+          {{- end -}}
+        </div>
+      </section>
+    {{- end -}}
+  </div>
+  <script>
+  (() => {
+    const root = document.currentScript?.previousElementSibling;
+    if (!root) return;
+
+    const images = Array.from(root.querySelectorAll('.chronik-photo-tile img'));
+    if (!images.length) return;
+
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d', { willReadFrequently: true });
+
+    const maxSampleSize = 32;
+    const channelTolerance = 12;
+    const coloredShareThreshold = 0.08;
+
+    const applySepiaIfMonochrome = (img) => {
+      if (!context) return;
+      if (!img.naturalWidth || !img.naturalHeight) return;
+
+      const scale = Math.min(1, maxSampleSize / Math.max(img.naturalWidth, img.naturalHeight));
+      canvas.width = Math.max(1, Math.round(img.naturalWidth * scale));
+      canvas.height = Math.max(1, Math.round(img.naturalHeight * scale));
+      context.clearRect(0, 0, canvas.width, canvas.height);
+
+      try {
+        context.drawImage(img, 0, 0, canvas.width, canvas.height);
+        const { data } = context.getImageData(0, 0, canvas.width, canvas.height);
+
+        let opaquePixels = 0;
+        let coloredPixels = 0;
+
+        for (let index = 0; index < data.length; index += 4) {
+          const alpha = data[index + 3];
+          if (alpha < 16) continue;
+
+          const red = data[index];
+          const green = data[index + 1];
+          const blue = data[index + 2];
+          const spread = Math.max(
+            Math.abs(red - green),
+            Math.abs(green - blue),
+            Math.abs(red - blue),
+          );
+
+          opaquePixels += 1;
+          if (spread > channelTolerance) {
+            coloredPixels += 1;
+          }
+        }
+
+        if (opaquePixels > 0 && (coloredPixels / opaquePixels) <= coloredShareThreshold) {
+          img.style.filter = 'sepia(1)';
+        }
+      } catch {
+        // Ignore images that cannot be sampled.
+      }
+    };
+
+    images.forEach((img) => {
+      if (img.complete) {
+        applySepiaIfMonochrome(img);
+      } else {
+        img.addEventListener('load', () => applySepiaIfMonochrome(img), { once: true });
+      }
+    });
+  })();
+  </script>
+{{- end -}}

@@ -1,0 +1,367 @@
+eras:
+  - slug: fuenfziger
+    title: 'Fünfziger'
+    years:
+      - year: 1934
+        entries:
+          - 'Gründung als „Ortsgruppe Unterjesingen im Deutschen Luftfahrtverband“'
+      - year: 1950
+        entries:
+          - 'Wiederaufnahme der Vereinstätigkeit als “Flugsportverein Unterjesingen“ im Baden-Württembergischen Luftfahrtverband'
+          - '1. Vorsitzender: Dr. Fritz Breuniger, 2. Vorsitzender: Hugo Gamerdinger, Schriftführer: Karl Hechler, Kassier: Ernst Hechler, Beisitzer: Dr. Huber, Paul Stickel, Otto Göhring und Richard Bock'
+      - year: 1951
+        entries:
+          - 'Mit dem Einschlag von 60 Festmeter Borkenkäferholz und „Stumpensprengen“ schaffen sich die aktiven Mitglieder ein „Grundkapital von 800,- DM'
+          - '27.4.1951. Das von den Alliierten über Deutschland verhängte Bauverbot wird für Segelflugzeuge aufgehoben.'
+          - 'November 1951: Beginn der Bauarbeiten am Doppel-Raab (Schulungsflugzeug mit zweitem Sitz)'
+      - year: 1952
+        entries:
+          - '8.8.1952: Erster Start eines eigenen Flugzeugs nach dem Wiederbeginn (Abnahmeflug auf dem Klippeneck). In der noch verbleibenden Flugsaison folgen weitere 120 Starts mit insgesamt 15 Flugstunden.'
+          - 'Taufe des Doppel-Raab im Ammertal.'
+          - 'Flugbetrieb im Ammer- und Neckartal in Gemeinschaft mit der Fliegergruppe Rottenburg.'
+      - year: 1953
+        entries:
+          - 'Bau einer Mü 13 E (Leistungs-Doppelsitzer) mit Stahlrohr-Rumpf.'
+      - year: 1954
+        entries:
+          - 'Abnahmeflug der Mü 13 E.'
+          - 'Richard Bock, Hans Eipper, Willi Haug und Gerhard Hocker erwerben in Huesca (Spanien) die ersten F-Schleppberechtigungen.'
+      - year: 1955
+        entries:
+          - 'Schömberger Kapf (Rosberg) wird fliegerisch erschlossen.'
+          - 'Bau eines Doppel-Transportwagens für Doppel-Raab und Mü 13 E. Der Verein ist Veranstalter der Jesinger Kirbe.'
+      - year: 1957
+        entries:
+          - 'Gemeinsam mit der Fliegergruppe Rottenburg wird im Ammertal ein Flugtag veranstaltet'
+      - year: 1958
+        entries:
+          - 'Mit Hermann Zankers Piper PA 18 Super Cub steht dem Verein erstmals ein Motorflugzeug für den F-Schlepp zur Verfügung.'
+          - 'Flugbetrieb im Ammertal, auf dem Roßberg und auf dem Flugplatz Eutingen.'
+          - 'Baubeginn des Motor-Raab (Tragflächen).'
+      - year: 1959
+        entries:
+          - 'Dank großzügiger Spenden, u.a. von Erwin Steger und Werner Brillinger (Porsche Flugmotor) kann ein Motor-Raab (gebraucht) gekauft werden.'
+          - 'Arbeiten an der Winde II'
+          - 'Nach langwierigen Verhandlungen mit den Grundstückseigentümern gelingt es, das frühere Fluggelände Heufeld wieder zu aktivieren.'
+          - 'Der Flugsportverein Herrenberg ebnet bei den Poltringer Linden einige feuchte Wiesen ein.'
+          - 'in den Sommerferien auf dem Heufeld das 1. Fluglager.'
+          - 'In diesem Jahr kommt es erstmals zu mehr als 400 (410) Starts mit insgesamt 110 Segelflugstunden.'
+    images:
+      - file: fuenfziger-01.jpg
+        title: ''
+      - file: fuenfziger-02.jpg
+        title: 'Umzug'
+      - file: fuenfziger-03.jpg
+        title: 'Flugtag im Ammertal'
+      - file: fuenfziger-04.jpg
+        title: 'Abfahrt'
+      - file: fuenfziger-05.jpg
+        title: 'Doppelraab'
+
+  - slug: sechziger
+    title: 'Sechziger'
+    years:
+      - year: 1960
+        entries:
+          - 'Hermann Zanker übernimmt von Dr. Theo Huber das Amt des 1. Vorsitzenden, 2. Vorsitzender wir Willi Haug.'
+          - '2. Fluglager auf dem Heufeld'
+      - year: 1961
+        entries:
+          - 'Der FSU wird Eigentümer eines Grundstücks an der Wurmlinger Straße. Beginn der Bauarbeiten an einer Flugzeughalle mit Werkstätten und Unterrichtsraum.'
+          - 'Fluglager auf dem Degerfeld'
+      - year: 1962
+        entries:
+          - '14.7.1962: Einweihung des Neubaus und Taufe des ersten Leistungs-Einsitzers Ka 8b.'
+          - 'Unter tatkräftiger Mithilfe auch ihrer Frauen haben sich die Mitglieder in 8000 Arbeitstunden ein eigenes Heim geschaffen. In der Halle und dem angebauten Festzelt wird die Jesinger Kirbe veranstaltet.'
+          - 'Im Winter 1962/63 findet im Clubheim der erste Funksprechlehrgang statt.'
+      - year: 1963
+        entries:
+          - 'Verkauf der Mü 13 E. Kauf des Schulungsdoppelsitzers Ka 7.'
+          - 'Absturz des Motor-Raab mit Dr. Jochen Bark auf dem Heufeld.'
+          - 'Jesinger Kirbe auf der Wiese hinter der Halle.'
+      - year: 1964
+        entries:
+          - 'Nach der vielen Arbeit wird besonders intensiv geflogen: 796 Starts mit 197 Segelflugstunden, dazu 100 Flugstunden auf der Piper PA 18 Super Cub.'
+      - year: 1965
+        entries:
+          - 'Erstes Fluglager in Aubenasson / Südfrankreich, von da an jährliche Wiederholung bis 1970.'
+      - year: 1966
+        entries:
+          - 'Verspätete Feier des 30-jährigen Vereinsjubiläums mit ebenso verspäteter Taufe der Ka 7 und der neuerworbenen Ka 6 CR ( Hochleistungseinsitzer).'
+      - year: 1967
+        entries:
+          - 'Übernahme der Piper PA 18 Super Cub D-EBYK in Vereinseigentum.'
+          - 'Höhenflüge in Fayence und Innsbruck.'
+      - year: 1968
+        entries:
+          - 'Die Ka 7 wird ersetzt durch den Schulungsdoppelsitzer ASK 13.'
+          - 'Veranstaltung der Jesinger Kirbe.'
+      - year: 1969
+        entries:
+          - 'Die Ka 6 Cr wird ersetzt durch eine Ka 6 E.'
+          - 'Zum ersten Mal mehr als 1000 Segelflugstarts in einem Jahr.'
+    images:
+      - file: sechziger-01.jpg
+        title: 'Fliegen im Ammertal'
+      - file: sechziger-02.jpg
+        title: 'Sprechfunk'
+      - file: sechziger-03.jpg
+        title: 'Fluglager'
+      - file: sechziger-04.jpg
+        title: 'Hallenbau'
+
+  - slug: siebziger
+    title: 'Siebziger'
+    years:
+      - year: 1970
+        entries:
+          - 'Teilnahme an der Internationalen Segelflugwoche in Bozen (ebenso 1971).'
+      - year: 1971
+        entries:
+          - 'Fluglager in Sterzing / Südtirol.'
+          - 'In diesem Jahr 1602 Starts auf Segelflugzeugen! Diese Zahl wird in den nächsten 15 Jahren nicht mehr erreicht werden.'
+          - 'Erich Baudermann wird 2. Vorsitzender.'
+      - year: 1972
+        entries:
+          - 'Flugzeughallenbau Flugplatz Poltringen.'
+          - 'Die Piper PA 28 Cherokee wird Vereinseigentum.'
+          - 'Fluglager in Lienz / Osttirol.'
+      - year: 1973
+        entries:
+          - 'Willi Haup wird zum 1. Vorsitzenden gewählt.'
+          - 'Anschaffung des ersten Kunststoff-Hochleistungs-Segelflugzeugs Standart Cirrus und damit Beginn des Kunststoffzeitalters im FSU.'
+          - 'Fluglager in Gap / Südfrankreich.'
+          - 'Veranstaltung der Jesinger Kirbe.'
+      - year: 1974
+        entries:
+          - 'Unser Manne Hermann Zanker ist gestorben.'
+          - 'Anschaffung des Motorseglers SF25C Falke.'
+          - 'Fluglager in Barcelonette / Südfrankreich.'
+      - year: 1975
+        entries:
+          - 'Fluglager in Scharnstein / Österreich.'
+      - year: 1976
+        entries:
+          - 'Höhenflüge in Fayence und St. Auban / Südfrankreich sowie in Schanis / Schweiz.'
+      - year: 1977
+        entries:
+          - 'Anschaffung des Hochleistungs-Segelflugzeugs Astir CS.'
+          - 'Fluglager wieder in Gap / Südfrankreich.'
+          - 'Weitere Höhenflüge in Fayence und Innsbruck.'
+      - year: 1978
+        entries:
+          - 'Die Ka 6 E wird verkauft und durch den Jeans-Astir ersetzt.'
+          - 'Fluglager in Gap'
+          - 'Die Flugsportvereine Herrenberg und Unterjesingen gründen nach langjähriger Zusammenarbeit den Flugsportverein Ammerbuch mit dem Zweck, den Sonderlandeplatz Poltringen gemeinsam zu betreiben.'
+      - year: 1979
+        entries:
+          - 'Hugo Gamerdinger, Gründer und Ehrenmitglied unseres Vereins, ist gestorben.'
+          - 'Der Motorsegler wird durch ein neueres Modell mit Zweibeinfahrwerk ersetzt.'
+          - 'Fluglager in Gap.'
+    images:
+      - file: siebziger-01.jpg
+        title: 'Halle des FSU'
+      - file: siebziger-02.jpg
+        title: ''
+      - file: siebziger-03.jpg
+        title: 'Schlepp in die Alpen'
+      - file: siebziger-04.jpg
+        title: 'Fliegerfest'
+      - file: siebziger-05.jpg
+        title: 'Piper Super Cup'
+
+  - slug: achtziger
+    title: 'Achtziger'
+    years:
+      - year: 1980
+        entries:
+          - 'Anstelle der Piper PA 18 Super Cub wird eine viersitzige Morane 180 TS erworben.'
+          - 'Beginn der Arbeiten zum Bau einer neuen Winde III.'
+          - 'Fluglager in Gap.'
+      - year: 1981
+        entries:
+          - 'Fluglager in Gerstetten / Ostalb.'
+      - year: 1982
+        entries:
+          - 'Dr. Theo Huber, Ehrenvorsitzender unseres Vereins, ist gestorben.'
+          - 'Anstelle des Jeans Astir wird eine LS 4 erworben.'
+          - 'Fluglager in Aubenasson.'
+      - year: 1983
+        entries:
+          - 'Vorstandwechsel bei der Jahreshauptversammlung im März: 1. Vorsitzender wird Herbert Keller. 2. Vorsitzender Richard Müller. Willi Haug wird nach 10 Jahren als 2. und weiteren 10 Jahren als 1. Vorsitzender zum Ehrenvorsitzenden ernannt.'
+          - 'Nach mehr als 30jähriger Tätigkeit als Ausbildungsleiter des Vereins gibt Richard Bock dieses Amt an Siegfried Geiger ab.'
+          - 'Verkauf des Segelflugzeugs Standart Cirrus und der Winde II.'
+          - 'Fluglager in Gerstetten.'
+      - year: 1984
+        entries:
+          - '50jähriges Vereinsjubiläum in Unterjesingen mit Flugzeugtaufe (Ventus).'
+          - 'Die 1980 begonnene Schleppwinde III mit Doppeltrommel wird fertiggestellt.'
+          - 'Erwerb des Hochleistungsseglers Ventus mit veränderbarer Spannweite. Kauf eines Motors für den Ventus (Spenden).'
+          - 'Fluglager am Egelsee / Deckenpfronn und in Aubenasson.'
+      - year: 1985
+        entries:
+          - 'Kauf einer Ausrüstung für Bannerschlepp. Anhänger von Daimler-Benz wird als Startwagen aufgerüstet.'
+          - 'Thomas Bock löst Fritz Rauscher als technischer Leiter ab.'
+          - 'Fluglager Farrenberg und Gerstetten.'
+      - year: 1986
+        entries:
+          - 'Dr. Peter Gundlach wird neuer 1. Vorsitzender'
+          - 'Der Ehrenvorsitzende Willi Haug kommt bei einem Verkehrsunfall ums Leben.'
+          - 'Anschaffung des Kunststoff-Doppelsitzers ASK 21.'
+          - 'Fluglager in Aubenasson und Eutingen.'
+      - year: 1987
+        entries:
+          - 'Das Gründungsmitglied Wilhelm Seibold ist gestorben.'
+          - 'Projektwoche Segelflug mit 30 Tübinger Gymnasiasten.'
+          - 'Stiftung des Hermann-Zanker-Gedächtnis-Pokals und Verleihung für 1987 an den langjährigen Motorflugzeugwart Walter Köhler.'
+          - 'Flugplatz-Skistaffellauf in Untermusbach: Unter 200 Teilnehmern stellen die Unterjesinger die Sieger in der Herren-, Damen-, und Jugendstaffel.'
+          - 'Höhepunkt des mit regelmäßiger Folge stattfindenden Tags der offenen Tür auf dem Flugplatz Poltringen ist ein Airbus-Überflug.'
+          - 'Fritz Rauscher wird wieder technischer Leiter.'
+          - 'Fluglager in Aubenasson.'
+      - year: 1988
+        entries:
+          - 'Nach einem Motorsegler-Unfall mit Sachschaden wird ein leistungsstärkerer Motorsegler SF25 C2000 angeschafft.'
+          - 'Dr. Diethard Braun löst Joachim Ostwald als Kassier ab. Rene Rau tritt als Jugendvertreter die Nachfolge von Tobias Geiger an.'
+          - 'Anlegung des Landefeld Ost und Einrichtung einer Tankstelle am Flugplatz Poltringen.'
+          - 'Tobias Geiger wird 3. der Deutschen Meisterschaft im Streckensegelflug Standardklasse Junioren.'
+          - 'Fluglager in Aubenasson un Eutingen.'
+      - year: 1989
+        entries:
+          - 'Kauf eines Segelflugzeugs LS 7.'
+          - 'Die Piloten Dr. Joachim Ostwald / Dr. Diethard Braun belegen beim Deutschlandflug den 1. Platz in der Einsteigerklasse.'
+          - 'Water Köhler macht am 14.7 in Aubenasson (als 70-Jähriger) einen 10-Stunden-Dauerflug mit dem Astir.'
+          - 'Fluglager in Gerstetten und Aubenasson.'
+          - 'Erstmals waren die Segelflieger mehr als 1000 Stunden (Jahressumme) in der Luft.'
+    images:
+      - file: achtziger-01.jpg
+        title: 'Motorflugpokal!'
+      - file: achtziger-02.jpg
+        title: 'Werkstattarbeit'
+      - file: achtziger-03.jpg
+        title: 'Ausflug nach Freudenstadt'
+      - file: achtziger-04.jpg
+        title: 'Flugzeugpark des FSU'
+      - file: achtziger-05.jpg
+        title: 'Überflug am Fliegerfest'
+
+  - slug: neunziger
+    title: 'Neunziger'
+    years:
+      - year: 1990
+        entries:
+          - 'Der langjährige Ausbildungsleiter Siegfried Geiger gibt sein Amt an Jörn Eisenhardt ab. Heiner Harbusch übernimmt das Amt des technischen Leiters.'
+          - 'Fluglehrer Hermann Krennmeir verunglückt tödlich.'
+          - 'Einführung einer Kostenpauschale für die Segelflugausbildung.'
+          - 'Verkauf der Piper PA-28 Cherokee und Kauf einer viersitzigen Motormaschine Piper PA-28 Archer II.'
+          - 'Richard Bock (Ventus) und Tobias Geiger (LS 7) fliegen erstmals von Poltringen aus ein 750 km Dreieck im Segelflug.'
+          - 'Fluglager in Gap'
+      - year: 1991
+        entries:
+          - 'Birgit Metzdorf wird neue Jugendvertreterin.'
+          - 'Fluglager in Gap, Gerstetten, Aubenasson und Eutingen.'
+      - year: 1992
+        entries:
+          - 'Hans Klatt übernimmt von Familie Lukas die Betreuung des Clubheims. Christine Müller ist die neue Jugendvertreterin.'
+          - 'Fluglager in Gap, Aubenasson, Farrenberg und Jena.'
+      - year: 1993
+        entries:
+          - 'Migliederstand erstmals über 200, davon 123 Aktive.'
+          - 'Verkauf der ASK 13 und Kauf des Kunststoff-Doppelsitzers DG 500.'
+          - 'Renovierung des Clubheims und der Metallwerkstatt.'
+          - 'Anbau einer Flugzeug-Halle (gemeinsam für die Flugsportvereine Unterjesingen und Herrenberg) an unsere Halle am Flugplatz Poltringen.'
+          - 'Verlängerung der Startbahn in Poltringen mit Rollrasen.'
+          - 'Tobias Geiger wird Vizemeister in der Landesmeisterschaft.'
+          - 'Fluglager in Jena, Haiterbach und Potringen.'
+      - year: 1994
+        entries:
+          - '60 Jahre FSU – gefeiert in Halle Unterjesingen mit der Taufe der DG 500 auf Hugo Gamerdinger.'
+          - 'Der in 11 Jahren als Vize bewährte Richard Müller wird 1. Vorsitzender. Dr. Peter Gundlach wird zum Ehrenvorsitzenden ernannt. Karl-Heinz Hackenberg wird 2. Vorsitzender. Tommy Stolz ist neuer Jugendvertreter.'
+          - 'Fluglager in Jena.'
+          - 'Fliegerfest in Poltringen mit Halleneinweihung.'
+          - 'Die Unterrichtsgemeinschaft THURM besteht nun 20 Jahre.'
+          - 'Lackierung der Morane.'
+      - year: 1995
+        entries:
+          - 'Fluglager in Poltringen, Kempten und Aubenasson sowie ein Motorfluglager.'
+          - 'Richard Bock, Siegfried Geiger und Richard Schmid aus Altersgründen aus dem aktiven Fluglehrerdienst ausgeschieden.'
+          - 'Detlef Meyerhoff löst Heiner Harbusch als Technischen Leiter ab.'
+      - year: 1996
+        entries:
+          - 'Fluglager in Jena, Gap, Poltringen und Birrfeld und Frauenfluglager in Koblenz-Winningen.'
+          - 'Tobias Geiger wird 3. bei der deutschen Meisterschaft der Clubklasse ( uns ist damit für die Europa-Meisterschaft 1997 qualifiziert).'
+          - 'Verkauf der Ka 8 und Kauf einer Super-Dimona.'
+          - 'Heike Rauscher löst Tommy Stolz als Jugendvertreter ab.'
+      - year: 1997
+        entries:
+          - 'Gerd Pfeffer wird Ausbildungsleiter Motorsegler. Jörn Eisenhardt bleibt Vereinsausbildungsleiter.'
+          - 'Volker Kirsch übernimmt die Koordination Segelflugzeug-Wartung.'
+          - 'Fluglager in Poltringen, Kempten, Gap, Frauenfluglager (Hexen) in Eggenfelden und Motorfluglager in Ungarn.'
+          - 'Hallenfest in Unterjesingen und Beteiligung am Untergassenfest und an der Kirbe.'
+          - 'Verkauf Ventus bT. Neuer Ventus 2cM (Selbststarter) bestellt.'
+          - 'Der langjährige 1. Vorsitzende des Flugsportvereins Ammerbuch Dr. Hans Spranger ist gestorben.'
+      - year: 1998
+        entries:
+          - 'Richard Müller wird als 1. Vorsitzender von Dr. Joachim Ostwald abgelöst. Detlef Meyerhoff gibt das Amt des Technischen Leiters an Volker Kirsch ab. Christine Müller wird für Heike Rauscher Jugendvertreter.'
+          - 'Fluglager in Poltringen, Kempten und Hexenfluglager in Rendsburg.'
+          - 'Hallenfest in Unterjesingen, Fliegerfest mit Ventus-Taufe.'
+          - 'Tobias Geiger wird Vize-Europameister Mannschaft Clubklasse und 2. bei der deutschen Meisterschaft.'
+          - 'Der 2. Vorsitzende Karl-Heinz Hackenberg ist gestorben.'
+      - year: 1999
+        entries:
+          - 'Roland Kehrer wird zum 2.Vorsitzenden gewählt.'
+          - 'Fluglager in Poltringen, Kempten, Jena und Hexenfluglager in Ballenstedt (Ostharz).'
+          - 'Hallenfest in Unterjesingen, Beteiligung am Untergassenfest und gemeinsames Abfliegen (FSV Ammerbuch).'
+          - 'Dr. Joachim Ostwald / Dr. Diethard Braun belgen bei der baden-württembergischen Motorflugmeisterschaft den 4. Platz. Roland Kehrer und Martin Diebold belgen beim Allgäurundflug den 1. Platz in der Einsteigerklasse mit dem Motorsegler.'
+    images:
+      - file: neunziger-01.jpg
+        title: 'Flotte des FSU'
+
+  - slug: jahrtausend
+    title: 'Jahrtausend'
+    intro:
+      - 'Anlässlich des 70. Geburtstags wurde eine Chronik über den Verein verfasst, inder für die einzelnen Jahre jeweils die wichtigsten Ereignisse aufgezeichnet sind.'
+    years:
+      - year: 2000
+        entries:
+          - 'Jörn Eisenhardt übergibt das Amt des Ausbildungsleiter an Robert Motzer.'
+          - 'Für Christine Müller wird Achim Enzmann Jugendvertreter.'
+          - 'Michael Löffler löst den langjährigen Moran-Wart Richard Schmid ab.'
+          - 'Fluglager in Poltringen, Kempten und Gerstetten.'
+          - 'Hexenfluglager in Rheindorf.'
+          - 'Hallenfest in Unterjesingen, Fliegerfest in Poltringen, Beteiligung an der Kirbe und vereinsinternes Abfliegen.'
+          - 'in der BWLV-Wertung der DMSt kommen Achim Enzmann auf den 6. Platz und Florian Ehinger auf den 13. Platz. Beim Südwestdeutschen Rundflug belegen in der Einsteigerklasse Jochen Haug / Richard Bock den 1. und Thomas Bock / Wolfgang Zanker den 2. Platz, Dr. Joachim Ostwald / Dr. Diethard Braun werden 10. bei den Wettbewerbern. Detlef Meyerhoff / Martin Diebold belegen bei der Motorflug-Landesmeisterschaft den 9. Platz.'
+          - 'In den Ventus 2cM wird ein Motor eingebaut (Selbststarter).'
+          - 'Zum Jahresende beendet Hans Klatt die 1990 übernommene Clubheim-Bewirtschaftung, die später Günter Bosch übernimmt.'
+      - year: 2001
+        entries:
+          - 'Fluglager in Poltringen, Gerstetten, Kempten und ein Hexenfluglager in Bielefeld.'
+          - 'Hallenfest Unterjesingen mit Fliegen im Ammertal, Beteiligung am Untergassenfest und an der Kirbe, gemeinsames Abfliegen (FSV Ammerbuch).'
+          - 'Am Flugplatz stellt der FSU ein Gartenhaus auf.'
+          - 'Eine der 300 Jahre alten Linden am Flugplatz wird Opfer des Sturms.'
+          - 'Heike Rauscher wird nach Achim Enzmann Jugendvertreterin'
+          - 'Beim Allgäuflug belegen Michael Löffler / Richard Bock den 2. Platz in der Einsteigerklasse.'
+          - 'Der Verein hat eine komplette Gastronomie-Küche geschenkt bekommen, die in Stuttgart aus- und im Hallenanbau Unterjesingen eingebaut wird.'
+      - year: 2002
+        entries:
+          - 'Erwin Oswald wird neuer Segelflug-Ausbildungsleiter. Gerd Pfeffer ist jetzt Vereinsausbildungsleiter.'
+          - 'Fluglager in Poltringen, Gerstetten und Kempten sowie ein Hexenfluglager in Jena.'
+          - 'Hallenfest Unterjesingen mit Einweihung der neu eingebauten Küche, Flugtag in Poltringen.'
+          - 'Der Flugsportverein richtet eine eigene Homepage ein.'
+          - 'Wegen der besseren Flugeigenschaften werden an der LS 7 Winglets angebracht. Von der Firma Daimler-Chrysler erhält der Verein einen Rückholwagen gespendet.'
+          - 'Achim Enzmann, Florian Ehinger, Daniel Widmaier belegen den 3. Platz in der Mannschaftswertung Standardklasse (Junioren) der DMSt (BWLV-Wertung).'
+          - 'Tobias Geiger (für seine neue Heimat Australien startend) belegt bei den Segelflugweltmeisterschaften in Musbach bei Freudenstadt den 17. Platz.'
+      - year: 2003
+        entries:
+          - 'Martin Diebold wird zum neuen 2. Vorsitzenden gewählt.'
+          - 'Viele Neueintritte (Segelflug und Motorsegler)'
+          - 'Fluglager in Poltringen, Gerstetten und Kempten sowie ein Hexenfluglager Jena.'
+          - 'Hallenfest und Untergassenfest in Unterjesingen, gemeinsames Abfliegen mit 25 Jahren Flugsportverein Ammerbuch.'
+          - 'Als weiteres Segelflugzeug wird eine LS 4b (gebraucht) gekauft. Der Doppelsitzer ASK 21 ( am Boden angebunden) wurde bei einem Gewitter schwer beschädigt. Wgen der auftretenden Probleme wird der Ventus 2cM (Selbststarter) verkauft. Als Nachfolger wird eine DG 808b bestellt. Der Verkauf der bisherigen Schleppmaschine Morane und als Ersatz der Kauf einer DA 40 wird beschlossen.'
+          - 'Beim Südwestdeutschen Rundflug belegen Dieter Seibold / Richard Bock den 2. Platz in der Einsteigerklasse. Dr. Joachim Ostwald / Dr. Diethard Braun belegen bei der baden-württembergieschen Motorflugmeisterschaft den 5. Platz.'
+      - year: 2004
+        entries:
+          - '70 Jahre FSU mit Hallenfest in Unterjesingen, Fliegen im Ammertal und Flugzeugtaufe der DG 808b'
+          - 'Dr. Diethard Braun hört nach 16 Jahren als Kassier auf. Neuer Kassier wird Michael Ott.'
+    images:
+      - file: jahrtausend-01.jpg
+        title: 'DG808 beim Start im Winter'

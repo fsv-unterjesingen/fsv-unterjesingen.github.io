@@ -844,6 +844,199 @@ section.weglide {
   display: none;
 }
 
+.chronik-subnav {
+  margin: 0 0 34px;
+  justify-content: center;
+}
+
+.chronik-timeline {
+  display: grid;
+  gap: 54px;
+}
+
+.chronik-era {
+  display: grid;
+  grid-template-columns: minmax(115px, 148px) minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  scroll-margin-top: calc(var(--header-height) + 28px);
+}
+
+.chronik-era-prelude .chronik-era-track {
+  grid-column: 2;
+}
+
+.chronik-era-stamp {
+  position: sticky;
+  top: calc(var(--header-height) + 24px);
+  display: block;
+}
+
+.chronik-era-stamp h2 {
+  margin: 0;
+  font-size: 2.2em;
+  line-height: 0.95;
+}
+
+.chronik-era-track {
+  --chronik-track-padding: 56px;
+  --chronik-line-left: 18px;
+  --chronik-dot-size: 14px;
+  --chronik-dot-left: -44px;
+  --chronik-dot-ring: 7px;
+  position: relative;
+  display: grid;
+  gap: 24px;
+  padding-left: var(--chronik-track-padding);
+}
+
+.chronik-era-track::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--chronik-line-left);
+  width: 2px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(8, 52, 68, 0.12), rgba(45, 143, 65, 0.4) 12%, rgba(45, 143, 65, 0.18) 88%, rgba(8, 52, 68, 0.08));
+}
+
+.chronik-node {
+  position: relative;
+}
+
+.chronik-node::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: var(--chronik-dot-left);
+  width: var(--chronik-dot-size);
+  height: var(--chronik-dot-size);
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 var(--chronik-dot-ring) rgba(45, 143, 65, 0.14);
+}
+
+.chronik-node-intro::before,
+.chronik-node-gallery::before {
+  background: var(--blue-dark);
+  box-shadow: 0 0 0 var(--chronik-dot-ring) rgba(8, 52, 68, 0.12);
+}
+
+.chronik-card {
+  padding: 15px;
+}
+
+.chronik-intro-card {
+  gap: 10px;
+}
+
+.chronik-copy p {
+  margin: 0;
+}
+
+.chronik-copy p+p {
+  margin-top: 12px;
+}
+
+.chronik-gallery-card {
+  gap: 18px;
+  background: linear-gradient(135deg, rgba(8, 52, 68, 0.06), rgba(45, 143, 65, 0.05)), var(--card-bg);
+}
+
+.chronik-gallery-header {
+  display: grid;
+  gap: 6px;
+}
+
+.chronik-gallery-header .card-meta {
+  margin: 0;
+}
+
+.chronik-gallery-header h3 {
+  margin: 0;
+  font-size: clamp(1.45rem, 2.3vw, 1.85rem);
+}
+
+.chronik-gallery-grid {
+  columns: 2 240px;
+  column-gap: 16px;
+}
+
+.chronik-gallery-grid.is-single-image {
+  columns: 1;
+}
+
+.chronik-photo-tile {
+  break-inside: avoid-column;
+  margin: 0 0 16px !important;
+}
+
+.chronik-photo-link {
+  display: block;
+  text-decoration: none;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(14, 93, 120, 0.08);
+}
+
+.chronik-photo-link:focus-visible {
+  outline: 3px solid rgba(14, 93, 120, 0.28);
+  outline-offset: 4px;
+}
+
+.chronik-photo-tile img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: none;
+  transition: transform 0.28s ease;
+}
+
+.chronik-photo-link:hover img,
+.chronik-photo-link:focus-visible img {
+  transform: scale(1.04);
+}
+
+.chronik-photo-tile figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.chronik-year-card {
+  display: grid;
+  grid-template-columns: minmax(88px, 108px) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.chronik-year-label {
+  display: block;
+}
+
+.chronik-year {
+  margin: 0;
+  font-family: "Fraunces", "Times New Roman", serif;
+  font-size: clamp(2.35rem, 4vw, 3.1rem);
+  line-height: 0.88;
+  color: var(--green);
+}
+
+.chronik-event-list {
+  margin: 0;
+  padding-left: 1.1em;
+}
+
+.chronik-event-list li+li {
+  margin-top: 10px;
+}
+
+.chronik-event-list li::marker {
+  color: var(--green);
+}
+
 .aircraft-fleet {
   display: grid;
   gap: 28px;
@@ -1104,7 +1297,6 @@ h2+h3 {
 
 .subnav a {
   font-weight: 600;
-  text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.85rem;
   color: #f3fbfd;
@@ -1278,6 +1470,24 @@ h2+h3 {
 }
 
 @media (max-width: 900px) {
+  .chronik-era {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .chronik-era-prelude .chronik-era-track {
+    grid-column: auto;
+  }
+
+  .chronik-era-stamp {
+    position: static;
+  }
+
+  .chronik-era-track {
+    --chronik-track-padding: 46px;
+    --chronik-dot-left: -34px;
+  }
+
   .header-row {
     grid-template-columns: auto 1fr;
     align-items: center;
@@ -1377,6 +1587,49 @@ h2+h3 {
 }
 
 @media (max-width: 700px) {
+  .chronik-subnav {
+    margin-bottom: 26px;
+  }
+
+  .chronik-timeline {
+    gap: 40px;
+  }
+
+  .chronik-era-track {
+    --chronik-track-padding: 34px;
+    --chronik-line-left: 10px;
+    --chronik-dot-size: 12px;
+    --chronik-dot-left: -29px;
+    --chronik-dot-ring: 5px;
+    gap: 18px;
+    padding-left: var(--chronik-track-padding);
+  }
+
+  .chronik-node::before {
+    top: 22px;
+  }
+
+  .chronik-card {
+    padding: 18px;
+  }
+
+  .chronik-gallery-grid {
+    columns: 1;
+  }
+
+  .chronik-year-card {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .chronik-year-label {
+    display: block;
+  }
+
+  .chronik-year {
+    font-size: clamp(2rem, 11vw, 2.8rem);
+  }
+
   .card-grid-preview {
     grid-template-columns: 1fr;
   }
