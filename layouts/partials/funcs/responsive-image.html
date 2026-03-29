@@ -9,6 +9,7 @@
 {{- $fallback := "" -}}
 {{- $srcset := "" -}}
 {{- $resource := "" -}}
+{{- $original := $imageURL -}}
 {{- $isRemote := or (strings.HasPrefix $imageURL "http://") (strings.HasPrefix $imageURL "https://") -}}
 
 {{- if and (not $isRemote) $imageURL -}}
@@ -26,6 +27,7 @@
 {{- end -}}
 
 {{- with $resource -}}
+  {{- $original = .RelPermalink -}}
   {{- if eq .ResourceType "image" -}}
     {{- $resourceImage := . -}}
     {{- $maxWidth := .Width -}}
@@ -72,6 +74,7 @@
     {{- else -}}
       {{- $resolvedURL = $imageURL | relURL -}}
     {{- end -}}
+    {{- $original = $resolvedURL -}}
   {{- end -}}
 {{- end -}}
 
@@ -79,4 +82,8 @@
   {{- $fallback = $resolvedURL -}}
 {{- end -}}
 
-{{- return (dict "url" $resolvedURL "fallback" $fallback "srcset" $srcset "sizes" $sizes) -}}
+{{- if not $original -}}
+  {{- $original = $resolvedURL -}}
+{{- end -}}
+
+{{- return (dict "url" $resolvedURL "fallback" $fallback "srcset" $srcset "sizes" $sizes "original" $original) -}}

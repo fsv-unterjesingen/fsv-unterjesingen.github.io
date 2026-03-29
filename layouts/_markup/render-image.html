@@ -1,0 +1,17 @@
+{{- $image := partial "funcs/responsive-image.html" (dict
+  "page" .Page
+  "url" .Destination
+  "sizes" "(min-width: 800px) 760px, 100vw"
+) -}}
+{{- $imageLink := $image.original | default $image.url -}}
+<a class="content-image-link" href="{{ $imageLink | safeURL }}">
+  <img
+    src="{{ $image.fallback | safeURL }}"
+    {{- with $image.srcset }} srcset="{{ . }}"{{ end -}}
+    sizes="{{ $image.sizes }}"
+    alt="{{ .PlainText }}"
+    loading="lazy"
+    decoding="async"
+    {{- with .Title }} title="{{ . }}"{{ end -}}
+  >
+</a>

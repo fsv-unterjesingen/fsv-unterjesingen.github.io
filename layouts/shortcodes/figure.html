@@ -16,6 +16,7 @@
 {{- $sizes := .Get "sizes" | default "(min-width: 800px) 760px, 100vw" -}}
 {{- $loading := .Get "loading" | default "lazy" -}}
 {{- $quality := .Get "quality" | default 78 -}}
+{{- $imgStyle := .Get "style" | default (.Get "img_style") | default "" -}}
 {{- $resource := "" -}}
 {{- $isRemote := or (strings.HasPrefix $src "http://") (strings.HasPrefix $src "https://") -}}
 
@@ -37,12 +38,13 @@
   "sizes" $sizes
   "quality" $quality
 ) -}}
+{{- $resolvedLink := $link | default ($image.original | default $image.url) -}}
 
 <figure class="content-figure{{ with $class }} {{ . }}{{ end }}">
-  {{- if $link -}}
+  {{- if $resolvedLink -}}
   <a
-    class="content-figure-link"
-    href="{{ $link | safeURL }}"
+    class="content-figure-link content-image-link"
+    href="{{ $resolvedLink | safeURL }}"
     {{- with $target }} target="{{ . }}"{{ end -}}
     {{- if eq $target "_blank" }} rel="noopener noreferrer"{{ end -}}
   >
@@ -54,9 +56,10 @@
       alt="{{ $alt }}"
       loading="{{ $loading }}"
       decoding="async"
+      {{- with $imgStyle }} style="{{ . }}"{{ end -}}
       {{- with $resource }} width="{{ .Width }}" height="{{ .Height }}"{{ end -}}
     >
-  {{- if $link -}}
+  {{- if $resolvedLink -}}
   </a>
   {{- end }}
   <figcaption{{ if not $hasAlt }} aria-hidden="true"{{ end }}>{{ $caption | markdownify }}</figcaption>

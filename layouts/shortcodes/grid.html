@@ -1,0 +1,8 @@
+{{- $variant := .Get "variant" | default "default" -}}
+{{- if not (in (slice "default" "portrait" "landscape") $variant) -}}
+  {{- errorf "grid shortcode variant must be one of default, portrait, landscape: %s" .Position -}}
+{{- end -}}
+{{- $extraClass := .Get "class" | default "" -}}
+<div class="media-grid media-grid--{{ $variant }}{{ with $extraClass }} {{ . }}{{ end }}">
+  {{ .Inner }}
+</div>
