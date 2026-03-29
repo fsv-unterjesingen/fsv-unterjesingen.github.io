@@ -6,8 +6,8 @@
   --black: black;
   --ink: #182226;
   --card-bg: white;
-  --muted: #6c7b80;
-  --shadow: 0 18px 40px rgba(8, 24, 28, 0.18);
+  --muted: #323a3d;
+  --shadow: 0 9px 18px rgba(8, 24, 28, 0.18);
 }
 
 * {
@@ -476,14 +476,8 @@ h2 {
   width: min(260px, 70%);
 }
 
-section.news,
-section.weglide {
-  padding: 80px 0;
-  background: var(--white);
-}
-
-.weglide {
-  background: var(--white);
+div.weglide {
+  border-radius: 18px;
 }
 
 .weglide iframe {
@@ -618,10 +612,15 @@ section.weglide {
   padding: 10px 18px;
   border-radius: 999px;
   border: 1px solid rgba(24, 34, 38, 0.18);
-  background: #fff;
+  background: var(--card-bg);
   box-shadow: var(--shadow);
   text-decoration: none;
   font-weight: 600;
+}
+
+.section-more a:hover {
+  transform: scale(1.03);
+  box-shadow: 0 18px 40px rgba(8, 24, 28, 0.22);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -630,10 +629,11 @@ section.weglide {
   .section-more a {
     box-shadow: none;
   }
-}
 
-.section-more a:hover {
-  background: var(--white);
+  .section-more a:hover {
+    box-shadow: none;
+    filter: brightness(1.3);
+  }
 }
 
 .cta {
@@ -700,7 +700,7 @@ section.weglide {
 .page-hero {
   margin-top: calc(-1 * var(--header-height));
   padding: calc(min(150px, 13vh) + 72px) 0 30px;
-  background-color: #365a9d45;
+  background-color: #6f92d23d;
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -781,7 +781,9 @@ section.weglide {
   text-align: center;
 }
 
-.page-body {
+section.page-body,
+section.news,
+section.weglide {
   padding: 40px 0 70px;
 }
 
