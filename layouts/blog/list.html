@@ -1,8 +1,22 @@
 {{ define "main" }}
-<section class="page-hero">
+{{ $hero := partial "funcs/hero-image.html" . }}
+<section class="page-hero{{ if $hero.url }} has-hero-image{{ end }}"{{ with $hero.url }} style="--page-hero-overlay: {{ $hero.overlay }};"{{ end }}>
+  {{ with $hero.url }}
+  <div class="page-hero-media" aria-hidden="true">
+    <img
+      src="{{ $hero.fallback | safeURL }}"
+      {{ with $hero.srcset }}srcset="{{ . }}"{{ end }}
+      sizes="{{ $hero.sizes }}"
+      alt=""
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    >
+  </div>
+  {{ end }}
   <div class="container">
     <h1>{{ .Title }}</h1>
-    <p class="page-lead">{{ .Params.Subtitle }}</p>
+    {{ with or .Params.subtitle .Params.lead }}<p class="page-lead">{{ . }}</p>{{ end }}
   </div>
 </section>
 <section class="page-body blog-archive">
