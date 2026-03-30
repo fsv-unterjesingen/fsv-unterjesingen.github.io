@@ -3,7 +3,7 @@
 <section class="hero">
   <div class="hero-slides">
     {{ range $index, $slide := $home.hero.slides }}
-      {{- $image := partial "funcs/responsive-image.html" (dict "url" $slide.image "fallbackWidth" 1920 "sizes" "100vw") -}}
+      {{- $image := partial "funcs/responsive-image.html" (dict "site" $.Site "url" $slide.image "fallbackWidth" 1920 "sizes" "100vw") -}}
     <div class="hero-slide" aria-hidden="true">
       <img
         src="{{ $image.fallback | safeURL }}"

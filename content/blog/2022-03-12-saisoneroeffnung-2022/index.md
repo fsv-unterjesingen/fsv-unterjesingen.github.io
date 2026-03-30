@@ -5,6 +5,7 @@ author: FSV Unterjesingen
 description: Mit frisch vorbereiteten Flugzeugen und zwei neuen Fluglehrern startet
   der FSV Unterjesingen in die Saison 2022. Dazu gibt es erste Streckenflüge und Vorfreude
   auf das anstehende Fluglager in Sondrio.
+thumbnail: 2022-03/Fallschirme-packen
 aliases:
 - /2022/03/12/flugsaison-2022-eroeffnet/
 ---
@@ -23,10 +24,10 @@ Am 02.04. geht es dann auch schon für einige in das erste Fluglager des Jahres 
 
 Wir freuen uns auf eine erfolgreiche Saison 2022 mit vielen Flugstunden und Kilometern.
 
-![](image-01.jpg)
+{{< img src="2022-03/Fallschirme-packen" alt="" >}}
 
-![](image-02.jpg)
+{{< img src="2022-03/ASK21-am-Start" alt="" >}}
 
-![](image-03.jpg)
+{{< img src="2022-03/Flugzeuge-aufbauen" alt="" >}}
 
-![](image-04.jpg)
+{{< img src="2022-03/Amelie-vor-der-ls4" alt="" >}}

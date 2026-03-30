@@ -19,10 +19,10 @@ Im neu verpachteten Flugplatz Casino werden Sie mit einer abwechslungsreichen de
 Wir freuen uns auf Deinen Besuch auf dem Flugplatz Poltringen! Genieße Natur, Ausblick und Flugzeuge.
 
 {{< grid >}}
-{{< figure src="/images/verein/ueber-uns/feldberg.jpg" alt="Mit dem Mose über dem Feldberg" sizes="(max-width: 700px) 100vw, 50vw" />}}
-{{< figure src="/images/verein/ueber-uns/clemens-start.jpg" alt="Clemens vor dem Start" sizes="(max-width: 700px) 100vw, 50vw" />}}
-{{< figure src="/images/verein/ueber-uns/volleyball-grabenstetten.jpg" alt="Die Jugend beim Volleyballturnier in Grabenstetten" sizes="(max-width: 700px) 100vw, 50vw" />}}
-{{< figure src="/images/verein/ueber-uns/flugplatz-von-oben.jpg" alt="Der Flugplatz Poltringen von oben" sizes="(max-width: 700px) 100vw, 50vw" />}}
-{{< figure src="/images/verein/ueber-uns/duo-alpen.jpg" alt="Der Duo über den Alpen" sizes="(max-width: 700px) 100vw, 50vw" />}}
-{{< figure src="/images/verein/ueber-uns/erster-alleinflug.jpg" alt="Nathanael nach seinem 1. Alleinflug" sizes="(max-width: 700px) 100vw, 50vw" />}}
+{{< figure src="2015-09/feldberg" alt="Mit dem Mose über dem Feldberg" />}}
+{{< figure src="2015-09/IMG_2186" alt="Clemens vor dem Start" />}}
+{{< figure src="2015-09/10927848_10153218499078777_6188144502237203577_o" alt="Die Jugend beim Volleyballturnier in Grabenstetten" />}}
+{{< figure src="2015-06/P10406751" alt="Der Flugplatz Poltringen von oben" />}}
+{{< figure src="2015-06/DSC02258" alt="Der Duo über den Alpen" />}}
+{{< figure src="2015-06/20150621_150009-e1441213795343" alt="Nathanael nach seinem 1. Alleinflug" />}}
 {{< /grid >}}

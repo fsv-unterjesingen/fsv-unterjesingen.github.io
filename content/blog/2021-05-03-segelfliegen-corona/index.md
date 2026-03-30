@@ -5,11 +5,12 @@ author: FSV Unterjesingen
 description: Auch unter strengen Hygieneregeln konnte der Flugbetrieb wieder anlaufen.
   Der Beitrag zeigt, wie Segelfliegen in Corona-Zeiten möglich war und warum der Einstieg
   in die Ausbildung trotzdem offen blieb.
+thumbnail: 2021-05/20160429_115139-1
 aliases:
 - /2021/05/03/freitheit-erleben-segelfliegen-auch-im-lockdown/
 ---
 
-![Segelflieger_Schwarzwald_Poltringen_Unterjesingen](image-01.jpg)
+{{< img src="2021-05/20160429_115139-1" alt="Segelflieger_Schwarzwald_Poltringen_Unterjesingen" >}}
 
 Trotz Corona-Einschränkungen durften auch wir Segelflieger unsere Saison wieder starten. So konnten wir im März unseren Flugbetrieb unter strengen Hygieneregeln wieder aufnehmen und unsere Flugschüler schulen. Dabei ist beim doppelsitzigen Fliegen natürlich ein Mund-Nase-Schutz zu tragen. Dank der sehr disziplinierten Einhaltung der Regelungen durch unsere Mitglieder, konnten wir so schon viele schöne Flüge in dieser Saison durchführen.
 

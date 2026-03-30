@@ -5,6 +5,7 @@ author: FSV Unterjesingen
 description: Trotz Corona ging es für den FSV wieder nach Kempten, um im Allgäu und
   Alpenvorland zu fliegen. Der Rückblick zeigt, wie viel Strecke, Gemeinschaft und
   Flugzeit in einer einzigen Woche stecken können.
+thumbnail: 2020-06/IMG_7067
 aliases:
 - /2020/06/26/fluglager-in-kempten/
 ---
@@ -21,10 +22,10 @@ Das Fluglager war wieder ein großer Erfolg.
 
 Der Flugsportverein Unterjesingen bedankt sich recht herzlich bei der Flugplatzgesellschaft Kempten für die Gastfreundschaft und freut sich schon auf das nächste Fluglager in Kempten!
 
-![](image-01.jpg)
+{{< img src="2020-06/IMG_7067" alt="" >}}
 
-![](image-02.jpg)
+{{< img src="2020-06/IMG_7053" alt="" >}}
 
-![](image-03.jpg)
+{{< img src="2020-06/IMG_7030" alt="" >}}
 
-![](image-04.jpg)
+{{< img src="2020-06/IMG_6997" alt="" >}}

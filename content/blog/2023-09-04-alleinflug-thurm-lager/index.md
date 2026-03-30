@@ -5,11 +5,12 @@ author: Joel Domke
 description: Joel Domke schildert die Nervosität, Konzentration und Freude rund um
   seinen ersten Alleinflug im THURM-Lager. Ein persönlicher Bericht über einen dieser
   Momente, die man im Cockpit nie vergisst.
+thumbnail: 2023-12/IMG-20230901-WA0005
 aliases:
 - /2023/09/04/mein-erster-alleinflug-im-thurm-lager-ein-bericht-von-joel/
 ---
 
-{{< figure caption="Joel Domke nach seinem ersten Alleinflug." src="image-01.jpg" />}}
+{{< figure caption="Joel Domke nach seinem ersten Alleinflug." src="2023-12/IMG-20230901-WA0005" />}}
 
 Nach einem langsamen Start in meine Segelflugausbildung im Jahr 2022 habe ich dieses Jahr richtig losgelegt und konnte bis zum THURM-Lager viele Starts und Flugstunden sammeln. Als sich herausstellte, dass ich demnächst meinen ersten Alleinflug absolvieren könnte, war ich doch etwas überrascht und musste noch spontan mein Medical machen. Nachdem das erledigt war, stand eigentlich schon fest, dass es demnächst so weit sein würde.
 

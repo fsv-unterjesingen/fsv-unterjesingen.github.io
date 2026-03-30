@@ -89,17 +89,57 @@
                 <div class="chronik-gallery-grid{{ if eq (len $images) 1 }} is-single-image{{ end }}">
                   {{- range $image := $images -}}
                     {{- $file := index $image "file" -}}
-                    {{- $resource := $.Page.Resources.GetMatch $file -}}
-                    {{- $imageVariant := partial "funcs/responsive-image.html" (dict "page" $.Page "url" $file "fallbackWidth" 960 "sizes" "(max-width: 700px) 100vw, (max-width: 1160px) calc(100vw - 150px), 520px") -}}
-                    {{- $caption := index $image "title" -}}
-                    {{- $alt := $caption | default (printf "Archivfoto aus den %s" $title) -}}
+                    {{- $sizes := "(max-width: 700px) 100vw, (max-width: 1160px) calc(100vw - 150px), 520px" -}}
+                    {{- $resolvedImage := partial "funcs/resolve-image-resource.html" (dict
+                      "page" $.Page
+                      "site" $.Page.Site
+                      "url" $file
+                      "allowPageResources" false
+                      "allowMedia" true
+                      "allowGlobalResources" false
+                    ) -}}
+                    {{- $resource := $resolvedImage.resource -}}
+                    {{- if not $resource -}}
+                      {{- errorf "chronik-timeline shortcode could not resolve media image %q: %s" $file $.Position -}}
+                    {{- end -}}
+                    {{- $mediaCaption := "" -}}
+                    {{- $mediaAlt := "" -}}
+                    {{- with $resolvedImage.mediaPage -}}
+                      {{- $mediaCaption = .Params.caption | default "" -}}
+                      {{- $mediaAlt = .Params.alt | default "" -}}
+                    {{- end -}}
+                    {{- $caption := index $image "title" | default $mediaCaption -}}
+                    {{- $alt := $mediaAlt | default $caption | default (printf "Archivfoto aus den %s" $title) -}}
+                    {{- $displayURL := $resource.RelPermalink -}}
+                    {{- $linkURL := $resource.RelPermalink -}}
+                    {{- $displayWidth := $resource.Width -}}
+                    {{- $displayHeight := $resource.Height -}}
+                    {{- $displaySrcset := slice -}}
+                    {{- $wide := $resource -}}
+                    {{- if gt $resource.Width 1600 -}}
+                      {{- $wide = $resource.Resize "1600x q82" -}}
+                      {{- $linkURL = $wide.RelPermalink -}}
+                    {{- end -}}
+                    {{- if gt $resource.Width 800 -}}
+                      {{- $small := $resource.Resize "800x q80" -}}
+                      {{- $displayURL = $small.RelPermalink -}}
+                      {{- $displayWidth = $small.Width -}}
+                      {{- $displayHeight = $small.Height -}}
+                      {{- $displaySrcset = $displaySrcset | append (printf "%s %dw" $small.RelPermalink $small.Width) -}}
+                      {{- if gt $resource.Width 1600 -}}
+                        {{- $displaySrcset = $displaySrcset | append (printf "%s %dw" $wide.RelPermalink $wide.Width) -}}
+                      {{- else -}}
+                        {{- $displaySrcset = $displaySrcset | append (printf "%s %dw" $resource.RelPermalink $resource.Width) -}}
+                      {{- end -}}
+                    {{- end -}}
                     <figure class="chronik-photo-tile">
-                      <a class="chronik-photo-link" href="{{ with $resource }}{{ .RelPermalink }}{{ else }}{{ $imageVariant.fallback | safeURL }}{{ end }}">
+                      <a class="chronik-photo-link" href="{{ $linkURL | safeURL }}">
                         <img
-                          src="{{ $imageVariant.fallback | safeURL }}"
-                          {{ with $imageVariant.srcset }}srcset="{{ . }}"{{ end }}
-                          sizes="{{ $imageVariant.sizes }}"
-                          {{ with $resource }}width="{{ .Width }}" height="{{ .Height }}"{{ end }}
+                          src="{{ $displayURL | safeURL }}"
+                          {{ if gt (len $displaySrcset) 0 }}srcset="{{ delimit $displaySrcset ", " }}"{{ end }}
+                          sizes="{{ $sizes }}"
+                          width="{{ $displayWidth }}"
+                          height="{{ $displayHeight }}"
                           alt="{{ $alt }}"
                           loading="lazy"
                           decoding="async"

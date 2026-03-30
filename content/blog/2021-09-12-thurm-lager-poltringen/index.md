@@ -5,6 +5,7 @@ author: FSV Unterjesingen
 description: Nach der Coronapause konnte das THURM-Lager endlich wieder stattfinden,
   diesmal in Poltringen. Der Beitrag blickt auf gemeinsames Schulen, viele Flüge und
   die besondere Atmosphäre des Lagers zurück.
+thumbnail: 2021-10/IMG_6347
 aliases:
 - /2021/09/12/thurm-lager-in-poltringen/
 ---
@@ -21,16 +22,16 @@ Ein Highlight der Woche war das traditionelle Sunrisefliegen. Montagmorgen um 5 
 
 Schlussendlich war es mal wieder ein ausgezeichnetes THURM-Lager mit wunderbaren Erlebnissen. Vielen Dank an alle, die das möglich gemacht haben!
 
-![](image-01.jpg)
+{{< img src="2021-10/IMG_6347" alt="" >}}
 
-![](image-02.jpg)
+{{< img src="2021-10/IMG_1641" alt="" >}}
 
-![](image-03.jpg)
+{{< img src="2021-10/89ef7fc8-c957-4fd7-9907-0d1fa035125b" alt="" >}}
 
-![](image-04.jpg)
+{{< img src="2021-10/IMG_6313" alt="" >}}
 
-![](image-05.jpg)
+{{< img src="2021-10/IMG_6254" alt="" >}}
 
-![](image-06.jpg)
+{{< img src="2021-10/IMG_4007" alt="" >}}
 
-![](image-07.jpg)
+{{< img src="2021-10/IMG_3702" alt="" >}}

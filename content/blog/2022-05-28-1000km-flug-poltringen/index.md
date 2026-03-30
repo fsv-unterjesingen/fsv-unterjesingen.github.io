@@ -5,6 +5,7 @@ author: Lorenz Gessler
 description: 'Ein Meilenstein für den Flugplatz Poltringen: Lorenz Gessler gelingt
   der erste 1000-Kilometer-Flug von zu Hause aus. Der Bericht zeichnet Wetterlage,
   Taktik und die entscheidenden Momente dieses außergewöhnlichen Streckenflugs nach.'
+thumbnail: 2022-07/IMG_20220524_1905533
 aliases:
 - /2022/05/28/1000-km/
 ---
@@ -39,32 +40,32 @@ Für die restlichen Kilometer zurück in die Heimat nutzte Gessler den Motor um 
 
 Du bist neugierig geworden, wie es ist Segelzufliegen oder hast sogar Interesse selbst einen Segelflugschein zu machen? Dann schreib uns gerne. Wir freuen uns auf deine Kontaktanfrage und dich bald auf unserem Flugplatz begrüßen zu dürfen!
 
-![](image-01.jpg)
+{{< img src="2022-07/IMG_20220524_1905533" alt="" >}}
 
-![](image-02.jpg)
+{{< img src="2022-07/IMG_20220525_092814" alt="" >}}
 
-![](image-03.jpg)
+{{< img src="2022-07/IMG_20220525_0928162" alt="" >}}
 
-![](image-04.jpg)
+{{< img src="2022-07/IMG_20220525_092823" alt="" >}}
 
-![](image-05.jpg)
+{{< img src="2022-07/IMG_20220525_092948-01" alt="" >}}
 
-![](image-06.jpg)
+{{< img src="2022-07/IMG_20220525_102458-01" alt="" >}}
 
-![](image-07.jpg)
+{{< img src="2022-07/IMG_20220525_1349022" alt="" >}}
 
-![](image-08.jpg)
+{{< img src="2022-07/IMG_20220525_134909-01" alt="" >}}
 
-![](image-09.jpg)
+{{< img src="2022-07/IMG_20220525_161613-01" alt="" >}}
 
-![](image-10.jpg)
+{{< img src="2022-07/IMG_20220525_190942-01" alt="" >}}
 
-![](image-11.jpg)
+{{< img src="2022-07/IMG_20220525_2000432" alt="" >}}
 
-![](image-12.jpg)
+{{< img src="2022-07/IMG_20220525_2000492" alt="" >}}
 
-![](image-13.jpg)
+{{< img src="2022-07/IMG_20220525_2028062" alt="" >}}
 
-![](image-14.jpg)
+{{< img src="2022-07/IMG_20220525_2036482" alt="" >}}
 
-![](image-15.png)
+{{< img src="2022-07/IMG_8570-2" alt="" >}}

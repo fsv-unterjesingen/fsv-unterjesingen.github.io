@@ -5,6 +5,7 @@ author: FSV Unterjesingen
 description: Die neue Homepage des FSV Unterjesingen ist online und bringt frisches
   Design, bessere Navigation und mehr Inhalte rund ums Fliegen mit. Der Beitrag führt
   durch die wichtigsten Neuerungen der Seite.
+thumbnail: 2016-06/1
 aliases:
 - /2016/06/23/fsv-unterjesingen-hat-eine-neue-homepage/
 ---
@@ -19,11 +20,11 @@ Mit dem Umstieg auf eine WordPress gemanagte Seite ist die Seite „responsive�
 
 Die Website versucht mit vielen emotionalen Bildern, Videos, interessanten Texten über das Fliegen, aktuellen News des FSV Unterjesingen und vielem mehr, jung und alt für unser einzigartiges Hobby Segelfliegen zu faszinieren. Die Menü-Struktur unserer Website wurde im Zuge der Neugestaltung grundlegend überarbeitet und soll für Interessierte einfach und logisch sein. Trotzdem birgt die Homepage beim genauen Hinschauen eine große Tiefe und viel Information für (zukünftige) (Segelflug)Pilotinnen und Piloten. Vor allem die Rubrik [Segelfliegen](https://www.fsv-unterjesingen.de/portfolio-item/segelflug/) soll in Zukunft weiter ausgebaut werden.
 
-![Startseite der neuen Homepage](image-01.png)
+{{< img src="2016-06/1" alt="Startseite der neuen Homepage" >}}
 
-![News-Seite](image-02.png)
+{{< img src="2016-06/2" alt="News-Seite" >}}
 
-![Streckenflug](image-03.png)
+{{< img src="2016-06/5" alt="Streckenflug" >}}
 
 Die Seite „[Mitfliegen](https://www.fsv-unterjesingen.de/startseite/mitfliegen/)“ wurde deutlich zentraler platziert, um Flug-Enthusiasten direkt zu einem Schnupperflug zu animieren und für die einzigartige Freizeitbeschäftigung Fliegen zu gewinnen. Ein Video soll Eindrücke aus der Luft direkt vermitteln und Vorfreude auf einen Flug bereiten (siehe auf der Seite „[Leistungssport](https://www.fsv-unterjesingen.de/startseite/der-verein/leistungssport/)“ zum Thema Streckenflug).
 
@@ -35,7 +36,7 @@ Häufig gestellte Fragen, sogenannte [FAQ](https://www.fsv-unterjesingen.de/star
 ### Für Vereins-Interne:
 
 Der Mitglieder-Bereich ist auf Vereinsflieger verschoben worden.  
-Den Link hierzu findet ihr ganz unten auf der Homepage ![3](image-04.png)
+Den Link hierzu findet ihr ganz unten auf der Homepage {{< img src="2016-06/3" alt="3" >}}
 
 Neben diesen Neuerungen gibt es noch zahlreich weitere, allerdings würde es den Rahmen sprengen diese alle aufzulisten.
 

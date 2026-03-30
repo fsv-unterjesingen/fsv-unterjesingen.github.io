@@ -1,0 +1,60 @@
+{{- $page := .page -}}
+{{- $site := .site -}}
+{{- $imageURL := .url | default "" -}}
+{{- $allowPageResources := true -}}
+{{- if isset . "allowPageResources" -}}
+  {{- $allowPageResources = .allowPageResources -}}
+{{- end -}}
+{{- $allowMedia := true -}}
+{{- if isset . "allowMedia" -}}
+  {{- $allowMedia = .allowMedia -}}
+{{- end -}}
+{{- $allowGlobalResources := true -}}
+{{- if isset . "allowGlobalResources" -}}
+  {{- $allowGlobalResources = .allowGlobalResources -}}
+{{- end -}}
+{{- $resource := "" -}}
+{{- $mediaPage := "" -}}
+{{- $isRemote := or (strings.HasPrefix $imageURL "http://") (strings.HasPrefix $imageURL "https://") -}}
+
+{{- if and (not $site) $page -}}
+  {{- $site = $page.Site -}}
+{{- end -}}
+
+{{- if and (not $isRemote) $imageURL -}}
+  {{- if and $allowPageResources $page (not (strings.HasPrefix $imageURL "/")) -}}
+    {{- with $page.Resources.GetMatch $imageURL -}}
+      {{- $resource = . -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- if and $allowMedia (not $resource) $site -}}
+    {{- $mediaPath := strings.TrimPrefix "/" $imageURL -}}
+    {{- $mediaPath = strings.TrimSuffix "/" $mediaPath -}}
+    {{- if strings.HasPrefix $mediaPath "media/" -}}
+      {{- $mediaPath = strings.TrimPrefix "media/" $mediaPath -}}
+    {{- end -}}
+    {{- with $site.GetPage (printf "/media/%s" $mediaPath) -}}
+      {{- $mediaPage = . -}}
+      {{- with .Resources.GetMatch "media*" -}}
+        {{- if eq .ResourceType "image" -}}
+          {{- $resource = . -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if not $resource -}}
+        {{- $imageResources := .Resources.ByType "image" -}}
+        {{- if gt (len $imageResources) 0 -}}
+          {{- $resource = index $imageResources 0 -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- if and $allowGlobalResources (not $resource) -}}
+    {{- with resources.Get (strings.TrimPrefix "/" $imageURL) -}}
+      {{- $resource = . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return (dict "resource" $resource "mediaPage" $mediaPage "isRemote" $isRemote) -}}

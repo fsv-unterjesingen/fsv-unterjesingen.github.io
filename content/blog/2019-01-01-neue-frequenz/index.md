@@ -5,6 +5,7 @@ author: FSV Unterjesingen
 description: Zum Jahreswechsel 2019 bekommt der Flugplatz eine neue Frequenz im 8,33-kHz-Kanalraster.
   Der Beitrag erklärt knapp, was sich ändert und was Pilotinnen und Piloten beachten
   müssen.
+thumbnail: 2017-03/DSC_0709
 aliases:
 - /2019/01/01/neue-frequenz-fuer-unseren-flugplatz/
 ---
@@ -15,4 +16,4 @@ Der Flugplatz **Poltringen** ist deshalb ab sofort auf der **123.055** zu erreic
 
 Diese Frequenz wird dann auch in der neuen ICAO Karte, welche im April erscheint, abgedruckt sein.
 
-![](image-01.jpg)
+{{< img src="2017-03/DSC_0709" alt="" >}}

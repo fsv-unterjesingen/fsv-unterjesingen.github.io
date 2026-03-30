@@ -13,4 +13,4 @@ Das in den 1950er Jahren errichtete Gebäude diente bis 1972 als Flugzeughalle f
 
 Seit dem Umzug nach Poltrigen nutzt der Flugsportverein Unterjesingen das Gebäude für die Wartung und Unterstellung der Flugzeuge im Winter. Du findest uns hier jeden (bis auf Feiertage) Dienstag und Freitag von 18:30 - 21:30 Uhr ab Mitte November bis Mitte März. Ebenfalls halten wir hier unsere Ausschusssitzungen, einen Teil der Theorie und das ein oder andere Fest ab.
 
-![Vereinsheim Unterjesingen](image-01.png)
+{{< img src="2019-11/IMG_5452-2" alt="Vereinsheim Unterjesingen" >}}

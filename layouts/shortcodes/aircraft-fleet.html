@@ -1,18 +1,60 @@
 {{- $aircraft := .Page.Params.aircraft | default slice -}}
+{{- $cardSizes := "(max-width: 699px) 100vw, (max-width: 1099px) 50vw, 33vw" -}}
+{{- $cardVariants := slice
+  (dict "width" 360 "height" 270)
+  (dict "width" 720 "height" 540)
+-}}
+{{- $modalSizes := "(max-width: 899px) calc(100vw - 25px), 60vw" -}}
+{{- $modalVariants := slice
+  (dict "width" 960 "height" 640)
+  (dict "width" 1600 "height" 1067)
+-}}
 <div class="aircraft-fleet" data-aircraft-fleet>
   <div class="card-grid">
     {{- range $item := $aircraft -}}
       {{- $modalID := printf "fleet-modal-%s" ($item.slug | anchorize) -}}
       {{- $galleryImages := $item.images | default (slice $item.image) -}}
       {{- $cardImageURL := $item.image | default (index $galleryImages 0) -}}
-      {{- $cardDerivedURL := replaceRE "(?i)\\.(jpe?g|png|webp)$" "-card.jpg" $cardImageURL -}}
-      {{- $cardImage := or ($.Page.Resources.GetMatch $cardDerivedURL) ($.Page.Resources.GetMatch $cardImageURL) -}}
+      {{- $cardImage := partial "funcs/resolve-image-resource.html" (dict
+        "page" $.Page
+        "site" $.Page.Site
+        "url" $cardImageURL
+        "allowPageResources" false
+        "allowMedia" true
+        "allowGlobalResources" false
+      ) -}}
+      {{- if not $cardImage.resource -}}
+        {{- errorf "aircraft-fleet shortcode could not resolve media image %q for %q: %s" $cardImageURL $item.slug $.Position -}}
+      {{- end -}}
+      {{- $cardFallback := $cardImage.resource.RelPermalink -}}
+      {{- $cardWidth := $cardImage.resource.Width -}}
+      {{- $cardHeight := $cardImage.resource.Height -}}
+      {{- $cardSrcsetEntries := slice -}}
+      {{- $cardHasVariant := false -}}
+      {{- range $spec := $cardVariants -}}
+        {{- if and (ge $cardImage.resource.Width $spec.width) (ge $cardImage.resource.Height $spec.height) -}}
+          {{- $processed := $cardImage.resource.Fill (printf "%dx%d smart q80" $spec.width $spec.height) -}}
+          {{- if not $cardHasVariant -}}
+            {{- $cardFallback = $processed.RelPermalink -}}
+            {{- $cardWidth = $processed.Width -}}
+            {{- $cardHeight = $processed.Height -}}
+            {{- $cardHasVariant = true -}}
+          {{- end -}}
+          {{- $cardSrcsetEntries = $cardSrcsetEntries | append (printf "%s %dw" $processed.RelPermalink $processed.Width) -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if not $cardHasVariant -}}
+        {{- $cardSrcsetEntries = $cardSrcsetEntries | append (printf "%s %dw" $cardImage.resource.RelPermalink $cardImage.resource.Width) -}}
+      {{- end -}}
       <article class="card-item" lang="de">
         <button class="card-link aircraft-card-trigger" type="button" data-fleet-open="{{ $modalID }}">
           <div class="card-media" aria-hidden="true">
             <img
-              src="{{ if $cardImage }}{{ $cardImage.RelPermalink }}{{ else }}{{ $cardDerivedURL | safeURL }}{{ end }}"
-              {{ with $cardImage }}width="{{ .Width }}" height="{{ .Height }}"{{ end }}
+              src="{{ $cardFallback }}"
+              srcset="{{ delimit $cardSrcsetEntries ", " }}"
+              sizes="{{ $cardSizes }}"
+              width="{{ $cardWidth }}"
+              height="{{ $cardHeight }}"
               alt="{{ $item.name }}"
               loading="lazy"
               decoding="async"
@@ -46,12 +88,44 @@
           {{- end -}}
           <div class="fleet-gallery-track">
             {{- range $index, $imageURL := $galleryImages -}}
-              {{- $modalDerivedURL := replaceRE "(?i)\\.(jpe?g|png|webp)$" "-modal.jpg" $imageURL -}}
-              {{- $modalImage := or ($.Page.Resources.GetMatch $modalDerivedURL) ($.Page.Resources.GetMatch $imageURL) -}}
+              {{- $modalImage := partial "funcs/resolve-image-resource.html" (dict
+                "page" $.Page
+                "site" $.Page.Site
+                "url" $imageURL
+                "allowPageResources" false
+                "allowMedia" true
+                "allowGlobalResources" false
+              ) -}}
+              {{- if not $modalImage.resource -}}
+                {{- errorf "aircraft-fleet shortcode could not resolve media image %q for %q: %s" $imageURL $item.slug $.Position -}}
+              {{- end -}}
+              {{- $modalFallback := $modalImage.resource.RelPermalink -}}
+              {{- $modalWidth := $modalImage.resource.Width -}}
+              {{- $modalHeight := $modalImage.resource.Height -}}
+              {{- $modalSrcsetEntries := slice -}}
+              {{- $modalHasVariant := false -}}
+              {{- range $spec := $modalVariants -}}
+                {{- if and (ge $modalImage.resource.Width $spec.width) (ge $modalImage.resource.Height $spec.height) -}}
+                  {{- $processed := $modalImage.resource.Fill (printf "%dx%d smart q82" $spec.width $spec.height) -}}
+                  {{- if not $modalHasVariant -}}
+                    {{- $modalFallback = $processed.RelPermalink -}}
+                    {{- $modalWidth = $processed.Width -}}
+                    {{- $modalHeight = $processed.Height -}}
+                    {{- $modalHasVariant = true -}}
+                  {{- end -}}
+                  {{- $modalSrcsetEntries = $modalSrcsetEntries | append (printf "%s %dw" $processed.RelPermalink $processed.Width) -}}
+                {{- end -}}
+              {{- end -}}
+              {{- if not $modalHasVariant -}}
+                {{- $modalSrcsetEntries = $modalSrcsetEntries | append (printf "%s %dw" $modalImage.resource.RelPermalink $modalImage.resource.Width) -}}
+              {{- end -}}
               <div class="fleet-gallery-slide{{ if eq $index 0 }} is-active{{ end }}" data-fleet-slide aria-hidden="{{ if eq $index 0 }}false{{ else }}true{{ end }}">
                 <img
-                  src="{{ if $modalImage }}{{ $modalImage.RelPermalink }}{{ else }}{{ $modalDerivedURL | safeURL }}{{ end }}"
-                  {{ with $modalImage }}width="{{ .Width }}" height="{{ .Height }}"{{ end }}
+                  src="{{ $modalFallback }}"
+                  srcset="{{ delimit $modalSrcsetEntries ", " }}"
+                  sizes="{{ $modalSizes }}"
+                  width="{{ $modalWidth }}"
+                  height="{{ $modalHeight }}"
                   alt="{{ if eq (len $galleryImages) 1 }}{{ $item.name }}{{ else }}{{ printf "%s – Bild %d" $item.name (add $index 1) }}{{ end }}"
                   loading="lazy"
                   decoding="async"

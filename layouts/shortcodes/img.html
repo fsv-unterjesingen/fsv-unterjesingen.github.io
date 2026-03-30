@@ -1,0 +1,59 @@
+{{- $src := .Get "src" -}}
+{{- if not $src -}}
+  {{- errorf "img shortcode requires a src parameter: %s" .Position -}}
+{{- end -}}
+
+{{- $hasAlt := isset .Params "alt" -}}
+{{- $alt := .Get "alt" -}}
+{{- $title := .Get "title" | default "" -}}
+{{- $link := .Get "link" | default "" -}}
+{{- $target := .Get "target" | default "" -}}
+{{- $sizes := .Get "sizes" | default "(min-width: 800px) 760px, 100vw" -}}
+{{- $loading := .Get "loading" | default "lazy" -}}
+{{- $quality := .Get "quality" | default 78 -}}
+{{- $imgStyle := .Get "style" | default "" -}}
+{{- $imgClass := .Get "class" | default "" -}}
+
+{{- $image := partial "funcs/responsive-image.html" (dict
+  "page" .Page
+  "site" .Page.Site
+  "url" $src
+  "sizes" $sizes
+  "quality" $quality
+  "allowPageResources" false
+  "allowMedia" true
+  "allowGlobalResources" false
+) -}}
+{{- if not $image.resource -}}
+  {{- errorf "img shortcode could not resolve media library image %q: %s" $src .Position -}}
+{{- end -}}
+{{- $resource := $image.resource -}}
+{{- if not $hasAlt -}}
+  {{- with $image.mediaPage -}}
+    {{- $alt = .Params.alt | default "" -}}
+  {{- end -}}
+{{- end -}}
+{{- $resolvedLink := $link | default ($image.original | default $image.url) -}}
+
+{{- if $resolvedLink -}}
+<a
+  class="content-image-link"
+  href="{{ $resolvedLink | safeURL }}"
+  {{- with $target }} target="{{ . }}"{{ end -}}
+  {{- if eq $target "_blank" }} rel="noopener noreferrer"{{ end -}}
+>
+{{- end -}}
+  <img
+    src="{{ $image.fallback | safeURL }}"
+    {{- with $image.srcset }} srcset="{{ . }}"{{ end -}}
+    sizes="{{ $image.sizes }}"
+    alt="{{ $alt }}"
+    loading="{{ $loading }}"
+    decoding="async"
+    {{- with $title }} title="{{ . }}"{{ end -}}
+    {{- with $imgClass }} class="{{ . }}"{{ end -}}
+    {{- with $imgStyle }} style="{{ . }}"{{ end -}}
+  >
+{{- if $resolvedLink -}}
+</a>
+{{- end -}}

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Media Editor</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <strong>Media Editor</strong>
+        <span id="stats"></span>
+      </div>
+      <div class="toolbar">
+        <input id="searchInput" type="search" placeholder="Medien durchsuchen">
+        <label class="checkbox">
+          <input id="missingAltFilter" type="checkbox">
+          Fehlendes Alt
+        </label>
+        <label class="checkbox">
+          <input id="duplicateFilter" type="checkbox">
+          Duplikate
+        </label>
+        <button id="refreshButton" type="button">Neu laden</button>
+        <label class="uploadButton">
+          Medien hinzufügen
+          <input id="uploadInput" type="file" accept="image/*,video/*" multiple hidden>
+        </label>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="browserPanel">
+        <div id="grid" class="grid"></div>
+      </section>
+    </main>
+
+    <dialog id="editorDialog" class="editorDialog" aria-labelledby="selectedTitle">
+      <div id="editorShell" class="editorShell">
+        <button id="closeDialogButton" class="closeDialogButton" type="button" aria-label="Schließen">
+          ×
+        </button>
+
+        <div class="previewPanel">
+          <img id="previewImage" alt="" loading="lazy">
+          <video id="previewVideo" controls preload="metadata" playsinline hidden></video>
+        </div>
+
+        <form id="metadataForm" class="metadataForm">
+          <div class="formHeader">
+            <div>
+              <h1 id="selectedTitle"></h1>
+              <p id="selectedPath" class="muted"></p>
+            </div>
+          </div>
+
+          <div class="formGrid">
+            <label class="fullWidth">
+              <span>Titel</span>
+              <input id="fieldTitle" name="title" type="text">
+            </label>
+
+            <label id="fieldAltLabel" class="fullWidth">
+              <span>Alt-Text</span>
+              <textarea id="fieldAlt" name="alt" rows="2"></textarea>
+            </label>
+
+            <label class="fullWidth">
+              <span>Beschreibung</span>
+              <textarea id="fieldDescription" name="description" rows="4"></textarea>
+            </label>
+
+            <label class="fullWidth">
+              <span>Tags</span>
+              <input id="fieldTags" name="tags" type="text" placeholder="kommagetrennt">
+            </label>
+          </div>
+
+          <div class="formFooter">
+            <span id="saveState" class="saveState"></span>
+            <div class="formButtons">
+              <button id="deleteButton" type="button">Löschen</button>
+              <button id="saveButton" type="submit">Speichern</button>
+            </div>
+          </div>
+
+          <section class="readonlyPanel">
+            <h2>Technische Daten</h2>
+            <dl id="readonlyMeta" class="readonlyGrid"></dl>
+          </section>
+        </form>
+      </div>
+    </dialog>
+
+    <template id="cardTemplate">
+      <button class="card" type="button">
+        <img class="cardThumb" alt="" loading="lazy">
+        <div class="cardBody">
+          <strong class="cardTitle"></strong>
+          <div class="cardMeta"></div>
+        </div>
+      </button>
+    </template>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

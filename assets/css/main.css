@@ -816,8 +816,10 @@ section.weglide {
   margin-bottom: 0;
 }
 
+.content>.content-image-link,
 .content figure,
 .content .content-figure {
+  display: block;
   margin: 32px 0;
 }
 

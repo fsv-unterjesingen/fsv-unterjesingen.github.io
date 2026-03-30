@@ -5,11 +5,12 @@ author: FSV Unterjesingen
 description: Mit WeGlide startet die Deutsche Meisterschaft im Streckensegelflug auf
   einer neuen Plattform. Der Beitrag erklärt die wichtigsten Regeländerungen, neuen
   Wertungen und Funktionen für Pilotinnen und Piloten.
+thumbnail: 2021-05/Download
 aliases:
 - /2021/05/01/weglide-neue-plattform-fuer-streckenfluege/
 ---
 
-![](image-01.png)
+{{< img src="2021-05/Download" alt="" >}}
 
 # DEUTSCHE MEISTERSCHAFT IM STRECKENSEGELFLUG (DMST)
 

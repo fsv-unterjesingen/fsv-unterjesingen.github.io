@@ -47,15 +47,15 @@ eras:
           - 'in den Sommerferien auf dem Heufeld das 1. Fluglager.'
           - 'In diesem Jahr kommt es erstmals zu mehr als 400 (410) Starts mit insgesamt 110 Segelflugstunden.'
     images:
-      - file: fuenfziger-01.jpg
+      - file: 2015-09/510c6af6ab
         title: ''
-      - file: fuenfziger-02.jpg
+      - file: 2015-09/Umzug
         title: 'Umzug'
-      - file: fuenfziger-03.jpg
+      - file: 2015-09/Flugtag_Ammertal
         title: 'Flugtag im Ammertal'
-      - file: fuenfziger-04.jpg
+      - file: 2015-09/Abfahrt
         title: 'Abfahrt'
-      - file: fuenfziger-05.jpg
+      - file: 2015-09/Doppelraab
         title: 'Doppelraab'
 
   - slug: sechziger
@@ -101,13 +101,13 @@ eras:
           - 'Die Ka 6 Cr wird ersetzt durch eine Ka 6 E.'
           - 'Zum ersten Mal mehr als 1000 Segelflugstarts in einem Jahr.'
     images:
-      - file: sechziger-01.jpg
+      - file: 2015-09/73cd5e36cd
         title: 'Fliegen im Ammertal'
-      - file: sechziger-02.jpg
+      - file: 2015-09/Sprechfunk
         title: 'Sprechfunk'
-      - file: sechziger-03.jpg
+      - file: 2015-09/43b8a6a2bf
         title: 'Fluglager'
-      - file: sechziger-04.jpg
+      - file: 2015-09/Hallenbau
         title: 'Hallenbau'
 
   - slug: siebziger
@@ -159,15 +159,15 @@ eras:
           - 'Der Motorsegler wird durch ein neueres Modell mit Zweibeinfahrwerk ersetzt.'
           - 'Fluglager in Gap.'
     images:
-      - file: siebziger-01.jpg
+      - file: 2015-09/94a1ab45f9
         title: 'Halle des FSU'
-      - file: siebziger-02.jpg
+      - file: 2015-09/0d3a233f8b
         title: ''
-      - file: siebziger-03.jpg
+      - file: 2015-09/7fa42bf27c
         title: 'Schlepp in die Alpen'
-      - file: siebziger-04.jpg
+      - file: 2015-09/b664a37d61
         title: 'Fliegerfest'
-      - file: siebziger-05.jpg
+      - file: 2015-09/9ee604044c
         title: 'Piper Super Cup'
 
   - slug: achtziger
@@ -233,15 +233,15 @@ eras:
           - 'Fluglager in Gerstetten und Aubenasson.'
           - 'Erstmals waren die Segelflieger mehr als 1000 Stunden (Jahressumme) in der Luft.'
     images:
-      - file: achtziger-01.jpg
+      - file: 2015-09/ed651cff94
         title: 'Motorflugpokal!'
-      - file: achtziger-02.jpg
+      - file: 2015-09/8f62c9c7cc
         title: 'Werkstattarbeit'
-      - file: achtziger-03.jpg
+      - file: 2015-09/a2970dea37
         title: 'Ausflug nach Freudenstadt'
-      - file: achtziger-04.jpg
+      - file: 2015-09/7af4996303
         title: 'Flugzeugpark des FSU'
-      - file: achtziger-05.jpg
+      - file: 2015-09/0edf95c969
         title: 'Überflug am Fliegerfest'
 
   - slug: neunziger
@@ -313,7 +313,7 @@ eras:
           - 'Hallenfest in Unterjesingen, Beteiligung am Untergassenfest und gemeinsames Abfliegen (FSV Ammerbuch).'
           - 'Dr. Joachim Ostwald / Dr. Diethard Braun belgen bei der baden-württembergischen Motorflugmeisterschaft den 4. Platz. Roland Kehrer und Martin Diebold belgen beim Allgäurundflug den 1. Platz in der Einsteigerklasse mit dem Motorsegler.'
     images:
-      - file: neunziger-01.jpg
+      - file: 2015-09/d83cd95727
         title: 'Flotte des FSU'
 
   - slug: jahrtausend
@@ -363,5 +363,5 @@ eras:
           - '70 Jahre FSU mit Hallenfest in Unterjesingen, Fliegen im Ammertal und Flugzeugtaufe der DG 808b'
           - 'Dr. Diethard Braun hört nach 16 Jahren als Kassier auf. Neuer Kassier wird Michael Ott.'
     images:
-      - file: jahrtausend-01.jpg
+      - file: 2015-09/38ea25be41
         title: 'DG808 beim Start im Winter'

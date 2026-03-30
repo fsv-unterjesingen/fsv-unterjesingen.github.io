@@ -3,13 +3,6 @@
   {{- errorf "figure shortcode requires a src parameter: %s" .Position -}}
 {{- end -}}
 
-{{- $caption := .Get "caption" | default (.Inner | strings.TrimSpace) | default (.Get "title") | default "" -}}
-{{- $captionText := $caption | plainify -}}
-{{- $hasAlt := isset .Params "alt" -}}
-{{- $alt := .Get "alt" -}}
-{{- if not $hasAlt -}}
-  {{- $alt = $captionText -}}
-{{- end -}}
 {{- $class := .Get "class" | default "" -}}
 {{- $link := .Get "link" | default "" -}}
 {{- $target := .Get "target" | default "" -}}
@@ -17,27 +10,28 @@
 {{- $loading := .Get "loading" | default "lazy" -}}
 {{- $quality := .Get "quality" | default 78 -}}
 {{- $imgStyle := .Get "style" | default (.Get "img_style") | default "" -}}
-{{- $resource := "" -}}
-{{- $isRemote := or (strings.HasPrefix $src "http://") (strings.HasPrefix $src "https://") -}}
-
-{{- if and (not $isRemote) (not (strings.HasPrefix $src "/")) -}}
-  {{- with .Page.Resources.GetMatch $src -}}
-    {{- $resource = . -}}
-  {{- end -}}
-{{- end -}}
-
-{{- if and (not $resource) (not $isRemote) -}}
-  {{- with resources.Get (strings.TrimPrefix "/" $src) -}}
-    {{- $resource = . -}}
-  {{- end -}}
-{{- end -}}
 
 {{- $image := partial "funcs/responsive-image.html" (dict
   "page" .Page
+  "site" .Page.Site
   "url" $src
   "sizes" $sizes
   "quality" $quality
 ) -}}
+{{- $resource := $image.resource -}}
+{{- $mediaCaption := "" -}}
+{{- $mediaAlt := "" -}}
+{{- with $image.mediaPage -}}
+  {{- $mediaCaption = .Params.caption | default "" -}}
+  {{- $mediaAlt = .Params.alt | default "" -}}
+{{- end -}}
+{{- $caption := .Get "caption" | default (.Inner | strings.TrimSpace) | default (.Get "title") | default $mediaCaption | default "" -}}
+{{- $captionText := $caption | plainify -}}
+{{- $hasAlt := isset .Params "alt" -}}
+{{- $alt := .Get "alt" -}}
+{{- if not $hasAlt -}}
+  {{- $alt = $mediaAlt | default $captionText -}}
+{{- end -}}
 {{- $resolvedLink := $link | default ($image.original | default $image.url) -}}
 
 <figure class="content-figure{{ with $class }} {{ . }}{{ end }}">

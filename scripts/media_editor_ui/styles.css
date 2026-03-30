@@ -1,0 +1,447 @@
+:root {
+  color-scheme: light;
+  --bg: #eef1e7;
+  --panel: rgba(255, 255, 255, 0.88);
+  --panel-strong: #ffffff;
+  --line: #d6dccf;
+  --line-strong: #b8c0b0;
+  --text: #1e281d;
+  --muted: #566553;
+  --accent: #244d7a;
+  --accent-soft: #d9e6f3;
+  --warn: #9a5a0b;
+  --warn-soft: #fae9cf;
+  --shadow: 0 18px 45px rgba(45, 61, 42, 0.12);
+  --radius: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #d8edf4;
+  color: var(--text);
+  font: 15px/1.45 "IBM Plex Sans", "Segoe UI", sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.topbar {
+  display: grid;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem 1rem;
+  border-bottom: 1px solid rgba(33, 52, 31, 0.08);
+  background: rgba(250, 251, 247, 0.72);
+  backdrop-filter: blur(18px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+}
+
+.brand strong {
+  font: 700 1rem/1 "IBM Plex Sans", "Segoe UI", sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.toolbar input[type="search"],
+.toolbar button,
+.uploadButton,
+.metadataForm input,
+.metadataForm textarea {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font: inherit;
+}
+
+.toolbar input[type="search"] {
+  min-width: 16rem;
+  padding: 0.7rem 0.9rem;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.toolbar button,
+.uploadButton,
+#saveButton,
+#deleteButton {
+  padding: 0.72rem 1rem;
+  background: var(--panel-strong);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.toolbar button:hover,
+.uploadButton:hover,
+.card:hover {
+  transform: translateY(-1px);
+  border-color: var(--line-strong);
+  box-shadow: 0 10px 20px rgba(51, 71, 48, 0.08);
+}
+
+.uploadButton,
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.checkbox {
+  color: var(--muted);
+}
+
+.layout {
+  min-height: 0;
+}
+
+.browserPanel {
+  padding: 1rem;
+}
+
+.grid {
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  align-content: start;
+  padding-bottom: 1rem;
+}
+
+.card {
+  display: grid;
+  gap: 0;
+  border: 1px solid var(--line);
+  padding: 0;
+  background: var(--panel);
+  border-radius: 18px;
+  overflow: hidden;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.card.is-selected {
+  border-color: var(--accent);
+  box-shadow: 0 18px 28px rgba(36, 77, 122, 0.18);
+}
+
+.cardThumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #e6e6e6;
+}
+
+.cardBody {
+  padding: 0.75rem 0.8rem 0.85rem;
+  overflow: hidden;
+}
+
+.cardTitle {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.cardMeta {
+  color: var(--muted);
+  font-size: 0.87rem;
+}
+
+.editorDialog,
+.editorShell {
+  color: var(--text);
+}
+
+.editorDialog {
+  width: min(98vw, 1560px);
+  max-width: none;
+  height: 94vh;
+  max-height: 94vh;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: visible;
+}
+
+.editorDialog::backdrop {
+  background: rgba(24, 34, 25, 0.42);
+  backdrop-filter: blur(8px);
+}
+
+.formHeader h1 {
+  margin: 0 0 0.35rem;
+  font: 600 1.45rem/1.1 "IBM Plex Sans", "Segoe UI", sans-serif;
+}
+
+.editorShell {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(42rem, 1.75fr) minmax(24rem, 1fr);
+  height: 100%;
+  overflow: hidden;
+  background: var(--panel);
+  border: 1px solid rgba(33, 52, 31, 0.08);
+  border-radius: calc(var(--radius) + 4px);
+  box-shadow: var(--shadow);
+}
+
+.editorShell>* {
+  min-height: 0;
+  min-width: 0;
+}
+
+.closeDialogButton {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 1px solid rgba(163, 68, 68, 0.25);
+  border-radius: 999px;
+  background: rgba(255, 231, 231, 0.96);
+  color: #9f3131;
+  font-size: 0;
+  line-height: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.closeDialogButton::before {
+  content: "×";
+  font: 400 1.45rem/1 "IBM Plex Sans", "Segoe UI", sans-serif;
+  transform: translateY(-0.08em);
+}
+
+.closeDialogButton:hover {
+  border-color: rgba(159, 49, 49, 0.4);
+  box-shadow: 0 10px 20px rgba(128, 42, 42, 0.12);
+}
+
+.previewPanel {
+  min-height: 0;
+  height: 100%;
+  padding: 1rem;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: start;
+}
+
+.previewPanel img,
+.previewPanel video {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  object-fit: contain;
+  object-position: center;
+  box-shadow: 0 24px 48px rgba(35, 48, 43, 0.18);
+  background: transparent;
+  display: block;
+}
+
+.previewPanel video {
+  background: rgba(20, 24, 22, 0.96);
+}
+
+.metadataForm {
+  padding: 1rem 1rem 1.15rem;
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  min-height: 0;
+  align-self: stretch;
+  height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.formHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-right: 3.6rem;
+}
+
+.saveState {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.saveState.is-dirty {
+  color: var(--warn);
+}
+
+#saveButton {
+  background: linear-gradient(135deg, #1d4a77, #476e30);
+  color: white;
+  border-color: transparent;
+  border-radius: 16px;
+}
+
+#deleteButton {
+  background: linear-gradient(135deg, #a92f2f, #7f1f1f);
+  color: white;
+  border-color: transparent;
+  border-radius: 16px;
+}
+
+.formFooter {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: start;
+  padding-top: 0.25rem;
+}
+
+.formButtons {
+  display: inline-flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.formGrid label,
+.readonlyPanel {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.formGrid label span,
+.readonlyPanel h2 {
+  font-weight: 600;
+}
+
+.formGrid input,
+.formGrid textarea {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.readonlyPanel {
+  padding: 0.9rem 1rem 1rem;
+  border-radius: 16px;
+  background: rgba(244, 247, 240, 0.95);
+  border: 1px solid rgba(33, 52, 31, 0.08);
+}
+
+.readonlyPanel h2 {
+  margin: 0;
+}
+
+.readonlyGrid {
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  gap: 0.45rem 1rem;
+  margin: 0;
+}
+
+.readonlyGrid dt {
+  color: var(--muted);
+}
+
+.readonlyGrid dd {
+  margin: 0;
+  word-break: break-word;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-right: 0.35rem;
+  margin-top: 0.2rem;
+  padding: 0.22rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  background: var(--accent-soft);
+  color: #19395a;
+}
+
+.badge.is-warning {
+  background: var(--warn-soft);
+  color: var(--warn);
+}
+
+@media (max-width: 1100px) {
+  .editorShell {
+    grid-template-columns: 1fr;
+  }
+
+  .editorDialog {
+    width: min(96vw, 52rem);
+    height: auto;
+    max-height: 94vh;
+  }
+
+  .editorShell {
+    max-height: 94vh;
+  }
+
+  .previewPanel {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 720px) {
+
+  .toolbar,
+  .formHeader,
+  .formGrid,
+  .readonlyGrid {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .readonlyGrid {
+    display: block;
+  }
+
+  .readonlyGrid dt {
+    margin-top: 0.75rem;
+  }
+}

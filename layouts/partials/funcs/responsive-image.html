@@ -1,4 +1,5 @@
 {{- $page := .page -}}
+{{- $site := .site -}}
 {{- $imageURL := .url | default "" -}}
 {{- $sizes := .sizes | default "100vw" -}}
 {{- $widths := .widths | default (slice 640 960 1200 1600 1920 2560 3200 3840) -}}
@@ -9,22 +10,31 @@
 {{- $fallback := "" -}}
 {{- $srcset := "" -}}
 {{- $resource := "" -}}
+{{- $mediaPage := "" -}}
 {{- $original := $imageURL -}}
-{{- $isRemote := or (strings.HasPrefix $imageURL "http://") (strings.HasPrefix $imageURL "https://") -}}
-
-{{- if and (not $isRemote) $imageURL -}}
-  {{- if and $page (not (strings.HasPrefix $imageURL "/")) -}}
-    {{- with $page.Resources.GetMatch $imageURL -}}
-      {{- $resource = . -}}
-    {{- end -}}
-  {{- end -}}
-
-  {{- if not $resource -}}
-    {{- with resources.Get (strings.TrimPrefix "/" $imageURL) -}}
-      {{- $resource = . -}}
-    {{- end -}}
-  {{- end -}}
+{{- $allowPageResources := true -}}
+{{- if isset . "allowPageResources" -}}
+  {{- $allowPageResources = .allowPageResources -}}
 {{- end -}}
+{{- $allowMedia := true -}}
+{{- if isset . "allowMedia" -}}
+  {{- $allowMedia = .allowMedia -}}
+{{- end -}}
+{{- $allowGlobalResources := true -}}
+{{- if isset . "allowGlobalResources" -}}
+  {{- $allowGlobalResources = .allowGlobalResources -}}
+{{- end -}}
+{{- $resolved := partial "funcs/resolve-image-resource.html" (dict
+  "page" $page
+  "site" $site
+  "url" $imageURL
+  "allowPageResources" $allowPageResources
+  "allowMedia" $allowMedia
+  "allowGlobalResources" $allowGlobalResources
+) -}}
+{{- $resource = $resolved.resource -}}
+{{- $mediaPage = $resolved.mediaPage -}}
+{{- $isRemote := $resolved.isRemote -}}
 
 {{- with $resource -}}
   {{- $original = .RelPermalink -}}
@@ -86,4 +96,4 @@
   {{- $original = $resolvedURL -}}
 {{- end -}}
 
-{{- return (dict "url" $resolvedURL "fallback" $fallback "srcset" $srcset "sizes" $sizes "original" $original) -}}
+{{- return (dict "url" $resolvedURL "fallback" $fallback "srcset" $srcset "sizes" $sizes "original" $original "resource" $resource "mediaPage" $mediaPage) -}}

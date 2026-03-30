@@ -5,6 +5,7 @@ author: FSV Unterjesingen
 description: Axel Baudermann und Ulrich Wild fliegen mit dem Motorsegler D-KEGH bis
   nach Cambridge. Der Beitrag erzählt von anspruchsvoller Flugplanung, Ärmelkanalquerung
   und einem besonderen Ostertrip.
+thumbnail: 2016-06/12891569_10154189377968777_4344536420680690261_o
 aliases:
 - /2016/06/23/mit-dem-motorsegler-d-kegh-nach-cambridge-egsc/
 ---
@@ -21,8 +22,8 @@ Nach Zwischenlandungn in Le Touquet, Valenciennes, Sedan Douzy und Trier ging es
 
 Für unsere Piloten war dies sicherlich ein unvergessliches Erlebnis!
 
-![](image-01.jpg)
+{{< img src="2016-06/12891569_10154189377968777_4344536420680690261_o" alt="" >}}
 
-![](image-02.jpg)
+{{< img src="2016-06/12916205_10154189377883777_4710972266337537595_o" alt="" >}}
 
-![](image-03.jpg)
+{{< img src="2016-06/12473560_10154189378443777_1685439705441536988_o" alt="" >}}

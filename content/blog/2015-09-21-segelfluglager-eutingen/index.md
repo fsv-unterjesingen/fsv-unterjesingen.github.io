@@ -5,11 +5,12 @@ author: FSV Unterjesingen
 description: Warum gemeinsames Schulen im Fluglager so wertvoll ist, zeigt dieser
   Einblick aus Eutingen im Gäu. Zwischen Thermik, Teamarbeit und Lagerfeuer wird deutlich,
   was den Segelflug als Gemeinschaftssport ausmacht.
+thumbnail: 2015-09/Sunrise_Fliegen-216_1
 aliases:
 - /2015/09/21/3944/
 ---
 
-![](image-01.jpg)
+{{< img src="2015-09/Sunrise_Fliegen-216_1" alt="" >}}
 
 # 
 

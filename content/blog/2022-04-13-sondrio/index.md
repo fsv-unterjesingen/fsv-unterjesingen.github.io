@@ -5,6 +5,7 @@ author: FSV Unterjesingen
 description: Nach zwei ausgefallenen Jahren geht es endlich wieder ins Alpensegelfluglager
   nach Sondrio. Der Beitrag berichtet von Flugtagen im Adda-Tal, Gemeinschaft am Abend
   und eindrucksvollen Höhen bis 4500 Meter.
+thumbnail: 2022-05/XZCL9022
 aliases:
 - /2022/04/13/sondrio-2022/
 ---
@@ -23,18 +24,18 @@ Weitere Informationen findet ihr unter:
 
 <https://www.segelflugschule-oerlinghausen.de/segelflug/gebirgssegelflug>
 
-![](image-01.jpg)
+{{< img src="2022-05/XZCL9022" alt="" >}}
 
-![](image-02.jpg)
+{{< img src="2022-05/XAIZ0065" alt="" >}}
 
-![](image-03.jpg)
+{{< img src="2022-05/UYDR1453" alt="" >}}
 
-![](image-04.jpg)
+{{< img src="2022-05/UWON9053" alt="" >}}
 
-![](image-05.jpg)
+{{< img src="2022-05/SMYO4504" alt="" >}}
 
-![](image-06.jpg)
+{{< img src="2022-05/KLKG2937" alt="" >}}
 
-![](image-07.jpg)
+{{< img src="2022-05/AFTN7973" alt="" >}}
 
-![](image-08.jpg)
+{{< img src="2022-05/ETFM3970" alt="" >}}

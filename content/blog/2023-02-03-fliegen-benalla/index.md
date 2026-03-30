@@ -5,6 +5,7 @@ author: Elena Steinhorst
 description: Elena Steinhorst nimmt euch mit nach Benalla in Australien und schildert
   ihren Segelflugstart in Victoria. Zwischen Tiefschlepp, 319 Kilometern und beeindruckender
   Landschaft wird der Saisonauftakt zu einem unvergesslichen Erlebnis.
+thumbnail: 2023-02/44D99E6B-0612-4B56-8381-477A69F2B387
 aliases:
 - /2023/02/03/fliegen-in-benalla/
 ---
@@ -19,20 +20,20 @@ Ich empfehle jedem, der Mal in Australien ist einen Segelflug zu machen. Es lohn
 
 ------------------------------------------------------------------------
 
-![](image-01.jpeg)
+{{< img src="2023-02/44D99E6B-0612-4B56-8381-477A69F2B387" alt="" >}}
 
-![](image-02.jpeg)
+{{< img src="2023-02/636AEBA9-43C9-4836-AEBF-C8D1E606C5BD" alt="" >}}
 
-![](image-03.jpeg)
+{{< img src="2023-02/4CFAF9F1-5352-40C7-B929-8153E42D2312" alt="" >}}
 
-![](image-04.jpeg)
+{{< img src="2023-02/1E0D4A3B-E556-4C7C-B97E-0C83ACB24E09" alt="" >}}
 
-![](image-05.jpeg)
+{{< img src="2023-02/14C4ACF4-2BA2-4E9B-A058-49AE81E23A3B" alt="" >}}
 
-![](image-06.jpeg)
+{{< img src="2023-02/DEB48BF6-A737-4B4B-94FB-2B2D7A0784E6" alt="" >}}
 
-![](image-07.jpeg)
+{{< img src="2023-02/14A8C711-F45A-4EB7-8FEE-37781203F00E" alt="" >}}
 
-![](image-08.jpeg)
+{{< img src="2023-02/7A1D7DF6-33D7-4905-8419-A0895F9D714E" alt="" >}}
 
-![](image-09.jpeg)
+{{< img src="2023-02/FCA705C9-2677-4964-9C16-446AD6BB9289" alt="" >}}

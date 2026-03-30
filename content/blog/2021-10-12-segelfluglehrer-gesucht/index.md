@@ -5,6 +5,7 @@ author: FSV Unterjesingen
 description: Der FSV Unterjesingen sucht Unterstützung für die Segelflugausbildung.
   Gesucht wird eine Gast-Segelfluglehrerin oder ein Gast-Segelfluglehrer, um Schulung
   und Fluglager weiterhin stark aufzustellen.
+thumbnail: 2021-10/IMG_3702
 aliases:
 - /2021/10/12/gast-segelfluglehrerin-gesucht/
 ---
@@ -36,4 +37,4 @@ Als Schulungsdoppelsitzer nutzen wir die ASK21, darauffolgend kommen die ASK23 u
 
 Du hast Interesse das Ausbildungsteam zu verstärken oder Fragen? Dann melde dich gerne bei uns unter: <uh.harbusch@gmx.de>
 
-![](image-01.jpg)
+{{< img src="2021-10/IMG_3702" alt="" >}}

@@ -7,12 +7,12 @@ aliases:
 # Ausbildung
 
 {{< grid >}}
-{{< figure src="/images/fliegen-lernen/IMG_1618-1030x687.jpg" alt="ASK 21" sizes="(max-width: 700px) 100vw, 50vw" />}}
-{{< figure src="/images/fliegen-lernen/neueflugschuelerin1-1030x736.png" alt="Segelfliegen, auch ein Sport für Frauen" sizes="(max-width: 700px) 100vw, 50vw" />}}
-{{< figure src="/images/fliegen-lernen/20150621_150009-e1441213795343-1030x741.jpg" alt="Nathanael nach seinem 1. Alleinflug" sizes="(max-width: 700px) 100vw, 50vw" />}}
-{{< figure src="/images/fliegen-lernen/12469471_10153972787573777_840098281186174510_o-1030x579.jpg" alt="Streckenflug-Workshop" sizes="(max-width: 700px) 100vw, 50vw" />}}
-{{< figure src="/images/fliegen-lernen/Sunrise_Fliegen-216_1-1030x687.jpg" alt="Sunrise Fliegen" sizes="(max-width: 700px) 100vw, 50vw" />}}
-{{< figure src="/images/fliegen-lernen/duo31.jpg" alt="Duo beim Start" sizes="(max-width: 700px) 100vw, 50vw" />}}
+{{< figure src="2016-06/IMG_1618" alt="ASK 21" sizes="(max-width: 700px) 100vw, 50vw" />}}
+{{< figure src="2015-09/neueflugschuelerin1" alt="Segelfliegen, auch ein Sport für Frauen" />}}
+{{< figure src="2015-06/20150621_150009-e1441213795343" alt="Nathanael nach seinem 1. Alleinflug" />}}
+{{< figure src="2016-04/12469471_10153972787573777_840098281186174510_o" alt="Streckenflug-Workshop" />}}
+{{< figure src="2015-09/Sunrise_Fliegen-216_1" alt="Sunrise Fliegen" />}}
+{{< figure src="2015-09/duo31" alt="Duo beim Start" />}}
 {{< /grid >}}
 
 Der FSV Unterjesingen ist ein zertifizierter Segelflug-Ausbildungsbetrieb und bietet dank ehrenamtlich engagierter, hervorragend ausgebildeter Fluglehrer eine kostengünstige Ausbildung auf höchstem Niveau. Der Schulungsbetrieb ist wetterabhängig und findet saisonal von Mitte März bis Mitte Oktober statt, überwiegend an Wochenenden sowie in Schulungslagern.

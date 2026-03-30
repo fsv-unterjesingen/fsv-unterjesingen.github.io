@@ -5,6 +5,7 @@ author: FSV Unterjesingen
 description: Beim ersten Ammerbucher Streckenflugseminar drehte sich alles um Flugvorbereitung,
   Luftraum, Thermik und Vorflug. Der Rückblick zeigt, wie viel Know-how und Begeisterung
   an einem Tag zusammengekommen sind.
+thumbnail: 2023-05/StreSem-Vorflug
 aliases:
 - /2023/04/05/1-ammerbucher-streckenflugseminar/
 ---
@@ -25,4 +26,4 @@ Das Schlusslicht bildete Lorenz mit dem Thema „Vorflug“. Lorenz beschrieb ve
 
 Insgesamt waren wir sehr glücklich über das das Seminar. Insbesondere die vielen Fragen und dadurch entstehenden Diskussionen waren sehr informativ. Jeder, egal ob Flugschüler oder Streckenflieger, konnte etwas lernen oder vorhandenes Wissen auffrischen. Nächstes Jahr möchten das Seminar mit Themen ausweiten und noch weitere Vereine einladen.
 
-![](image-01.jpg)
+{{< img src="2023-05/StreSem-Vorflug" alt="" >}}

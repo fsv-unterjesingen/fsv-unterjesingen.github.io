@@ -5,6 +5,7 @@ author: Jonas Eschmann
 description: Jonas Eschmann blickt auf sein erstes Ausbildungsjahr im FSU zurück und
   erzählt von Schulung, Theorie und seinem ersten Alleinflug. Ein persönlicher Einblick
   in den Weg zum Segelflugpiloten.
+thumbnail: 2023-06/Jonas-1.-Alleinflug
 aliases:
 - /2023/05/25/mein-1-ausbildungsjahr-im-fsu/
 ---
@@ -27,4 +28,4 @@ Mein erstes Ausbildungsjahr im FSU war eine unvergessliche Erfahrung. Ich habe n
 
 Ich freue mich auf den nun kommenden Teil meiner Segelflugausbildung, indem ich meine fliegerischen Fertigkeiten vertiefen und noch mehr unvergessliche Momente in der Luft erleben darf.
 
-![](image-01.jpg)
+{{< img src="2023-06/Jonas-1.-Alleinflug" alt="" >}}

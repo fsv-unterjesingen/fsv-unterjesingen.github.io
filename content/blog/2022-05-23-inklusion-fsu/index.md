@@ -5,6 +5,7 @@ author: FSV Unterjesingen
 description: Gemeinsam mit der Lebenshilfe Tübingen ermöglicht der FSV seit Jahren
   besondere Flugtage für Menschen mit Behinderung. Der Beitrag zeigt, warum diese
   Tage für alle Beteiligten so wertvoll sind.
+thumbnail: 2022-05/IMG_0672-1
 aliases:
 - /2022/05/23/inklusion-beim-fsu/
 ---
@@ -13,4 +14,4 @@ Seit 2018 machen wir jedes Jahr in Kooperation mit der [Lebenshilfe Tübingen e.
 
 Den Artikel findet ihr unter: [Hoch Hinaus – Artikel Schwäbisches Tagblatt](https://epaper-st.tagblatt.de/_data/_data_online/2022/05/23/stbst/articles/363960.html)
 
-![](image-01.png)
+{{< img src="2022-05/IMG_0672-1" alt="" >}}

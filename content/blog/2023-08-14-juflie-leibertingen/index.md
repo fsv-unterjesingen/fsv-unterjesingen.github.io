@@ -5,6 +5,7 @@ author: Amelie Steinhorst
 description: Amelie Steinhorst nimmt euch mit zu ihrem ersten Jugendvergleichsfliegen
   in Leibertingen. Zwischen Aufgaben, Beinahe-Außenlandungen und einem Tagessieg entsteht
   ein packender Wettbewerbsbericht.
+thumbnail: 2023-12/DSC07615
 aliases:
 - /2023/08/14/mein-erster-wettbewerb-juflie-in-leibertingen-2023-ein-bericht-von-amelie-steinhorst/
 ---
@@ -37,18 +38,18 @@ Schlussendlich ergatterte ich den 5. Platz, und konnte in dieser Woche sehr viel
 
 Danke an meinen Vater, der immer zur Stelle war, mich immer motiviert hat, und immer Ruhe bewahrt hat. Danke auch an meine Schwester, die mir ab und zu Infos und Tipps von zu Hause aus durchgegeben hat, und danke an meine Mama, die sowieso nie an mir zweifelt, und natürlich danke an das Team aus Leibertingen fürs Organisieren und Unterstützen!
 
-![](image-01.jpg)
+{{< img src="2023-12/DSC07615" alt="" >}}
 
-![](image-02.jpg)
+{{< img src="2023-12/DSC07855" alt="" >}}
 
-![](image-03.jpg)
+{{< img src="2023-12/IMG_4237" alt="" >}}
 
-![](image-04.jpg)
+{{< img src="2023-12/IMG_4198" alt="" >}}
 
-![](image-05.jpg)
+{{< img src="2023-12/DSC07733" alt="" >}}
 
-![](image-06.jpg)
+{{< img src="2023-12/DSC07663" alt="" >}}
 
-![](image-07.jpg)
+{{< img src="2023-12/IMG_4249" alt="" >}}
 
-![](image-08.jpg)
+{{< img src="2023-12/DSC07559" alt="" >}}

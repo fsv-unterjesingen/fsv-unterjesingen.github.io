@@ -9,131 +9,131 @@ aircraft:
   - slug: ventus-3m
     name: Ventus 3M
     category: Eigenstarter
-    image: ventus-3m-01.jpg
+    image: "2021-10/IMG_0968"
     seats: 1
     engine_power: 61 PS
     glide_ratio: "48"
     application: "Streckenflug"
     images:
-      - ventus-3m-01.jpg
-      - ventus-3m-02.jpg
-      - ventus-3m-03.jpg
-      - ventus-3m-04.jpg
-      - ventus-3m-05.jpg
-      - ventus-3m-06.jpg
-      - ventus-3m-07.jpg
-      - ventus-3m-08.jpg
+      - "2021-10/IMG_0968"
+      - "2021-10/IMG_3869"
+      - "2021-10/IMG_3868"
+      - "2021-10/IMG_3650"
+      - "2021-10/IMG_3865"
+      - "2021-10/IMG_3867"
+      - "2021-10/IMG_0966"
+      - "2021-10/IMG_0967"
   - slug: arcus-m
     name: Arcus M
     category: Eigenstarter
-    image: arcus-m-01.jpg
+    image: "2024-06/arcus0"
     seats: 2
     engine_power: 68 PS
     glide_ratio: "50"
     application: "Streckenflug"
     images:
-      - arcus-m-01.jpg
-      - arcus-m-02.jpg
-      - arcus-m-03.jpg
-      - arcus-m-04.jpg
+      - "2024-06/arcus0"
+      - "2024-06/arcus3"
+      - "2024-06/arcus2"
+      - "2024-06/arcus1"
   - slug: ask21
     name: ASK 21
     category: Segelflugzeug
-    image: ask21-01.jpg
+    image: "2015-09/ask21-2"
     seats: 2
     glide_ratio: "34"
     application: "Schulung"
     images:
-      - ask21-01.jpg
-      - ask21-02.jpg
-      - ask21-03.jpg
-      - ask21-04.jpg
+      - "2015-09/ask21-2"
+      - "2015-09/ask21_2"
+      - "2015-09/Ask21_3"
+      - "2016-06/4fc5c991dd"
   - slug: ask23
     name: ASK 23
     category: Segelflugzeug
-    image: ask23-01.jpg
+    image: "2015-06/ASK23"
     seats: 1
     glide_ratio: "34"
     application: "Schulung"
     images:
-      - ask23-01.jpg
-      - ask23-02.jpg
+      - "2015-06/ASK23"
+      - "2015-09/ask231"
   - slug: ls4a
     name: LS4 a
     category: Segelflugzeug
-    image: ls4a-01.jpg
+    image: "2015-09/ls4a"
     seats: 1
     glide_ratio: "41"
     application: "Schulung"
     images:
-      - ls4a-01.jpg
-      - ls4a-02.jpg
+      - "2015-09/ls4a"
+      - "2015-09/ls4a_2"
   - slug: ls4b
     name: LS4 b
     category: Segelflugzeug
-    image: ls4b-01.jpg
+    image: "2015-09/IMG_2100"
     seats: 1
     glide_ratio: "41"
     application: "Streckenflug"
     images:
-      - ls4b-01.jpg
-      - ls4b-02.jpg
-      - ls4b-03.jpeg
+      - "2015-09/IMG_2100"
+      - "2015-09/ls4b"
+      - "2021-05/f9fa01b9-ca84-4038-aa13-ccc9abff4955"
   - slug: duo-discus-xl
     name: Duo Discus XL
     category: Segelflugzeug
-    image: duo-discus-xl-01.jpg
+    image: "2015-06/Slider1-e1465400038724"
     seats: 2
     glide_ratio: "47"
     application: "Streckenflug"
     images:
-      - duo-discus-xl-01.jpg
-      - duo-discus-xl-02.jpg
-      - duo-discus-xl-03.jpg
-      - duo-discus-xl-04.jpg
-      - duo-discus-xl-05.jpeg
-      - duo-discus-xl-06.jpeg
-      - duo-discus-xl-07.jpg
+      - "2015-06/Slider1-e1465400038724"
+      - "2015-09/duo"
+      - "2015-09/duo2"
+      - "2015-09/duo3"
+      - "2021-05/bc92f845-8f6b-40fc-8cbe-86c64eec54a2"
+      - "2021-05/IMG_4669"
+      - "2016-01/IMG_1650-1-e1452809538518"
   - slug: dg808
     name: DG808
     category: Eigenstarter
-    image: dg808-01.jpg
+    image: "2015-06/Slider2-e1465400068732"
     seats: 1
     engine_power: 53 PS
     glide_ratio: "50"
     application: "Streckenflug"
     images:
-      - dg808-01.jpg
-      - dg808-02.jpg
-      - dg808-03.jpg
-      - dg808-04.jpg
-      - dg808-05.jpg
-      - dg808-06.jpeg
+      - "2015-06/Slider2-e1465400068732"
+      - "2015-09/dg"
+      - "2015-09/dg2"
+      - "2015-06/DSCN1355"
+      - "2015-06/BILD1202"
+      - "2021-05/IMG_4265"
   - slug: hk36-ttc
     name: HK36 TTC
     category: Motorsegler
-    image: hk36-ttc-01.jpg
+    image: "2015-08/dimona3-e1442598305452"
     seats: 2
     engine_power: 116 PS
     range: ca. 800 km
     glide_ratio: "27"
     images:
-      - hk36-ttc-01.jpg
-      - hk36-ttc-02.jpg
-      - hk36-ttc-03.jpg
-      - hk36-ttc-04.jpg
-      - hk36-ttc-05.jpeg
+      - "2015-08/dimona3-e1442598305452"
+      - "2015-09/feldberg"
+      - "2015-08/dimona2"
+      - "2015-08/dimona1"
+      - "2021-05/IMG_4252"
   - slug: da-40
     name: DA 40
     category: Motorflugzeug
-    image: da-40-01.jpg
+    image: "2016-06/2004-09-11__16-35-09_00"
     seats: 4
     engine_power: 180 PS
     range: ca. 1.100 km
     images:
-      - da-40-01.jpg
-      - da-40-02.jpg
-      - da-40-03.jpg
+      - "2016-06/2004-09-11__16-35-09_00"
+      - "2016-06/2004-09-11__16-35-07_00"
+      - "2016-06/5cb53ca222"
 ---
 
 {{< aircraft-fleet >}}

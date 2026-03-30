@@ -1,7 +1,7 @@
 baseURL = 'https://www.fsv-unterjesingen.de/'
 languageCode = 'de-de'
 title = 'FSV Unterjesingen'
-timeout = '180s'
+timeout = '1h'
 
 [params]
 clubName = 'Flugsportverein Unterjesingen e.V.'
@@ -83,8 +83,3 @@ openaipApiKey = 'bf2df3ae9c5c969fe269d1418df194f2'
     name = 'Blog'
     pageRef = '/blog'
     weight = 5
-  [[menu.main]]
-    name = 'Bilderarchiv'
-    pageRef = '/bilder'
-    parent = 'verein'
-    weight = 7

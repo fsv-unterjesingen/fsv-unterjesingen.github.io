@@ -5,6 +5,7 @@ author: FSV Unterjesingen
 description: Gemeinsam mit dem FSV Herrenberg organisierte der Verein eine Flugbetriebswoche,
   um die Corona-Lücke in der Ausbildung zu schließen. Der Rückblick zeigt eine intensive
   Woche mit viel Flugbetrieb, guter Stimmung und einem frühen Start in den Tag.
+thumbnail: 2020-09/IMG_2454-1
 aliases:
 - /2020/09/26/unsere-flugbetriebswoche-in-poltringen/
 ---
@@ -19,12 +20,12 @@ Am letzten Tag wollten wir ein Sunrise-Fliegen veranstalten. Als wir ausgehallt 
 
 Herzlichen Dank an alle Teilnehmer, Windenfahrer, Flugleiter, Fluglehrer und dem FSVH für die tolle Zusammenarbeit und eine gelungene Woche Flugbetrieb!
 
-![](image-01.jpg)
+{{< img src="2020-09/IMG_2454-1" alt="" >}}
 
-![](image-02.jpg)
+{{< img src="2020-09/f9ad1527-db82-4678-a92e-fcb7f3783964-1" alt="" >}}
 
-![](image-03.jpg)
+{{< img src="2020-09/ed181fa3-ea06-40c7-9f56-a7aae09cfafe-1" alt="" >}}
 
-![](image-04.jpg)
+{{< img src="2020-09/705775ea-16e4-491e-81a1-8fd76411d4bd-1" alt="" >}}
 
-![](image-05.jpg)
+{{< img src="2020-09/IMG_2418-1" alt="" >}}

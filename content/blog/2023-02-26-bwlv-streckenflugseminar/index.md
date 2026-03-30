@@ -5,6 +5,7 @@ author: Amelie Steinhorst
 description: Amelie Steinhorst berichtet vom BWLV-Streckenflugtheorieseminar auf dem
   Klippeneck. Ein Wochenende voller Wissen, Gemeinschaft und Vorfreude auf die Saison
   2023.
+thumbnail: 2023-02/9E8DB2E8-4AC1-4C84-A680-4D392528FAA6
 aliases:
 - /2023/02/26/bwlv-streckenflugtheorieseminar-2023/
 ---
@@ -27,10 +28,10 @@ Durch das Seminar sind beide nun voller Tatendrang für die Saison 2023 und woll
 
 Text von Amelie Steinhorst
 
-![](image-01.jpeg)
+{{< img src="2023-02/9E8DB2E8-4AC1-4C84-A680-4D392528FAA6" alt="" >}}
 
-![](image-02.jpeg)
+{{< img src="2023-02/0F9DB1B6-6D55-4172-BB99-6DC1D0BAA6A0" alt="" >}}
 
-![](image-03.jpeg)
+{{< img src="2023-02/63E0DCE6-1649-4EE8-9C09-1D541BA222E0" alt="" >}}
 
-![](image-04.jpeg)
+{{< img src="2023-02/91B1E104-E2A8-4323-8237-A7561AB0AAEB" alt="" >}}

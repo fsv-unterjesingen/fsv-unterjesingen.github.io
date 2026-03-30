@@ -5,6 +5,7 @@ author: FSV Unterjesingen
 description: Der FSV Unterjesingen lädt auf seinen Messestand bei der fdf – Für die
   Familie in Tübingen ein. Dort gibt es Informationen rund ums Fliegen und sogar die
   Gelegenheit, in einer ASK 23 Platz zu nehmen.
+thumbnail: 2016-04/12496513_10154088798813777_479963121883330583_o
 aliases:
 - /2016/03/02/messestand-auf-der-fuer-die-familie-in-tuebingen/
 ---

@@ -5,6 +5,7 @@ author: FSV Unterjesingen
 description: Schon Anfang Januar hebt der FSV Unterjesingen in die Saison 2020 ab.
   Bei bestem Winterwetter gelingen die ersten Flüge mit DuoDiscus, Super Dimona und
   DG808.
+thumbnail: 2020-01/DHAL0075
 aliases:
 - /2020/01/06/flugsaison-2020-eroeffnet/
 ---
@@ -15,14 +16,14 @@ Bei herrlichem Wetter und Temperaturen etwas über 0°C wurden die ersten F-Schl
 
 Nun geht die Wartung unserer Flugzeuge in Unterjesingen weiter und wir freuen bereits jetzt auf viele schöne und lange Flüge im Jahr 2020!
 
-![](image-01.jpg)
+{{< img src="2020-01/DHAL0075" alt="" >}}
 
-![](image-02.jpg)
+{{< img src="2020-01/FAZO2538" alt="" >}}
 
-![](image-03.jpg)
+{{< img src="2020-01/FESB2271" alt="" >}}
 
-![](image-04.jpg)
+{{< img src="2020-01/YKEC8417" alt="" >}}
 
-![](image-05.jpg)
+{{< img src="2020-01/RQJT6395" alt="" >}}
 
-![](image-06.jpg)
+{{< img src="2020-01/BYLI5688" alt="" >}}

@@ -1,22 +1,49 @@
 {{- $page := . -}}
 {{- $summary := $page.Params.description | default ($page.Plain | plainify | truncate 220) -}}
+{{- $thumbnailPath := $page.Params.thumbnail | default "" -}}
 <article class="card-item" lang="de">
   <a class="card-link" href="{{ $page.RelPermalink }}">
-  {{ with $page.Resources.ByType "image" }}
-  {{ with index . 0 }}
-  {{ $thumb := .Fill "720x540 Center q78 webp" }}
+  {{- if $thumbnailPath -}}
+  {{- $resolvedThumbnail := partial "funcs/resolve-image-resource.html" (dict
+    "page" $page
+    "site" $page.Site
+    "url" $thumbnailPath
+    "allowPageResources" false
+    "allowMedia" true
+    "allowGlobalResources" false
+  ) -}}
+  {{- $thumbnail := $resolvedThumbnail.resource -}}
+  {{- if not $thumbnail -}}
+    {{- errorf "blog-card could not resolve thumbnail %q for %q" $thumbnailPath $page.File.Path -}}
+  {{- end -}}
+  {{- $cardURL := $thumbnail.RelPermalink -}}
+  {{- $cardWidth := $thumbnail.Width -}}
+  {{- $cardHeight := $thumbnail.Height -}}
+  {{- $cardSrcset := slice -}}
+  {{- if and (ge $thumbnail.Width 360) (ge $thumbnail.Height 270) -}}
+    {{- $small := $thumbnail.Fill "360x270 Center q74 webp" -}}
+    {{- $cardURL = $small.RelPermalink -}}
+    {{- $cardWidth = $small.Width -}}
+    {{- $cardHeight = $small.Height -}}
+    {{- $cardSrcset = $cardSrcset | append (printf "%s %dw" $small.RelPermalink $small.Width) -}}
+    {{- if and (ge $thumbnail.Width 720) (ge $thumbnail.Height 540) -}}
+      {{- $large := $thumbnail.Fill "720x540 Center q78 webp" -}}
+      {{- $cardSrcset = $cardSrcset | append (printf "%s %dw" $large.RelPermalink $large.Width) -}}
+    {{- end -}}
+  {{- end -}}
   <div class="card-media" aria-hidden="true">
     <img
-      src="{{ $thumb.RelPermalink }}"
-      width="{{ $thumb.Width }}"
-      height="{{ $thumb.Height }}"
+      src="{{ $cardURL }}"
+      {{- if gt (len $cardSrcset) 0 }} srcset="{{ delimit $cardSrcset ", " }}"{{ end }}
+      sizes="(max-width: 699px) 100vw, (max-width: 1099px) 50vw, 33vw"
+      width="{{ $cardWidth }}"
+      height="{{ $cardHeight }}"
       alt=""
       loading="lazy"
       decoding="async"
     >
   </div>
-  {{ end }}
-  {{ end }}
+  {{- end }}
   <div class="card-body">
     <p class="card-meta">
       <span>{{ $page.Date.Format "02.01.2006" }}</span>
