@@ -57,10 +57,10 @@ Der Editor ist dann unter <http://127.0.0.1:4173/> erreichbar.
 
 - `content/`: Seiteninhalte
 - `content/blog/`: Blog-Beiträge als Hugo Leaf Bundles
-- `content/media/`: zentrale Medienbibliothek
+- `content/media/`: Zentrale Medienbibliothek
 - `layouts/`: Templates und Shortcodes
 - `assets/`: CSS, JavaScript und globale Assets
-- `static/`: statische Dateien
+- `static/`: Statische Dateien
 - `scripts/`: Hilfsskripte, insbesondere der Medieneditor unter `scripts/media_editor.js`
 
 ## Neue Blog-Beiträge anlegen
@@ -113,7 +113,7 @@ Im Markdown dann mit den vorhandenen Shortcodes einbinden:
 {{< img src="2026-04/mein-bild" alt="Startaufstellung am Flugplatz Poltringen" >}}
 ```
 
-Wenn eine Bildunterschrift gewünscht ist:
+Wenn eine Bildunterschrift (`caption`) gewünscht ist:
 
 ```go-html-template
 {{< figure
@@ -125,9 +125,10 @@ Wenn eine Bildunterschrift gewünscht ist:
 
 Wichtig:
 
-- `src` verweist auf den Medienpfad aus `content/media`, ohne `media.jpg`
-- `thumbnail` in Blog-Beiträgen funktioniert ebenfalls nur mit Medien aus der Bibliothek
-- neue Inhaltsbilder sollen nicht als lokale Page Resources im Beitragsordner landen
+- `src` verweist auf den Medienpfad aus `content/media`, ohne `media.jpg`.
+- `alt` ist eine kurze Bildbeschreibung, die blinden Besuchern von ihren Screenreadern anstelle des Bildes vorgelesen wird, und sollte immer bereitgestellt sein.
+- `thumbnail` in Blog-Beiträgen funktioniert ebenfalls nur mit Medien aus der Bibliothek.
+- Neue Inhaltsbilder sollen nicht als lokale Page Resources im Beitragsordner landen.
 
 ## Hero-Bilder als Page Resources
 
@@ -162,20 +163,3 @@ Hinweise:
 - `brightness` ist ein optionales Feld und steuert die Abdunklung des Hero-Bilds; Werte zwischen `0` und `1` werden hier erwartet.
 - Für Hero-Bilder ein breites Querformat verwenden, idealerweise mindestens ca. `1600px` Breite.
 - Ein Hero-Bild ersetzt **nicht** das `thumbnail`; für die Blog-Übersicht wird weiterhin ein Medienbibliotheksbild für die Vorschau des Blog-Beitrags benötigt.
-
-## Historische Altbestände
-
-Im Repository gibt es noch ein paar migrierte ältere Beiträge mit lokalen Bildern im jeweiligen Bundle. Das ist ein Altbestand aus der WordPress-Migration. Diese sollten idealerweise auch zur Medienbibliothek hinzugefügt werden und sind wie folgt:
-
-- `content/blog/2015-06-23-alleinflug-nathanael/image-02.jpg`
-- `content/blog/2016-03-02-messestand-fdf/image-01.jpg`
-- `content/blog/2021-05-01-weglide-streckenflug/image-02.jpg`
-- `content/blog/2021-05-01-weglide-streckenflug/image-03.png`
-- `content/blog/2021-05-01-weglide-streckenflug/image-04.png`
-- `content/blog/2021-05-01-weglide-streckenflug/image-05.png`
-- `content/blog/2021-05-01-weglide-streckenflug/image-06.png`
-- `content/blog/2021-05-01-weglide-streckenflug/image-07.png`
-- `content/blog/2021-05-01-weglide-streckenflug/image-08.png`
-- `content/blog/2021-05-01-weglide-streckenflug/image-09.png`
-
-Für neue Inhalte gilt immer: Normale Bilder immer über den Medieneditor, lokale Page Resources nur für Hero-Bilder.
