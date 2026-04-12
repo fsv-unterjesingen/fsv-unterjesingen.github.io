@@ -1,12 +1,12 @@
 ---
-title: Grunau Baby beim Gummiseilstart, rechts und links sind die Seilmannschaften zu erkennen,  welche
-  V-f¨ormig die Gummiseile vor dem Flugzeug straffen
-date: '2025-02-23T13:44:40'
-lastmod: '2025-02-23T18:08:03'
-caption: Grunau Baby beim Gummiseilstart, rechts und links sind die Seilmannschaften zu erkennen,  welche
-  V-förmig die Gummiseile vor dem Flugzeug straffen
-description: Grunau Baby beim Gummiseilstart, rechts und links sind die Seilmannschaften zu erkennen,  welche
-  V-förmig die Gummiseile vor dem Flugzeug straffen
+title: Grunau Baby beim Gummiseilstart, rechts und links sind die Seilmannschaften zu
+  erkennen,  welche V-förmig die Gummiseile vor dem Flugzeug straffen
+date: 2025-02-23T13:44:40
+lastmod: 2026-04-12T14:28:40
+caption: Grunau Baby beim Gummiseilstart, rechts und links sind die Seilmannschaften zu
+  erkennen,  welche V-förmig die Gummiseile vor dem Flugzeug straffen
+description: Grunau Baby beim Gummiseilstart, rechts und links sind die Seilmannschaften zu
+  erkennen,  welche V-förmig die Gummiseile vor dem Flugzeug straffen
 original_filename: DSC1569.jpg
 old_url: https://www.fsv-unterjesingen.de/wp-content/uploads/2025/02/DSC1569.jpg
 wordpress_id: 39661

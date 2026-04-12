@@ -1,7 +1,7 @@
 ---
-title: Der SG-38 des BWLV, ein Nachbau nach Originalpl¨anen, Baujahr 1999
-date: '2025-02-23T13:42:34'
-lastmod: '2025-02-23T13:43:00'
+title: Der SG-38 des BWLV, ein Nachbau nach Originalplänen, Baujahr 1999
+date: 2025-02-23T13:42:34
+lastmod: 2026-04-12T14:28:49
 original_filename: DSC1491.jpg
 old_url: https://www.fsv-unterjesingen.de/wp-content/uploads/2025/02/DSC1491.jpg
 wordpress_id: 39659
