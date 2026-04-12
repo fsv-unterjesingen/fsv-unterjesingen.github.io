@@ -476,7 +476,8 @@ h2 {
   width: min(260px, 70%);
 }
 
-div.weglide {
+/* Embedded YouTube videos and WeGlide embedding. */
+iframe {
   border-radius: 18px;
 }
 
