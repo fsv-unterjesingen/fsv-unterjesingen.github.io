@@ -1,6 +1,8 @@
 ---
 title: "Streckenflug"
 lead: "Weite Flüge, Thermik lesen, Leistung steigern."
+aliases:
+  - /streckenflug/
 hero_image:
   url: hero-image.jpg
 ---

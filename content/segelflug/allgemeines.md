@@ -1,6 +1,9 @@
 ---
 title: "Segelflug"
 lead: "Lautlos fliegen, Thermik nutzen, Strecken meistern."
+aliases:
+  - /portfolio-item/segelflug/
+  - /portfolio-item/aufbau-eines-segelflugzeugs/
 ---
 
 **Lautlos im Himmel schweben und wie ein Vogel durch die Luft gleiten – das ist Segelfliegen.**

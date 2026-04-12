@@ -2,6 +2,16 @@
 title: Flugzeugpark
 aliases:
   - /startseite/der-verein/flugzeugpark
+  - /startseite/der-verein/flugzeugpark/arcus-m/
+  - /startseite/der-verein/flugzeugpark/ask-21/
+  - /startseite/der-verein/flugzeugpark/ask-23/
+  - /startseite/der-verein/flugzeugpark/dg808/
+  - /startseite/der-verein/flugzeugpark/duo-discus/
+  - /startseite/der-verein/flugzeugpark/ls4-a/
+  - /startseite/der-verein/flugzeugpark/ls4-b/
+  - /startseite/der-verein/flugzeugpark/ventus-3m/
+  - /startseite/der-verein/flugzeugpark/hk36-ttc/
+  - /startseite/der-verein/flugzeugpark/da-40/
 content_width: wide
 hero_image:
   url: flugzeugpark.jpg
