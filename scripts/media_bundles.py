@@ -172,34 +172,6 @@ def _extract_pillow_metadata(image: Any) -> dict[str, Any]:
     return metadata
 
 
-def probe_media_file(path: Path) -> dict[str, Any]:
-    details = {
-        "filesize": path.stat().st_size,
-        "width": None,
-        "height": None,
-        "mime_type": None,
-        "sha256": sha256_file(path),
-        "image_meta": {},
-    }
-
-    if Image is None or media_kind_for_path(path) != "image":
-        return details
-
-    try:
-        with Image.open(path) as image:
-            details["width"], details["height"] = image.size
-            details["mime_type"] = Image.MIME.get(image.format)
-            details["image_meta"] = _extract_pillow_metadata(image)
-    except Exception:
-        pass
-
-    return details
-
-
-def probe_image(path: Path) -> dict[str, Any]:
-    return probe_media_file(path)
-
-
 def inspect_media_file(path: Path) -> dict[str, Any]:
     details = {
         "filesize": path.stat().st_size,
@@ -220,11 +192,6 @@ def inspect_media_file(path: Path) -> dict[str, Any]:
 
     return details
 
-
-def inspect_image_file(path: Path) -> dict[str, Any]:
-    return inspect_media_file(path)
-
-
 def parse_timestamp(value: str | None) -> datetime | None:
     if not value:
         return None
@@ -242,28 +209,10 @@ def parse_timestamp(value: str | None) -> datetime | None:
             continue
     return None
 
-
-def parse_exif_timestamp(value: str | None) -> datetime | None:
-    if not value:
-        return None
-    for candidate in ("%Y:%m:%d %H:%M:%S", "%Y-%m-%d %H:%M:%S"):
-        try:
-            return datetime.strptime(value, candidate)
-        except ValueError:
-            continue
-    return None
-
-
 def to_datetime_local_value(value: str | None) -> str:
     timestamp = parse_timestamp(value)
     if timestamp is None:
         return ""
-    return timestamp.strftime("%Y-%m-%dT%H:%M:%S")
-
-
-def format_timestamp(timestamp: datetime | None) -> str | None:
-    if timestamp is None:
-        return None
     return timestamp.strftime("%Y-%m-%dT%H:%M:%S")
 
 
@@ -641,14 +590,6 @@ def relative_media_path(bundle_dir: Path) -> str:
     return bundle_dir.relative_to(MEDIA_ROOT).as_posix()
 
 
-def gallery_thumbnail_path(bundle_dir: Path) -> str:
-    return f"/thumb/{relative_media_path(bundle_dir)}"
-
-
-def gallery_media_file_path(bundle_dir: Path) -> str:
-    return f"/media-file/{relative_media_path(bundle_dir)}"
-
-
 def load_bundle(bundle_dir: Path) -> dict[str, Any]:
     index_path = bundle_dir / "index.md"
     metadata, body = read_markdown_file(index_path)
@@ -661,8 +602,6 @@ def load_bundle(bundle_dir: Path) -> dict[str, Any]:
     metadata["description"] = metadata.get("description") or body.strip() or None
     metadata["bundle_dir"] = relative_bundle_path(bundle_dir)
     metadata["media_path"] = relative_media_path(bundle_dir)
-    metadata["image_url"] = gallery_media_file_path(bundle_dir)
-    metadata["thumb_url"] = gallery_thumbnail_path(bundle_dir)
     metadata["original_path"] = original_path.relative_to(ROOT).as_posix()
     metadata["resource_filename"] = original_path.name
     metadata["original_filename"] = (
@@ -780,143 +719,6 @@ def normalize_comma_list(value: str | list[str] | None) -> list[str]:
     else:
         items = [part.strip() for part in str(value).split(",")]
     return [item for item in items if item]
-
-
-def save_bundle_metadata(
-    bundle_dir: Path,
-    metadata_updates: dict[str, Any],
-    *,
-    touch_lastmod: bool = True,
-) -> None:
-    index_path = bundle_dir / "index.md"
-    front_matter, body = read_markdown_file(index_path)
-    body_text = body
-
-    if "description" in metadata_updates:
-        body_text = ""
-
-    merged = dict(front_matter)
-    merged.update(metadata_updates)
-    merged["description"] = metadata_updates.get("description", merged.get("description", "")) or ""
-    merged["tags"] = normalize_comma_list(merged.get("tags"))
-    merged["galleries"] = normalize_comma_list(merged.get("galleries"))
-
-    if touch_lastmod:
-        merged["lastmod"] = format_timestamp(datetime.now())
-
-    write_markdown_file(index_path, canonicalize_bundle_front_matter(merged), body_text)
-
-
-def _prune_empty_parents(start: Path, stop_at: Path) -> None:
-    current = start
-    while current != stop_at and current.exists():
-        try:
-            next(current.iterdir())
-            break
-        except StopIteration:
-            current.rmdir()
-            current = current.parent
-
-
-def delete_bundle(bundle_dir: Path, *, media_root: Path = MEDIA_ROOT, static_root: Path = ROOT / "static") -> None:
-    bundle_dir = bundle_dir.resolve()
-    media_root = media_root.resolve()
-    static_root = static_root.resolve()
-
-    if media_root not in bundle_dir.parents:
-        raise ValueError(f"Refusing to delete bundle outside media root: {bundle_dir}")
-    if not bundle_dir.exists() or not bundle_dir.is_dir():
-        raise FileNotFoundError(bundle_dir)
-
-    front_matter, _ = read_markdown_file(bundle_dir / "index.md")
-    original_path = original_file_for_bundle(bundle_dir)
-    old_url = _clean_image_meta_text(front_matter.get("old_url"))
-
-    if old_url and original_path is not None:
-        try:
-            link_path = static_path_for_old_url(old_url, static_root=static_root)
-        except ValueError:
-            link_path = None
-        if link_path is not None and link_path.is_symlink():
-            expected_target = relative_symlink_target(link_path, original_path)
-            if os.readlink(link_path) == expected_target:
-                link_path.unlink()
-                _prune_empty_parents(link_path.parent, static_root)
-
-    shutil.rmtree(bundle_dir)
-    _prune_empty_parents(bundle_dir.parent, media_root)
-
-
-def create_bundle_from_media(
-    *,
-    source_path: Path,
-    source_filename: str,
-    title: str | None,
-    date_value: str | None,
-    media_root: Path = MEDIA_ROOT,
-    tags: list[str] | None = None,
-    galleries: list[str] | None = None,
-) -> Path:
-    prepare_section_root(media_root)
-
-    probe = probe_media_file(source_path)
-    timestamp = parse_timestamp(date_value) or datetime.now()
-
-    period_folder = timestamp.strftime("%Y-%m")
-    bundle_parent = media_root / period_folder
-    base_title = title or title_from_filename(source_filename)
-    bundle_dir = ensure_unique_bundle_dir(bundle_parent, Path(source_filename).stem or "image")
-    suffix = Path(source_filename).suffix.lower()
-    original_name = f"{MEDIA_RESOURCE_BASENAME}{suffix}" if suffix else MEDIA_RESOURCE_BASENAME
-
-    bundle_dir.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(source_path, bundle_dir / original_name)
-
-    front_matter = build_front_matter(
-        title=base_title,
-        date=timestamp.strftime("%Y-%m-%d"),
-        lastmod=format_timestamp(datetime.now()),
-        alt=None,
-        caption=None,
-        description=None,
-        tags=tags or [],
-        galleries=galleries or [],
-        credit=None,
-        location=None,
-        original_filename=source_filename,
-        filesize=int(probe["filesize"]) if probe.get("filesize") else None,
-        sha256=str(probe.get("sha256") or "").strip() or None,
-        uploaded_at_gmt=None,
-        uploaded_at_local=None,
-        modified_at_gmt=None,
-        modified_at_local=None,
-        wordpress_id=None,
-        image_meta=None,
-        old_url=None,
-    )
-    write_markdown_file(bundle_dir / "index.md", front_matter)
-    return bundle_dir
-
-
-def create_bundle_from_image(
-    *,
-    source_path: Path,
-    source_filename: str,
-    title: str | None,
-    date_value: str | None,
-    media_root: Path = MEDIA_ROOT,
-    tags: list[str] | None = None,
-    galleries: list[str] | None = None,
-) -> Path:
-    return create_bundle_from_media(
-        source_path=source_path,
-        source_filename=source_filename,
-        title=title,
-        date_value=date_value,
-        media_root=media_root,
-        tags=tags,
-        galleries=galleries,
-    )
 
 
 def static_path_for_old_url(old_url: str, *, static_root: Path = ROOT / "static") -> Path:

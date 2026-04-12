@@ -2,9 +2,13 @@
   "name": "fsv-unterjesingen.de",
   "type": "module",
   "scripts": {
+    "media-editor": "node scripts/media_editor.js",
+    "media-editor:summary": "node scripts/media_editor.js --summary",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "maplibre-gl": "^5.17.0"
+    "maplibre-gl": "^5.17.0",
+    "sharp": "^0.34.5",
+    "yaml": "^2.8.3"
   }
 }
