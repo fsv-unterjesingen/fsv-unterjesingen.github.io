@@ -43,7 +43,7 @@ npm install
 hugo server
 ```
 
-Danach läuft die Website standardmäßig unter <http://localhost:1313/>.
+Danach läuft die Website standardmäßig unter <http://localhost:1313/>. Beim ersten Mal wird `hugo server` wahrscheinlich ein paar Minuten brauchen, bevor die Website lokal verfügbar ist. Das liegt daran, dass Hugo Versionen der Bilder auf der Website in verschiedenen Größen generiert (Medienoptimierung). Diese werden unter `resources/_gen/images` gespeichert, müssen aber nur einmal generiert werden.
 
 Für die Medienverwaltung gibt es einen separaten lokalen Editor:
 
@@ -51,7 +51,7 @@ Für die Medienverwaltung gibt es einen separaten lokalen Editor:
 npm run media-editor
 ```
 
-Der Editor ist danach unter <http://127.0.0.1:4173/> erreichbar.
+Der Editor ist dann unter <http://127.0.0.1:4173/> erreichbar.
 
 ## Wichtige Verzeichnisse
 
@@ -177,10 +177,5 @@ Im Repository gibt es noch ein paar migrierte ältere Beiträge mit lokalen Bild
 - `content/blog/2021-05-01-weglide-streckenflug/image-07.png`
 - `content/blog/2021-05-01-weglide-streckenflug/image-08.png`
 - `content/blog/2021-05-01-weglide-streckenflug/image-09.png`
-- `content/blog/image.jpg`
-- `content/segelflug/alpensegelflug/hero-image.jpg`
-- `content/segelflug/streckenflug/hero-image.jpg`
-- `content/verein/flugplatz/poltringen.jpg`
-- `content/verein/flugzeugpark/flugzeugpark.jpg`
 
 Für neue Inhalte gilt immer: Normale Bilder immer über den Medieneditor, lokale Page Resources nur für Hero-Bilder.
