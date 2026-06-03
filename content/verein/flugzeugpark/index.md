@@ -5,7 +5,7 @@ aliases:
   - /startseite/der-verein/flugzeugpark/arcus-m/
   - /startseite/der-verein/flugzeugpark/ask-21/
   - /startseite/der-verein/flugzeugpark/ask-23/
-  - /startseite/der-verein/flugzeugpark/dg808/
+  - /startseite/der-verein/flugzeugpark/discus2ct/
   - /startseite/der-verein/flugzeugpark/duo-discus/
   - /startseite/der-verein/flugzeugpark/ls4-a/
   - /startseite/der-verein/flugzeugpark/ls4-b/
@@ -104,21 +104,17 @@ aircraft:
       - "2021-05/bc92f845-8f6b-40fc-8cbe-86c64eec54a2"
       - "2021-05/IMG_4669"
       - "2016-01/IMG_1650-1-e1452809538518"
-  - slug: dg808
-    name: DG808
-    category: Eigenstarter
-    image: "2015-06/Slider2-e1465400068732"
+  - slug: discus2ct
+    name: Discus 2cT
+    category: Segelflugzeug mit Heimkehrhilfe
+    image: "2026-06/as1"
     seats: 1
-    engine_power: 53 PS
-    glide_ratio: "50"
+    engine_power: 21 PS
+    glide_ratio: "45"
     application: "Streckenflug"
     images:
-      - "2015-06/Slider2-e1465400068732"
-      - "2015-09/dg"
-      - "2015-09/dg2"
-      - "2015-06/DSCN1355"
-      - "2015-06/BILD1202"
-      - "2021-05/IMG_4265"
+      - "2026-06/as1"
+      - "2026-06/as2
   - slug: hk36-ttc
     name: HK36 TTC
     category: Motorsegler
