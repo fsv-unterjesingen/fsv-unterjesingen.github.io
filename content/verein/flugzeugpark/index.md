@@ -114,7 +114,7 @@ aircraft:
     application: "Streckenflug"
     images:
       - "2026-06/as1"
-      - "2026-06/as2
+      - "2026-06/as2"
   - slug: hk36-ttc
     name: HK36 TTC
     category: Motorsegler
