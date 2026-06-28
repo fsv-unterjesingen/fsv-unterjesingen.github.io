@@ -3,7 +3,6 @@ title: "Segelflugausbildung"
 description: "Segelflugausbildung beim FSV Unterjesingen – guenstig, professionell, in der Region Tuebingen. Segelflugschein ab 300 Euro."
 aliases:
   - /startseite/fliegen-lernen-2/wie-werde-ich-pilot
-  - /segelflug/fliegen-lernen
 ---
 
 # Ausbildung
