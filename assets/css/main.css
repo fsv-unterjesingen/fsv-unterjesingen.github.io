@@ -78,7 +78,7 @@ header a,
   --header-padding: 3px;
   height: 100%;
   display: flex;
-  column-gap: 24px;
+  column-gap: 48px;
   justify-content: space-between;
   align-items: stretch;
   padding: var(--header-padding) 0;
