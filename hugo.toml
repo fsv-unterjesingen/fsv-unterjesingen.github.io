@@ -23,7 +23,7 @@ openaipApiKey = 'bf2df3ae9c5c969fe269d1418df194f2'
     weight = 2
   [[menu.main]]
     name = 'Segelflugausbildung'
-    pageRef = '/fliegen-lernen/segelflugausbildung'
+    url = '/fliegen-lernen/segelflugausbildung/'
     parent = 'fliegen-lernen'
     weight = 1
   [[menu.main]]
