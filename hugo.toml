@@ -17,11 +17,6 @@ openaipApiKey = 'bf2df3ae9c5c969fe269d1418df194f2'
 
 [menu]
   [[menu.main]]
-    name = 'Start'
-    pageRef = '/'
-    weight = 1
-
-  [[menu.main]]
     name = 'Fliegen lernen'
     pageRef = '/fliegen-lernen'
     identifier = 'fliegen-lernen'
