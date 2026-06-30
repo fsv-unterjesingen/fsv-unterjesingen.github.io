@@ -5,4 +5,4 @@ description: "Motorsegler-Ausbildung beim FSV Unterjesingen in der Region Tuebin
 
 # Motorsegler-Ausbildung
 
-Inhalt folgt in Kuerze. Bitte nimm direkt [Kontakt](/kontakt/) mit uns auf.
+Inhalt folgt in Kuerze2. Bitte nimm direkt [Kontakt](/kontakt/) mit uns auf.

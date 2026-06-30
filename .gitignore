@@ -6,3 +6,4 @@ package-lock.json
 resources/_gen/images
 __pycache__
 .codex
+.vs/
