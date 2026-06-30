@@ -6,6 +6,8 @@ aliases:
   - /portfolio-item/aufbau-eines-segelflugzeugs/
 ---
 
+{{< figure src="2023-03/Segelfliegenmachtgluecklich-standalone-klein" alt="Ventus – Segelfliegen macht glücklich" />}}
+
 **Lautlos im Himmel schweben und wie ein Vogel durch die Luft gleiten – das ist Segelfliegen.**
 
 # Ausrüstung
