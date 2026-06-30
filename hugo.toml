@@ -24,6 +24,7 @@ openaipApiKey = 'bf2df3ae9c5c969fe269d1418df194f2'
   [[menu.main]]
     name = 'Segelflugausbildung'
     url = '/fliegen-lernen/segelflugausbildung/'
+    identifier = 'segelflug-segelflugausbildung'
     parent = 'fliegen-lernen'
     weight = 1
   [[menu.main]]
@@ -33,10 +34,11 @@ openaipApiKey = 'bf2df3ae9c5c969fe269d1418df194f2'
     weight = 2
   [[menu.main]]
     name = 'Motorflugausbildung'
-    url = 'https://motorflugschule.info'
+    url = 'https://www.motorflugschule.info'
     parent = 'fliegen-lernen'
+    params = { target = "_blank" }
     weight = 3
-
+    
   [[menu.main]]
     name = 'Segelflug'
     pageRef = '/segelflug'
@@ -50,6 +52,7 @@ openaipApiKey = 'bf2df3ae9c5c969fe269d1418df194f2'
   [[menu.main]]
     name = 'Segelflugausbildung'
     url = '/fliegen-lernen/segelflugausbildung/'
+    identifier = 'fliegen-lernen-segelflugausbildung'
     parent = 'segelflug'
     weight = 2
   [[menu.main]]
