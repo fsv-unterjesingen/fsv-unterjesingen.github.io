@@ -32,7 +32,8 @@
 {{- if not $hasAlt -}}
   {{- $alt = $mediaAlt | default $captionText -}}
 {{- end -}}
-{{- $resolvedLink := $link | default ($image.original | default $image.url) -}}
+{{- $hasExplicitLink := isset .Params "link" -}}
+{{- $resolvedLink := cond $hasExplicitLink $link ($image.original | default $image.url) -}}
 
 <figure class="content-figure{{ with $class }} {{ . }}{{ end }}">
   {{- if $resolvedLink -}}

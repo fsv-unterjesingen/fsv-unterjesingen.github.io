@@ -1,0 +1,230 @@
+{{- $images := .Page.Params.gallery | default slice -}}
+{{- if eq (len $images) 0 -}}
+  {{- errorf "gallery shortcode: no images found in page frontmatter 'gallery' param: %s" .Position -}}
+{{- end -}}
+
+<style>
+.photo-gallery .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+.gallery-thumb {
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 6px;
+  background: transparent;
+  display: block;
+  width: 100%;
+}
+.gallery-thumb img {
+  display: block;
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+.gallery-thumb:hover img { transform: scale(1.04); }
+
+.gallery-modal {
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: auto;
+  max-width: min(92vw, 1000px);
+  max-height: 92vh;
+  background: transparent;
+  overflow: visible;
+}
+.gallery-modal::backdrop { background: rgba(0,0,0,0.85); }
+.gallery-modal-inner {
+  background: #111;
+  color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+.gallery-track { position: relative; }
+.gallery-slide { display: none; flex-direction: column; align-items: center; }
+.gallery-slide.is-active { display: flex; }
+.gallery-slide img {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  display: block;
+}
+.gallery-caption {
+  margin: 0.5rem 1rem 0.75rem;
+  font-size: 0.9rem;
+  color: #ddd;
+  text-align: center;
+}
+.gallery-modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  font-size: 1.8rem;
+  line-height: 1;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+}
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.45);
+  border: none;
+  color: #fff;
+  font-size: 2.5rem;
+  line-height: 1;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 4px;
+}
+.gallery-nav:hover { background: rgba(0,0,0,0.7); }
+.gallery-nav-prev { left: 0.5rem; }
+.gallery-nav-next { right: 0.5rem; }
+.gallery-status {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #aaa;
+  margin: 0 0 0.5rem;
+}
+</style>
+
+<div class="photo-gallery" data-photo-gallery>
+  <div class="gallery-grid">
+    {{- range $index, $item := $images -}}
+      {{- $resolved := partial "funcs/resolve-image-resource.html" (dict
+        "page" $.Page
+        "site" $.Page.Site
+        "url" $item.src
+        "allowPageResources" false
+        "allowMedia" true
+        "allowGlobalResources" false
+      ) -}}
+      {{- if not $resolved.resource -}}
+        {{- errorf "gallery shortcode: could not resolve image %q: %s" $item.src $.Position -}}
+      {{- end -}}
+      {{- $thumb := $resolved.resource.Fill "720x540 smart q80" -}}
+      <button class="gallery-thumb" type="button" data-gallery-open="{{ $index }}">
+        <img
+          src="{{ $thumb.RelPermalink }}"
+          width="{{ $thumb.Width }}"
+          height="{{ $thumb.Height }}"
+          alt="{{ $item.alt | default "" }}"
+          loading="lazy"
+          decoding="async"
+        >
+      </button>
+    {{- end -}}
+  </div>
+
+  <dialog class="gallery-modal" data-gallery-modal>
+    <div class="gallery-modal-inner">
+    <button class="gallery-modal-close" type="button" data-gallery-close aria-label="Schließen">×</button>
+    <button class="gallery-nav gallery-nav-prev" type="button" data-gallery-step="-1" aria-label="Vorheriges Bild">&#8249;</button>
+    <button class="gallery-nav gallery-nav-next" type="button" data-gallery-step="1" aria-label="Nächstes Bild">&#8250;</button>
+    <div class="gallery-track">
+      {{- range $index, $item := $images -}}
+        {{- $resolved := partial "funcs/resolve-image-resource.html" (dict
+          "page" $.Page
+          "site" $.Page.Site
+          "url" $item.src
+          "allowPageResources" false
+          "allowMedia" true
+          "allowGlobalResources" false
+        ) -}}
+        {{- $full := $resolved.resource.Resize "1600x webp q82" -}}
+        <div class="gallery-slide{{ if eq $index 0 }} is-active{{ end }}" data-gallery-slide aria-hidden="{{ if eq $index 0 }}false{{ else }}true{{ end }}">
+          <img
+            src="{{ $full.RelPermalink }}"
+            width="{{ $full.Width }}"
+            height="{{ $full.Height }}"
+            alt="{{ $item.alt | default "" }}"
+            loading="lazy"
+            decoding="async"
+          >
+          {{- with $item.caption -}}
+            <p class="gallery-caption">{{ . }}</p>
+          {{- else -}}
+            {{- with $item.alt -}}
+              <p class="gallery-caption">{{ . }}</p>
+            {{- end -}}
+          {{- end -}}
+        </div>
+      {{- end -}}
+    </div>
+    <p class="gallery-status" aria-live="polite">
+      <span data-gallery-index>1</span> / <span>{{ len $images }}</span>
+    </p>
+    </div>
+  </dialog>
+</div>
+
+<script>
+(() => {
+  const root = document.currentScript?.previousElementSibling;
+  if (!root) return;
+
+  const modal = root.querySelector('[data-gallery-modal]');
+  const slides = Array.from(root.querySelectorAll('[data-gallery-slide]'));
+  const counter = root.querySelector('[data-gallery-index]');
+  let currentIndex = 0;
+  let opener = null;
+
+  const show = (index) => {
+    const total = slides.length;
+    currentIndex = ((index % total) + total) % total;
+    slides.forEach((s, i) => {
+      const active = i === currentIndex;
+      s.classList.toggle('is-active', active);
+      s.setAttribute('aria-hidden', active ? 'false' : 'true');
+    });
+    if (counter) counter.textContent = String(currentIndex + 1);
+  };
+
+  root.querySelectorAll('[data-gallery-open]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      opener = btn;
+      show(Number(btn.dataset.galleryOpen));
+      if (typeof modal.showModal === 'function') {
+        modal.showModal();
+      } else {
+        modal.setAttribute('open', '');
+      }
+    });
+  });
+
+  root.querySelectorAll('[data-gallery-step]').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      show(currentIndex + Number(btn.dataset.galleryStep));
+    });
+  });
+
+  root.querySelector('[data-gallery-close]')?.addEventListener('click', () => modal.close());
+
+  modal.addEventListener('click', (e) => {
+    const track = modal.querySelector('.gallery-track');
+    if (!track) return;
+    const rect = track.getBoundingClientRect();
+    const outside = e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom;
+    if (outside && e.target === modal) modal.close();
+  });
+
+  modal.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') { e.preventDefault(); show(currentIndex - 1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); show(currentIndex + 1); }
+  });
+
+  modal.addEventListener('close', () => opener?.focus());
+})();
+</script>
