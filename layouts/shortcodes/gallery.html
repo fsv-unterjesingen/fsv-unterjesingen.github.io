@@ -113,7 +113,8 @@
       {{- if not $resolved.resource -}}
         {{- errorf "gallery shortcode: could not resolve image %q: %s" $item.src $.Position -}}
       {{- end -}}
-      {{- $thumb := $resolved.resource.Fill "720x540 smart q80" -}}
+      {{- $anchor := $item.anchor | default "smart" -}}
+      {{- $thumb := $resolved.resource.Fill (printf "720x540 %s q80" $anchor) -}}
       <button class="gallery-thumb" type="button" data-gallery-open="{{ $index }}">
         <img
           src="{{ $thumb.RelPermalink }}"

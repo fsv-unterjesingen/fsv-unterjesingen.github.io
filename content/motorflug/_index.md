@@ -2,14 +2,15 @@
 title: "Motorflug"
 description: "Motorflug beim FSV Unterjesingen. DA40 fliegen zum C152 Tarif – unter 175 € pro Stunde inkl. Kraftstoff. Am Flugplatz Poltringen (EDSP)."
 gallery:
+  - src: "da40/IMG_5848"
+    alt: "Diamond DA40 D-EBYK am Flugplatz Poltringen"
+    anchor: "Center"
   - src: "da40/P1020176"
     alt: "Diamond DA40 D-EBYK mit geöffnetem Cockpit"
   - src: "da40/IMG_20171104_1306153"
     alt: "Diamond DA40 D-EBYK am Flugplatz Poltringen"
   - src: "da40/IMG_20171104_1306135"
     alt: "Diamond DA40 D-EBYK auf dem Rollfeld"
-  - src: "da40/IMG_5848"
-    alt: "Diamond DA40 D-EBYK am Flugplatz Poltringen"
 ---
 
 {{< gallery >}}
