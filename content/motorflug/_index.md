@@ -51,4 +51,4 @@ Du möchtest den Motorflugschein (PPL/LAPL) machen? Der FSV Unterjesingen kooper
 
 ---
 
-*Einsteigen. Abhe
+*Einsteigen. Abheben. Frei sein.*
