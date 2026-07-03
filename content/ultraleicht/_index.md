@@ -3,7 +3,7 @@ title: "Ultraleicht (UL)"
 description: "Ultraleichtfliegen beim FSV Unterjesingen mit der Bristell Classic 916iS. Modernste UL-Technik, 160 PS Turbo, 1.250 km Reichweite – am Flugplatz Poltringen (EDSP)."
 ---
 
-{{< figure src="ul/bristell-classic" alt="Bristell Classic 916iS D-MVAC" link="" />}}
+{{< figure src="2026-07/media" alt="Bristell Classic 916iS D-MVAC" link="" />}}
 
 **Die Neudefinition des Ultraleichtflugzeugs — formschönes Design, herausragende Verarbeitung, beeindruckende Leistung.**
 
