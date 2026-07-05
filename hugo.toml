@@ -56,20 +56,25 @@ openaipApiKey = 'bf2df3ae9c5c969fe269d1418df194f2'
     parent = 'verein'
     weight = 1
   [[menu.main]]
-    name = 'Flugplatz Poltringen'
-    pageRef = '/verein/flugplatz'
-    parent = 'verein'
-    weight = 2
-  [[menu.main]]
     name = 'Flugzeugpark'
     pageRef = '/verein/flugzeugpark'
     parent = 'verein'
+    weight = 2
+  [[menu.main]]
+    name = 'Flugplatz Poltringen'
+    pageRef = '/verein/flugplatz'
+    parent = 'verein'
     weight = 3
+  [[menu.main]]
+    name = 'Webcam Flugplatz Poltringen'
+    pageRef = '/verein/webcam'
+    parent = 'verein'
+    weight = 4
   [[menu.main]]
     name = 'Vereinsheim Unterjesingen'
     pageRef = '/verein/vereinsheim'
     parent = 'verein'
-    weight = 4
+    weight = 5
   [[menu.main]]
     name = 'Chronik'
     pageRef = '/verein/chronik'
