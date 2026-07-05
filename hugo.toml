@@ -20,9 +20,9 @@ openaipApiKey = 'bf2df3ae9c5c969fe269d1418df194f2'
     name = 'Start'
     pageRef = '/'
     weight = 1
+
   [[menu.main]]
     name = 'Segelflug'
-    url = '#'
     identifier = 'segelflug'
     weight = 2
   [[menu.main]]
@@ -45,6 +45,27 @@ openaipApiKey = 'bf2df3ae9c5c969fe269d1418df194f2'
     pageRef = '/segelflug/alpensegelflug'
     parent = 'segelflug'
     weight = 4
+
+  [[menu.main]]
+    name = 'Motorflug'
+    identifier = 'motorflug'
+    weight = 3
+  [[menu.main]]
+    name = 'Echo Klasse'
+    pageRef = '/motorflug/echo-klasse'
+    parent = 'motorflug'
+    weight = 1
+  [[menu.main]]
+    name = 'Motorsegler'
+    pageRef = '/motorflug/motorsegler'
+    parent = 'motorflug'
+    weight = 2
+  [[menu.main]]
+    name = 'Ultraleicht (UL)'
+    pageRef = '/motorflug/ultraleicht'
+    parent = 'motorflug'
+    weight = 3
+
   [[menu.main]]
     name = 'Verein'
     pageRef = '/verein'
@@ -79,12 +100,14 @@ openaipApiKey = 'bf2df3ae9c5c969fe269d1418df194f2'
     name = 'Chronik'
     pageRef = '/verein/chronik'
     parent = 'verein'
-    weight = 5
-  [[menu.main]]
-    name = 'Kontakt'
-    pageRef = '/kontakt'
     weight = 6
+
   [[menu.main]]
     name = 'Blog'
     pageRef = '/blog'
     weight = 5
+
+  [[menu.main]]
+    name = 'Kontakt'
+    pageRef = '/kontakt'
+    weight = 6
