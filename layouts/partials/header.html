@@ -13,31 +13,23 @@
       <button class="nav-toggle" aria-label="Menü öffnen"
         onclick="document.body.classList.toggle('nav-open')">Menü</button>
       <ul>
-          {{ range site.Menus.main }}
-          {{ $isActive := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}
-          <li class="{{ if .HasChildren }}has-children{{ end }}{{ if $isActive }} is-active{{ end }}">
-              <a href="{{ .URL }}"
-                 {{ with .Params.target }} target="{{ . }}" rel="noopener noreferrer" {{ end }}
-                 {{ if .HasChildren }} aria-haspopup="true" aria-expanded="false"
-                 data-menu-parent="true" onclick="return window.fsvToggleMenu(event, this);" {{ end }}>
-                  <span class="nav-label">{{ .Name }}</span>
-              </a>
-
-              {{ if .HasChildren }}
-              <ul class="sub-menu">
-                  {{ range .Children }}
-                  {{ $childActive := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}
-                  <li class="{{ if $childActive }}is-active{{ end }}">
-                      <a href="{{ .URL }}"
-                         {{ with .Params.target }} target="{{ . }}" rel="noopener noreferrer" {{ end }}>
-                          <span class="nav-label">{{ .Name }}</span>
-                      </a>
-                  </li>
-                  {{ end }}
-              </ul>
-              {{ end }}
-          </li>
+        {{ range site.Menus.main }}
+        {{ $isActive := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}
+        <li class="{{ if .HasChildren }}has-children{{ end }}{{ if $isActive }} is-active{{ end }}">
+          <a href="{{ .URL }}" {{ if .HasChildren }} aria-haspopup="true" aria-expanded="false"
+            data-menu-parent="true" onclick="return window.fsvToggleMenu(event, this);" {{ end }}><span
+              class="nav-label">{{ .Name }}</span></a>
+          {{ if .HasChildren }}
+          <ul class="sub-menu">
+            {{ range .Children }}
+            {{ $childActive := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}
+            <li class="{{ if $childActive }}is-active{{ end }}"><a href="{{ .URL }}"><span class="nav-label">{{ .Name
+                  }}</span></a></li>
+            {{ end }}
+          </ul>
           {{ end }}
+        </li>
+        {{ end }}
       </ul>
     </nav>
   </div>

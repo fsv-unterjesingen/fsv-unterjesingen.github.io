@@ -17,42 +17,22 @@ openaipApiKey = 'bf2df3ae9c5c969fe269d1418df194f2'
 
 [menu]
   [[menu.main]]
-    name = 'Fliegen lernen'
-    pageRef = '/fliegen-lernen'
-    identifier = 'fliegen-lernen'
-    weight = 2
-  [[menu.main]]
-    name = 'Segelflugausbildung'
-    url = '/fliegen-lernen/segelflugausbildung/'
-    identifier = 'segelflug-segelflugausbildung'
-    parent = 'fliegen-lernen'
+    name = 'Start'
+    pageRef = '/'
     weight = 1
-  [[menu.main]]
-    name = 'Motorsegler-Ausbildung'
-    pageRef = '/fliegen-lernen/motorsegler-ausbildung'
-    parent = 'fliegen-lernen'
-    weight = 2
-  [[menu.main]]
-    name = 'Motorflugausbildung'
-    url = 'https://www.motorflugschule.info'
-    parent = 'fliegen-lernen'
-    params = { target = "_blank" }
-    weight = 3
-    
+
   [[menu.main]]
     name = 'Segelflug'
-    pageRef = '/segelflug'
     identifier = 'segelflug'
-    weight = 3
+    weight = 2
   [[menu.main]]
     name = 'Allgemeines'
     pageRef = '/segelflug/allgemeines'
     parent = 'segelflug'
     weight = 1
   [[menu.main]]
-    name = 'Segelflugausbildung'
-    url = '/fliegen-lernen/segelflugausbildung/'
-    identifier = 'fliegen-lernen-segelflugausbildung'
+    name = 'Fliegen lernen'
+    pageRef = '/segelflug/fliegen-lernen'
     parent = 'segelflug'
     weight = 2
   [[menu.main]]
@@ -67,25 +47,30 @@ openaipApiKey = 'bf2df3ae9c5c969fe269d1418df194f2'
     weight = 4
 
   [[menu.main]]
-    name = 'Motorsegler'
-    pageRef = '/motorsegler'
-    weight = 4
-
-  [[menu.main]]
     name = 'Motorflug'
-    pageRef = '/motorflug'
-    weight = 5
-
+    identifier = 'motorflug'
+    weight = 3
+  [[menu.main]]
+    name = 'Echo Klasse'
+    pageRef = '/motorflug/echo-klasse'
+    parent = 'motorflug'
+    weight = 1
+  [[menu.main]]
+    name = 'Motorsegler'
+    pageRef = '/motorflug/motorsegler'
+    parent = 'motorflug'
+    weight = 2
   [[menu.main]]
     name = 'Ultraleicht (UL)'
-    pageRef = '/ultraleicht'
-    weight = 6
+    pageRef = '/motorflug/ultraleicht'
+    parent = 'motorflug'
+    weight = 3
 
   [[menu.main]]
     name = 'Verein'
     pageRef = '/verein'
     identifier = 'verein'
-    weight = 7
+    weight = 4
   [[menu.main]]
     name = 'Über uns'
     pageRef = '/verein/ueber-uns'
@@ -120,9 +105,9 @@ openaipApiKey = 'bf2df3ae9c5c969fe269d1418df194f2'
   [[menu.main]]
     name = 'Blog'
     pageRef = '/blog'
-    weight = 8
+    weight = 5
 
   [[menu.main]]
     name = 'Kontakt'
     pageRef = '/kontakt'
-    weight = 9
+    weight = 6

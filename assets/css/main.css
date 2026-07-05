@@ -104,12 +104,12 @@ header a,
 }
 
 .brand-lockup>.brand-text {
-  width: 200px;
+  width: 160px;
 }
 
 .brand-title {
   font-family: "Fraunces", "Times New Roman", serif;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: #fff;
 }
@@ -133,7 +133,7 @@ body:has(.site-header.is-scrolled) {
 
 .main-nav ul {
   display: flex;
-  gap: 12px;
+  gap: 18px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -143,7 +143,7 @@ body:has(.site-header.is-scrolled) {
 }
 
 .main-nav a {
-  font-size: 0.95rem;
+  font-size: 1rem;
   text-transform: none;
   letter-spacing: 0.08em;
   color: #fff;
@@ -227,9 +227,8 @@ body:has(.site-header.is-scrolled) {
 }
 
 .main-nav .sub-menu a {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   letter-spacing: 0.06em;
-  text-transform: none;
   padding: 17px 16px 15px;
   border-radius: 0;
   display: flex;
@@ -1470,7 +1469,7 @@ h2+h3 {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
   .chronik-era {
     grid-template-columns: 1fr;
     gap: 18px;

@@ -13,17 +13,32 @@ Der FSV Unterjesingen bietet seinen Mitgliedern mit der **Bristell Classic 916iS
 
 Unsere **Bristell Classic** aus dem Hause BRM Aero ist ein beeindruckendes Flugzeug! Mit dem leistungsstarken turbogeladenen **Rotax 916 iS** (160 PS) fliegt die Bristell auch in großen Höhen mit voller Leistung — eine Liga für sich in der UL-Klasse.
 
-| | |
-|---|---|
-| **Hersteller** | BRM Aero |
-| **Typ** | Bristell Classic |
-| **Kennzeichen** | D-MVAC |
-| **Motor** | Rotax 916 iS A – 160 PS, Turbolader |
-| **Reisegeschwindigkeit** | ca. 110 kts (über 200 km/h) bei 75 % Leistung |
-| **Höchstgeschwindigkeit** | 155 kts (ca. 285 km/h) |
-| **Reichweite** | ca. 1.250 km |
-| **MTOW** | 600 kg |
-| **Cockpitbreite** | 1,30 m |
+Hersteller
+:   BRM Aero
+
+Typ
+:   Bristell Classic
+
+Kennzeichen
+:   D-MVAC
+
+Motor
+:   Rotax 916 iS A – 160 PS, Turbolader
+
+Reisegeschwindigkeit
+:   ca. 110 kts (über 200 km/h) bei 75 % Leistung
+
+Höchstgeschwindigkeit
+:   155 kts (ca. 285 km/h)
+
+Reichweite
+:   ca. 1.250 km
+
+MTOW
+:   600 kg
+
+Cockpitbreite
+:   1,30 m
 
 ## Was die Bristell besonders macht
 
