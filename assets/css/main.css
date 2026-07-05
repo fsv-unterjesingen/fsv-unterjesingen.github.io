@@ -143,8 +143,8 @@ body:has(.site-header.is-scrolled) {
 }
 
 .main-nav a {
-  font-size: 0.95rem;
-  text-transform: uppercase;
+  font-size: 1rem;
+  text-transform: none;
   letter-spacing: 0.08em;
   color: #fff;
   font-weight: 600;
@@ -227,9 +227,8 @@ body:has(.site-header.is-scrolled) {
 }
 
 .main-nav .sub-menu a {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
   padding: 17px 16px 15px;
   border-radius: 0;
   display: flex;
