@@ -1,10 +1,9 @@
 ---
-title: "Fliegen lernen"
+title: "Segelflugausbildung"
+description: "Segelflugausbildung beim FSV Unterjesingen – günstig, professionell, in der Region Tübingen. Segelflugschein ab 300 Euro. Schon ab 14 Jahren!"
 aliases:
   - /startseite/fliegen-lernen-2/wie-werde-ich-pilot
 ---
-
-# Ausbildung
 
 {{< grid >}}
 {{< figure src="2016-06/IMG_1618" alt="ASK 21" sizes="(max-width: 700px) 100vw, 50vw" />}}
@@ -15,52 +14,49 @@ aliases:
 {{< figure src="2015-09/duo31" alt="Duo beim Start" />}}
 {{< /grid >}}
 
-Der FSV Unterjesingen ist ein zertifizierter Segelflug-Ausbildungsbetrieb und bietet dank ehrenamtlich engagierter, hervorragend ausgebildeter Fluglehrer eine kostengünstige Ausbildung auf höchstem Niveau. Der Schulungsbetrieb ist wetterabhängig und findet saisonal von Mitte März bis Mitte Oktober statt, überwiegend an Wochenenden sowie in Schulungslagern.
+Der FSV Unterjesingen ist ein zertifizierter Segelflug-Ausbildungsbetrieb. Zusätzlich kannst du bei uns eine [Klassenberechtigung TMG](/fliegen-lernen/motorsegler-ausbildung/) (Touring Motor Glider) für den Motorsegler machen.
 
-## Allgemeine Infos
+Dank des großen Engagements unserer exzellent ausgebildeten Fluglehrer bieten wir Dir im FSV Unterjesingen eine kostengünstige Ausbildung auf höchstem Niveau. Da unsere Ausbilder ehrenamtlich arbeiten, ist der Ausbildungsbetrieb auf das Wochenende und Schulungslager beschränkt.
+
+Als Segelflieger sind wir an das Wetter gebunden. Flugbetrieb findet von **Mitte März bis Mitte Oktober** statt: ab 1. Mai bis 31. August **Samstags ab 13 Uhr und Sonntags ab 9 Uhr**, ansonsten Samstags ab 13 Uhr und Sonntags ab 10 Uhr. In den Wintermonaten warten wir dienstags und freitags von **18:30 bis 21:30** unsere Flugzeuge in der Werkstatt in Unterjesingen.
+
+Für die Ausbildung steht unser [hervorragender Flugzeugpark](/verein/flugzeugpark/) zur Verfügung. Bis zum ersten Alleinflug fliegst du auf unserer **ASK 21**, danach auf der einsitzigen **ASK 23**. Die Theorieausbildung findet in Kooperation mit [FSV Tübingen](http://www.fsv-tuebingen.de/), [FSV Herrenberg](http://www.fsv-herrenberg.de/) und [LSG Hanns-Klemm](https://lsghannsklemm.de/) (THURM-Gemeinschaft) statt.
 
 {{< youtube D3-s7hWb6rA >}}
 
-- gesamte Ausbildungsdauer: etwa **2 Jahre**
-- Ausbildungsdauer bis zum Alleinflug: etwa **70**-90 Starts (entspricht etwa einer Saison)
-- Mindestalter für Ausbildungsbeginn: **14 Jahre** (mit Sondergenehmigung auch vorher, nach oben lediglich begrenzt durch die Flugtauglichkeit)
-- Mindestalter für Scheinerhalt: **16 Jahre**
+## Allgemeine Infos
+
+- Gesamte Ausbildungsdauer: etwa **2 Jahre**
+- Bis zum Alleinflug: etwa **70–90 Starts** (etwa eine Saison)
+- Mindestalter Ausbildungsbeginn: **14 Jahre** (mit Sondergenehmigung auch früher)
+- Mindestalter Scheinerhalt: **16 Jahre**
 
 ## Kosten
 
-Für nur 300 € (Schüler und Studenten bis 25) bzw. 400€ kann man beim FSV Unterjesingen eine Segelflugausbildung bis zum 1. Alleinflug machen. Danach fliegt man zu den regulären Preisen, wobei es auch hier Vergünstigungen für Schüler und Studenten gibt.
+Für nur **300 €** (Schüler und Studenten bis 25) bzw. **400 €** kann man beim FSV Unterjesingen eine Segelflugausbildung bis zum 1. Alleinflug machen. Danach fliegt man zu den regulären Preisen — auch hier gibt es Vergünstigungen für Schüler und Studenten.
 
-Gerne beantworten wir dir deine Fragen hierzu persönlich. Schicke uns einfach eine [Nachricht](https://www.fsv-unterjesingen.de/startseite/kontakt/) und wir melden uns bei dir.
+Fragen? Schreib uns an [info@fsv-unterjesingen.de](mailto:info@fsv-unterjesingen.de)!
 
-## Ausbildung
+## Die Ausbildung
 
-Am Anfang der Ausbildung steht die Eingewöhnung an das Fliegen, das für viele ein komplett neues, aufregendes und begeisterndes Gefühl sein wird.
+Am Anfang steht die Eingewöhnung ans Fliegen — für viele ein komplett neues, aufregendes Gefühl. Fortan werden dir immer mehr Aufgaben bis hin zur alleinigen Kontrolle über das Flugzeug übertragen. Unsere Fluglehrer üben mit dir, damit du in allen Situationen das Flugzeug sicher beherrschst. Der erste Abschnitt bis zum Alleinflug dauert etwa 1 Jahr bei regelmäßiger Teilnahme.
 
-Fortan werden dir immer mehr Aufgaben, bis hin zur alleinigen Kontrolle über das Flugzeug übergeben.
+**Grundausbildung:** Praktische und theoretische Ausbildung im Segelflug, Windenbetrieb und F-Schlepp
 
-Unsere ehrenamtlichen Fluglehrer üben mit dir, damit du in allen Situationen in der Lage bist das Flugzeug zu beherrschen.
+**Angebote:** Wöchentliche Schulung, THURM-Lager/Theorieschulung, Fluglager
 
-Der erste Abschnitt deiner Ausbildung bis zum ersten Alleinflug dauert etwa 1 Jahr, insofern du regelmäßig am Flugbetrieb teilnimmst.
+## Der erste Alleinflug
 
-**Der erste Alleinflug** ist das Highlight deiner jungen fliegerischen Karriere. Du darfst das erste mal ganz alleine abheben! Der Fluglehrer beobachtet dich dabei vom Platz aus und steht in Funkkontakt mit dir. Deshalb ist es beim Segelfliegen möglich (auch ohne Schein) im Alter von 14 Jahren alleine zu fliegen!
+Der erste Alleinflug ist das Highlight deiner jungen fliegerischen Karriere! Die Alleinflugreife muss von 2 Fluglehrern bestätigt werden. Dann hebst du zum ersten Mal ganz alleine ab — der Fluglehrer beobachtet dich vom Platz aus und steht per Funk in Kontakt.
 
-Dann sammelst du immer mehr Erfahrung im Alleinflug, machst deine Theorieprüfung und dein Funksprechzeugnis und sogar deinen ersten 50-km Flug.
-
-Wenn du das alles geschafft hast nach 2-3 Jahren kommt die praktische Prüfung: 3 Starts mit Prüfer.
-**Grundausbildung:** praktische und theoretische Ausbildung im Segelflug, Windenbetrieb und F-Schlepp
-**Angebote:** wöchentliche Schulung, THURM-Lager/Theorieschulung, Fluglager
+Beim Segelfliegen ist es möglich, **im Alter von 14 Jahren bereits alleine zu fliegen** — ohne Schein! Die ersten Alleinflüge werden auf der vertrauten ASK 21 durchgeführt. Nach etwa 10–15 Starts erfolgt die Umschulung auf den Einsitzer ASK 23.
 
 ## Theorie
 
-Ohne Grundwissen geht nichts.
-Deshalb ist es notwendig, dass du eine theoretische Prüfung ablegst.
-Das sollte dich nicht abschrecken. Die theoretische Prüfung ist für jeden machbar!
-
-Der FSV Unterjesingen und die umliegenden Vereine bieten dir deshalb einen Theoriekurs an. Dieser findet jeden Winter an einigen Wochenenden statt.
-Die folgen 9 Fächer werden dabei unterrichtet:
+Ohne Grundwissen geht nichts — aber keine Angst: die Prüfung ist für jeden machbar! Der Theoriekurs findet jeden Winter an einigen Wochenenden statt. Folgende 9 Fächer werden unterrichtet:
 
 - Luftrecht
-- Menschliches Leitsungsvermögen
+- Menschliches Leistungsvermögen
 - Meteorologie
 - Kommunikation
 - Grundlagen des Fliegens
@@ -71,13 +67,12 @@ Die folgen 9 Fächer werden dabei unterrichtet:
 
 ## Scheinerhalt
 
-Hast du genügend Erfahrung gesammelt und die Theorieprüfung und das Funksprechzeugnis bestanden, kannst du die praktische Prüfung im Segelflug ablegen. Danach ist deine Grundausbildung abgeschlossen und du hast einen Segelflugschein.
+Nach bestandener Theorie- und Funksprechprüfung folgt die praktische Prüfung: 3 Starts mit Prüfer. Danach hast du deinen Segelflugschein (SPL)!
 
 ## Streckenflugausbildung
 
-Auch nach dem Scheinerhalt unterstützt der FSV Unterjesingen dich bei deiner fliegerischen Entwicklung.
+Auch nach dem Scheinerhalt unterstützt der FSV Unterjesingen dich bei deiner fliegerischen Entwicklung. Eine individuelle Streckenflug-Ausbildung führt dich optimal an den Überlandflug heran.
 
-Eine individuelle **Streckenflug-Ausbildung** soll dich optimal an den Streckenflug heranführen.
+**Ziel:** Strategien und Methodik zur Optimierung des Streckensegelfluges mit Vorbereitung und Debriefing
 
-**Ziel:** Strategien und Methodik zur Optimierungdes Strecken-Segelfluges mit Vorbereitung und Debriefing
 **Angebote:** Streckenflüge im Doppelsitzer mit erfahrenen Piloten, Workshops, Exkursion Fuentemilanos (Spanien), Wettbewerbe
