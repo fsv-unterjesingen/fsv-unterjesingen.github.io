@@ -89,15 +89,14 @@ def title_from_filename(filename: str) -> str:
 
 
 def parse_front_matter(text: str) -> tuple[dict[str, Any], str]:
-    if not text.startswith("---\n"):
+    # CRLF handling is technically superfluous for read_markdown_file(), because
+    # Python text reads normalize newlines, but this keeps direct parsing consistent.
+    match = re.match(r"^---\r?\n(.*?)^---(?:\r?\n|$)", text, flags=re.DOTALL | re.MULTILINE)
+    if not match:
         return {}, text
 
-    end_index = text.find("\n---\n", 4)
-    if end_index < 0:
-        return {}, text
-
-    front_matter = text[4:end_index]
-    body = text[end_index + 5 :]
+    front_matter = re.sub(r"\r?\n$", "", match.group(1))
+    body = text[match.end() :]
     data = yaml.safe_load(front_matter) or {}
     if not isinstance(data, dict):
         raise ValueError("Expected YAML front matter to deserialize to a mapping")
@@ -121,7 +120,7 @@ def dump_front_matter(data: dict[str, Any], body: str = "") -> str:
         default_flow_style=False,
     ).strip()
 
-    clean_body = body.lstrip("\n")
+    clean_body = re.sub(r"^(?:\r?\n)+", "", body)
     if clean_body:
         return f"---\n{payload}\n---\n\n{clean_body}"
     return f"---\n{payload}\n---\n"

@@ -193,17 +193,13 @@ export function normalizeCommaList(value) {
 }
 
 export function parseFrontMatter(text) {
-  if (!text.startsWith("---\n")) {
+  const match = /^---\r?\n([\s\S]*?)^---(?:\r?\n|$)/m.exec(text);
+  if (!match || match.index !== 0) {
     return [{}, text];
   }
 
-  const endIndex = text.indexOf("\n---\n", 4);
-  if (endIndex < 0) {
-    return [{}, text];
-  }
-
-  const frontMatter = text.slice(4, endIndex);
-  const body = text.slice(endIndex + 5);
+  const frontMatter = match[1].replace(/\r?\n$/, "");
+  const body = text.slice(match[0].length);
   const data = parseYaml(frontMatter) ?? {};
   if (!data || typeof data !== "object" || Array.isArray(data)) {
     throw new Error("Expected YAML front matter to deserialize to a mapping");
@@ -229,7 +225,7 @@ export function dumpFrontMatter(data, body = "") {
     simpleKeys: true,
     singleQuote: true,
   }).trimEnd();
-  const cleanBody = body.replace(/^\n+/, "");
+  const cleanBody = body.replace(/^(?:\r?\n)+/, "");
   if (cleanBody) {
     return `---\n${payload}\n---\n\n${cleanBody}`;
   }
