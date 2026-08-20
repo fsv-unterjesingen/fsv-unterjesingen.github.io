@@ -12,6 +12,7 @@ aliases:
   - /startseite/der-verein/flugzeugpark/ventus-3m/
   - /startseite/der-verein/flugzeugpark/hk36-ttc/
   - /startseite/der-verein/flugzeugpark/da-40/
+  - /startseite/der-verein/flugzeugpark/Bristell 916/
 content_width: wide
 hero_image:
   url: flugzeugpark.jpg
@@ -22,7 +23,7 @@ aircraft:
     image: "2021-10/IMG_0968"
     seats: 1
     engine_power: 61 PS
-    glide_ratio: "48"
+    glide_ratio: "> 50"
     application: "Streckenflug"
     images:
       - "2021-10/IMG_0968"
@@ -39,7 +40,7 @@ aircraft:
     image: "2024-06/arcus0"
     seats: 2
     engine_power: 68 PS
-    glide_ratio: "50"
+    glide_ratio: "ca. 50"
     application: "Streckenflug"
     images:
       - "2024-06/arcus0"
@@ -140,6 +141,20 @@ aircraft:
       - "2016-06/2004-09-11__16-35-09_00"
       - "2016-06/2004-09-11__16-35-07_00"
       - "2016-06/5cb53ca222"
+  - slug: bristell-916
+    name: Bristell 916
+    category: Ultraleicht
+    image: "2026-08/_DSC1516"
+    seats: 2
+    engine_power: 160 PS
+    range: ca. 1040 km
+    climb_rate: 7,6 m/s
+    images:
+      - "2026-08/_DSC1516"
+      - "2026-08/_DSC1499"
+      - "2026-08/_DSC1518"
+      - "2026-08/_DSC1538_1"
+      - "2026-08/_DSC1540"
 ---
 
 {{< aircraft-fleet >}}
