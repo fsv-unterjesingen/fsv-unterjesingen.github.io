@@ -23,7 +23,8 @@
           <ul class="sub-menu">
             {{ range .Children }}
             {{ $childActive := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}
-            <li class="{{ if $childActive }}is-active{{ end }}"><a href="{{ .URL }}"><span class="nav-label">{{ .Name
+            {{ $isExternal := or (strings.HasPrefix .URL "http://") (strings.HasPrefix .URL "https://") }}
+            <li class="{{ if $childActive }}is-active{{ end }}"><a href="{{ .URL }}" {{ if $isExternal }}target="_blank" rel="noopener noreferrer"{{ end }}><span class="nav-label">{{ .Name
                   }}</span></a></li>
             {{ end }}
           </ul>
