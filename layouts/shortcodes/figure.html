@@ -4,6 +4,7 @@
 {{- end -}}
 
 {{- $class := .Get "class" | default "" -}}
+{{- $hasExplicitLink := isset .Params "link" -}}
 {{- $link := .Get "link" | default "" -}}
 {{- $target := .Get "target" | default "" -}}
 {{- $sizes := .Get "sizes" | default "(min-width: 800px) 760px, 100vw" -}}
@@ -32,7 +33,19 @@
 {{- if not $hasAlt -}}
   {{- $alt = $mediaAlt | default $captionText -}}
 {{- end -}}
-{{- $resolvedLink := $link | default ($image.original | default $image.url) -}}
+{{- $enlargedWidth := 1600 -}}
+{{- $enlargedLink := $image.original | default $image.url -}}
+{{- with $resource -}}
+  {{- if and (eq .ResourceType "image") (gt .Width $enlargedWidth) -}}
+    {{- $enlargedLink = (.Resize (printf "%dx q85" $enlargedWidth)).RelPermalink -}}
+  {{- end -}}
+{{- end -}}
+{{- $resolvedLink := "" -}}
+{{- if $hasExplicitLink -}}
+  {{- $resolvedLink = $link -}}
+{{- else -}}
+  {{- $resolvedLink = $enlargedLink -}}
+{{- end -}}
 
 <figure class="content-figure{{ with $class }} {{ . }}{{ end }}">
   {{- if $resolvedLink -}}
